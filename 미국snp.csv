@@ -1,0 +1,1945 @@
+Company,Market,Symbol
+3M,S&P500,MMM
+A. O. Smith,S&P500,AOS
+Abbott Laboratories,S&P500,ABT
+AbbVie,S&P500,ABBV
+Accenture,S&P500,ACN
+Adobe Inc.,S&P500,ADBE
+Advanced Micro Devices,S&P500,AMD
+AES Corporation,S&P500,AES
+Aflac,S&P500,AFL
+Agilent Technologies,S&P500,A
+Air Products,S&P500,APD
+Airbnb,S&P500,ABNB
+Akamai Technologies,S&P500,AKAM
+Albemarle Corporation,S&P500,ALB
+Alexandria Real Estate Equities,S&P500,ARE
+Align Technology,S&P500,ALGN
+Allegion,S&P500,ALLE
+Alliant Energy,S&P500,LNT
+Allstate,S&P500,ALL
+Alphabet Inc. (Class A),S&P500,GOOGL
+Alphabet Inc. (Class C),S&P500,GOOG
+Altria,S&P500,MO
+Amazon,S&P500,AMZN
+Amcor,S&P500,AMCR
+Ameren,S&P500,AEE
+American Electric Power,S&P500,AEP
+American Express,S&P500,AXP
+American International Group,S&P500,AIG
+American Tower,S&P500,AMT
+American Water Works,S&P500,AWK
+Ameriprise Financial,S&P500,AMP
+Ametek,S&P500,AME
+Amgen,S&P500,AMGN
+Amphenol,S&P500,APH
+Analog Devices,S&P500,ADI
+Aon plc,S&P500,AON
+APA Corporation,S&P500,APA
+Apollo Global Management,S&P500,APO
+Apple Inc.,S&P500,AAPL
+Applied Materials,S&P500,AMAT
+AppLovin,S&P500,APP
+Aptiv,S&P500,APTV
+Arch Capital Group,S&P500,ACGL
+Archer Daniels Midland,S&P500,ADM
+Ares Management,S&P500,ARES
+Arista Networks,S&P500,ANET
+Arthur J. Gallagher & Co.,S&P500,AJG
+Assurant,S&P500,AIZ
+AT&T,S&P500,T
+Atmos Energy,S&P500,ATO
+Autodesk,S&P500,ADSK
+Automatic Data Processing,S&P500,ADP
+AutoZone,S&P500,AZO
+AvalonBay Communities,S&P500,AVB
+Avery Dennison,S&P500,AVY
+Axon Enterprise,S&P500,AXON
+Baker Hughes,S&P500,BKR
+Ball Corporation,S&P500,BALL
+Bank of America,S&P500,BAC
+Baxter International,S&P500,BAX
+Becton Dickinson,S&P500,BDX
+Berkshire Hathaway,S&P500,BRK.B
+Best Buy,S&P500,BBY
+Bio-Techne,S&P500,TECH
+Biogen,S&P500,BIIB
+BlackRock,S&P500,BLK
+Blackstone Inc.,S&P500,BX
+"Block, Inc.",S&P500,XYZ
+BNY Mellon,S&P500,BK
+Boeing,S&P500,BA
+Booking Holdings,S&P500,BKNG
+Boston Scientific,S&P500,BSX
+Bristol Myers Squibb,S&P500,BMY
+Broadcom,S&P500,AVGO
+Broadridge Financial Solutions,S&P500,BR
+Brown & Brown,S&P500,BRO
+Brown?“Forman,S&P500,BF.B
+Builders FirstSource,S&P500,BLDR
+Bunge Global,S&P500,BG
+"BXP, Inc.",S&P500,BXP
+C.H. Robinson,S&P500,CHRW
+Cadence Design Systems,S&P500,CDNS
+Camden Property Trust,S&P500,CPT
+Campbell's Company (The),S&P500,CPB
+Capital One,S&P500,COF
+Cardinal Health,S&P500,CAH
+Carnival,S&P500,CCL
+Carrier Global,S&P500,CARR
+Carvana,S&P500,CVNA
+Caterpillar Inc.,S&P500,CAT
+Cboe Global Markets,S&P500,CBOE
+CBRE Group,S&P500,CBRE
+CDW Corporation,S&P500,CDW
+Cencora,S&P500,COR
+Centene Corporation,S&P500,CNC
+CenterPoint Energy,S&P500,CNP
+CF Industries,S&P500,CF
+Charles River Laboratories,S&P500,CRL
+Charles Schwab Corporation,S&P500,SCHW
+Charter Communications,S&P500,CHTR
+Chevron Corporation,S&P500,CVX
+Chipotle Mexican Grill,S&P500,CMG
+Chubb Limited,S&P500,CB
+Church & Dwight,S&P500,CHD
+Ciena,S&P500,CIEN
+Cigna,S&P500,CI
+Cincinnati Financial,S&P500,CINF
+Cintas,S&P500,CTAS
+Cisco,S&P500,CSCO
+Citigroup,S&P500,C
+Citizens Financial Group,S&P500,CFG
+Clorox,S&P500,CLX
+CME Group,S&P500,CME
+CMS Energy,S&P500,CMS
+Coca-Cola Company (The),S&P500,KO
+Cognizant,S&P500,CTSH
+Coinbase,S&P500,COIN
+Colgate-Palmolive,S&P500,CL
+Comcast,S&P500,CMCSA
+Comfort Systems USA,S&P500,FIX
+Conagra Brands,S&P500,CAG
+ConocoPhillips,S&P500,COP
+Consolidated Edison,S&P500,ED
+Constellation Brands,S&P500,STZ
+Constellation Energy,S&P500,CEG
+Cooper Companies (The),S&P500,COO
+Copart,S&P500,CPRT
+Corning Inc.,S&P500,GLW
+Corpay,S&P500,CPAY
+Corteva,S&P500,CTVA
+CoStar Group,S&P500,CSGP
+Costco,S&P500,COST
+Coterra,S&P500,CTRA
+CRH plc,S&P500,CRH
+CrowdStrike,S&P500,CRWD
+Crown Castle,S&P500,CCI
+CSX Corporation,S&P500,CSX
+Cummins,S&P500,CMI
+CVS Health,S&P500,CVS
+Danaher Corporation,S&P500,DHR
+Darden Restaurants,S&P500,DRI
+Datadog,S&P500,DDOG
+DaVita,S&P500,DVA
+Deckers Brands,S&P500,DECK
+Deere & Company,S&P500,DE
+Dell Technologies,S&P500,DELL
+Delta Air Lines,S&P500,DAL
+Devon Energy,S&P500,DVN
+Dexcom,S&P500,DXCM
+Diamondback Energy,S&P500,FANG
+Digital Realty,S&P500,DLR
+Dollar General,S&P500,DG
+Dollar Tree,S&P500,DLTR
+Dominion Energy,S&P500,D
+Domino's,S&P500,DPZ
+DoorDash,S&P500,DASH
+Dover Corporation,S&P500,DOV
+Dow Inc.,S&P500,DOW
+D. R. Horton,S&P500,DHI
+DTE Energy,S&P500,DTE
+Duke Energy,S&P500,DUK
+DuPont,S&P500,DD
+Eaton Corporation,S&P500,ETN
+eBay Inc.,S&P500,EBAY
+Ecolab,S&P500,ECL
+Edison International,S&P500,EIX
+Edwards Lifesciences,S&P500,EW
+Electronic Arts,S&P500,EA
+Elevance Health,S&P500,ELV
+Emcor,S&P500,EME
+Emerson Electric,S&P500,EMR
+Entergy,S&P500,ETR
+EOG Resources,S&P500,EOG
+EPAM Systems,S&P500,EPAM
+EQT Corporation,S&P500,EQT
+Equifax,S&P500,EFX
+Equinix,S&P500,EQIX
+Equity Residential,S&P500,EQR
+Erie Indemnity,S&P500,ERIE
+Essex Property Trust,S&P500,ESS
+EstÃ©e Lauder Companies (The),S&P500,EL
+Everest Group,S&P500,EG
+Evergy,S&P500,EVRG
+Eversource Energy,S&P500,ES
+Exelon,S&P500,EXC
+Expand Energy,S&P500,EXE
+Expedia Group,S&P500,EXPE
+Expeditors International,S&P500,EXPD
+Extra Space Storage,S&P500,EXR
+ExxonMobil,S&P500,XOM
+"F5, Inc.",S&P500,FFIV
+FactSet,S&P500,FDS
+Fair Isaac,S&P500,FICO
+Fastenal,S&P500,FAST
+Federal Realty Investment Trust,S&P500,FRT
+FedEx,S&P500,FDX
+Fidelity National Information Services,S&P500,FIS
+Fifth Third Bancorp,S&P500,FITB
+First Solar,S&P500,FSLR
+FirstEnergy,S&P500,FE
+Fiserv,S&P500,FISV
+Ford Motor Company,S&P500,F
+Fortinet,S&P500,FTNT
+Fortive,S&P500,FTV
+Fox Corporation (Class A),S&P500,FOXA
+Fox Corporation (Class B),S&P500,FOX
+Franklin Resources,S&P500,BEN
+Freeport-McMoRan,S&P500,FCX
+Garmin,S&P500,GRMN
+Gartner,S&P500,IT
+GE Aerospace,S&P500,GE
+GE HealthCare,S&P500,GEHC
+GE Vernova,S&P500,GEV
+Gen Digital,S&P500,GEN
+Generac,S&P500,GNRC
+General Dynamics,S&P500,GD
+General Mills,S&P500,GIS
+General Motors,S&P500,GM
+Genuine Parts Company,S&P500,GPC
+Gilead Sciences,S&P500,GILD
+Global Payments,S&P500,GPN
+Globe Life,S&P500,GL
+GoDaddy,S&P500,GDDY
+Goldman Sachs,S&P500,GS
+Halliburton,S&P500,HAL
+Hartford (The),S&P500,HIG
+Hasbro,S&P500,HAS
+HCA Healthcare,S&P500,HCA
+Healthpeak Properties,S&P500,DOC
+Henry Schein,S&P500,HSIC
+Hershey Company (The),S&P500,HSY
+Hewlett Packard Enterprise,S&P500,HPE
+Hilton Worldwide,S&P500,HLT
+Hologic,S&P500,HOLX
+Home Depot (The),S&P500,HD
+Honeywell,S&P500,HON
+Hormel Foods,S&P500,HRL
+Host Hotels & Resorts,S&P500,HST
+Howmet Aerospace,S&P500,HWM
+HP Inc.,S&P500,HPQ
+Hubbell Incorporated,S&P500,HUBB
+Humana,S&P500,HUM
+Huntington Bancshares,S&P500,HBAN
+Huntington Ingalls Industries,S&P500,HII
+IBM,S&P500,IBM
+IDEX Corporation,S&P500,IEX
+Idexx Laboratories,S&P500,IDXX
+Illinois Tool Works,S&P500,ITW
+Incyte,S&P500,INCY
+Ingersoll Rand,S&P500,IR
+Insulet Corporation,S&P500,PODD
+Intel,S&P500,INTC
+Interactive Brokers,S&P500,IBKR
+Intercontinental Exchange,S&P500,ICE
+International Flavors & Fragrances,S&P500,IFF
+International Paper,S&P500,IP
+Intuit,S&P500,INTU
+Intuitive Surgical,S&P500,ISRG
+Invesco,S&P500,IVZ
+Invitation Homes,S&P500,INVH
+IQVIA,S&P500,IQV
+Iron Mountain,S&P500,IRM
+J.B. Hunt,S&P500,JBHT
+Jabil,S&P500,JBL
+Jack Henry & Associates,S&P500,JKHY
+Jacobs Solutions,S&P500,J
+Johnson & Johnson,S&P500,JNJ
+Johnson Controls,S&P500,JCI
+JPMorgan Chase,S&P500,JPM
+Kenvue,S&P500,KVUE
+Keurig Dr Pepper,S&P500,KDP
+KeyCorp,S&P500,KEY
+Keysight Technologies,S&P500,KEYS
+Kimberly-Clark,S&P500,KMB
+Kimco Realty,S&P500,KIM
+Kinder Morgan,S&P500,KMI
+KKR & Co.,S&P500,KKR
+KLA Corporation,S&P500,KLAC
+Kraft Heinz,S&P500,KHC
+Kroger,S&P500,KR
+L3Harris,S&P500,LHX
+Labcorp,S&P500,LH
+Lam Research,S&P500,LRCX
+Lamb Weston,S&P500,LW
+Las Vegas Sands,S&P500,LVS
+Leidos,S&P500,LDOS
+Lennar,S&P500,LEN
+Lennox International,S&P500,LII
+Lilly (Eli),S&P500,LLY
+Linde plc,S&P500,LIN
+Live Nation Entertainment,S&P500,LYV
+Lockheed Martin,S&P500,LMT
+Loews Corporation,S&P500,L
+Lowe's,S&P500,LOW
+Lululemon Athletica,S&P500,LULU
+LyondellBasell,S&P500,LYB
+M&T Bank,S&P500,MTB
+Marathon Petroleum,S&P500,MPC
+Marriott International,S&P500,MAR
+Marsh McLennan,S&P500,MRSH
+Martin Marietta Materials,S&P500,MLM
+Masco,S&P500,MAS
+Mastercard,S&P500,MA
+Match Group,S&P500,MTCH
+McCormick & Company,S&P500,MKC
+McDonald's,S&P500,MCD
+McKesson Corporation,S&P500,MCK
+Medtronic,S&P500,MDT
+Merck & Co.,S&P500,MRK
+Meta Platforms,S&P500,META
+MetLife,S&P500,MET
+Mettler Toledo,S&P500,MTD
+MGM Resorts,S&P500,MGM
+Microchip Technology,S&P500,MCHP
+Micron Technology,S&P500,MU
+Microsoft,S&P500,MSFT
+Mid-America Apartment Communities,S&P500,MAA
+Moderna,S&P500,MRNA
+Molina Healthcare,S&P500,MOH
+Molson Coors Beverage Company,S&P500,TAP
+Mondelez International,S&P500,MDLZ
+Monolithic Power Systems,S&P500,MPWR
+Monster Beverage,S&P500,MNST
+Moody's Corporation,S&P500,MCO
+Morgan Stanley,S&P500,MS
+Mosaic Company (The),S&P500,MOS
+Motorola Solutions,S&P500,MSI
+MSCI Inc.,S&P500,MSCI
+"Nasdaq, Inc.",S&P500,NDAQ
+NetApp,S&P500,NTAP
+Netflix,S&P500,NFLX
+Newmont,S&P500,NEM
+News Corp (Class A),S&P500,NWSA
+News Corp (Class B),S&P500,NWS
+NextEra Energy,S&P500,NEE
+"Nike, Inc.",S&P500,NKE
+NiSource,S&P500,NI
+Nordson Corporation,S&P500,NDSN
+Norfolk Southern,S&P500,NSC
+Northern Trust,S&P500,NTRS
+Northrop Grumman,S&P500,NOC
+Norwegian Cruise Line Holdings,S&P500,NCLH
+NRG Energy,S&P500,NRG
+Nucor,S&P500,NUE
+Nvidia,S&P500,NVDA
+"NVR, Inc.",S&P500,NVR
+NXP Semiconductors,S&P500,NXPI
+O?™Reilly Automotive,S&P500,ORLY
+Occidental Petroleum,S&P500,OXY
+Old Dominion,S&P500,ODFL
+Omnicom Group,S&P500,OMC
+ON Semiconductor,S&P500,ON
+Oneok,S&P500,OKE
+Oracle Corporation,S&P500,ORCL
+Otis Worldwide,S&P500,OTIS
+Paccar,S&P500,PCAR
+Packaging Corporation of America,S&P500,PKG
+Palantir Technologies,S&P500,PLTR
+Palo Alto Networks,S&P500,PANW
+Paramount Skydance Corporation,S&P500,PSKY
+Parker Hannifin,S&P500,PH
+Paychex,S&P500,PAYX
+Paycom,S&P500,PAYC
+PayPal,S&P500,PYPL
+Pentair,S&P500,PNR
+PepsiCo,S&P500,PEP
+Pfizer,S&P500,PFE
+PG&E Corporation,S&P500,PCG
+Philip Morris International,S&P500,PM
+Phillips 66,S&P500,PSX
+Pinnacle West Capital,S&P500,PNW
+PNC Financial Services,S&P500,PNC
+Pool Corporation,S&P500,POOL
+PPG Industries,S&P500,PPG
+PPL Corporation,S&P500,PPL
+Principal Financial Group,S&P500,PFG
+Procter & Gamble,S&P500,PG
+Progressive Corporation,S&P500,PGR
+Prologis,S&P500,PLD
+Prudential Financial,S&P500,PRU
+Public Service Enterprise Group,S&P500,PEG
+PTC Inc.,S&P500,PTC
+Public Storage,S&P500,PSA
+PulteGroup,S&P500,PHM
+Quanta Services,S&P500,PWR
+Qualcomm,S&P500,QCOM
+Quest Diagnostics,S&P500,DGX
+Qnity Electronics,S&P500,Q
+Ralph Lauren Corporation,S&P500,RL
+Raymond James Financial,S&P500,RJF
+RTX Corporation,S&P500,RTX
+Realty Income,S&P500,O
+Regency Centers,S&P500,REG
+Regeneron Pharmaceuticals,S&P500,REGN
+Regions Financial Corporation,S&P500,RF
+Republic Services,S&P500,RSG
+ResMed,S&P500,RMD
+Revvity,S&P500,RVTY
+Robinhood Markets,S&P500,HOOD
+Rockwell Automation,S&P500,ROK
+"Rollins, Inc.",S&P500,ROL
+Roper Technologies,S&P500,ROP
+Ross Stores,S&P500,ROST
+Royal Caribbean Group,S&P500,RCL
+S&P Global,S&P500,SPGI
+Salesforce,S&P500,CRM
+Sandisk,S&P500,SNDK
+SBA Communications,S&P500,SBAC
+Schlumberger,S&P500,SLB
+Seagate Technology,S&P500,STX
+Sempra,S&P500,SRE
+ServiceNow,S&P500,NOW
+Sherwin-Williams,S&P500,SHW
+Simon Property Group,S&P500,SPG
+Skyworks Solutions,S&P500,SWKS
+J.M. Smucker Company (The),S&P500,SJM
+Smurfit Westrock,S&P500,SW
+Snap-on,S&P500,SNA
+Solventum,S&P500,SOLV
+Southern Company,S&P500,SO
+Southwest Airlines,S&P500,LUV
+Stanley Black & Decker,S&P500,SWK
+Starbucks,S&P500,SBUX
+State Street Corporation,S&P500,STT
+Steel Dynamics,S&P500,STLD
+Steris,S&P500,STE
+Stryker Corporation,S&P500,SYK
+Supermicro,S&P500,SMCI
+Synchrony Financial,S&P500,SYF
+Synopsys,S&P500,SNPS
+Sysco,S&P500,SYY
+T-Mobile US,S&P500,TMUS
+T. Rowe Price,S&P500,TROW
+Take-Two Interactive,S&P500,TTWO
+"Tapestry, Inc.",S&P500,TPR
+Targa Resources,S&P500,TRGP
+Target Corporation,S&P500,TGT
+TE Connectivity,S&P500,TEL
+Teledyne Technologies,S&P500,TDY
+Teradyne,S&P500,TER
+"Tesla, Inc.",S&P500,TSLA
+Texas Instruments,S&P500,TXN
+Texas Pacific Land Corporation,S&P500,TPL
+Textron,S&P500,TXT
+Thermo Fisher Scientific,S&P500,TMO
+TJX Companies,S&P500,TJX
+TKO Group Holdings,S&P500,TKO
+Trade Desk (The),S&P500,TTD
+Tractor Supply,S&P500,TSCO
+Trane Technologies,S&P500,TT
+TransDigm Group,S&P500,TDG
+Travelers Companies (The),S&P500,TRV
+Trimble Inc.,S&P500,TRMB
+Truist Financial,S&P500,TFC
+Tyler Technologies,S&P500,TYL
+Tyson Foods,S&P500,TSN
+U.S. Bancorp,S&P500,USB
+Uber,S&P500,UBER
+"UDR, Inc.",S&P500,UDR
+Ulta Beauty,S&P500,ULTA
+Union Pacific Corporation,S&P500,UNP
+United Airlines Holdings,S&P500,UAL
+United Parcel Service,S&P500,UPS
+United Rentals,S&P500,URI
+UnitedHealth Group,S&P500,UNH
+Universal Health Services,S&P500,UHS
+Valero Energy,S&P500,VLO
+Ventas,S&P500,VTR
+Veralto,S&P500,VLTO
+Verisign,S&P500,VRSN
+Verisk Analytics,S&P500,VRSK
+Verizon,S&P500,VZ
+Vertex Pharmaceuticals,S&P500,VRTX
+Viatris,S&P500,VTRS
+Vici Properties,S&P500,VICI
+Visa Inc.,S&P500,V
+Vistra Corp.,S&P500,VST
+Vulcan Materials Company,S&P500,VMC
+W. R. Berkley Corporation,S&P500,WRB
+W. W. Grainger,S&P500,GWW
+Wabtec,S&P500,WAB
+Walmart,S&P500,WMT
+Walt Disney Company (The),S&P500,DIS
+Warner Bros. Discovery,S&P500,WBD
+Waste Management,S&P500,WM
+Waters Corporation,S&P500,WAT
+WEC Energy Group,S&P500,WEC
+Wells Fargo,S&P500,WFC
+Welltower,S&P500,WELL
+West Pharmaceutical Services,S&P500,WST
+Western Digital,S&P500,WDC
+Weyerhaeuser,S&P500,WY
+"Williams-Sonoma, Inc.",S&P500,WSM
+Williams Companies,S&P500,WMB
+Willis Towers Watson,S&P500,WTW
+"Workday, Inc.",S&P500,WDAY
+Wynn Resorts,S&P500,WYNN
+Xcel Energy,S&P500,XEL
+Xylem Inc.,S&P500,XYL
+Yum! Brands,S&P500,YUM
+Zebra Technologies,S&P500,ZBRA
+Zimmer Biomet,S&P500,ZBH
+Zoetis,S&P500,ZTS
+Invesco QQQ Trust,NASDAQ,QQQ
+Defiance Quantum ETF,NASDAQ,QTUM 
+SPDR S&P 500 ETF Trust,NYSE Arca,SPY
+"Invesco QQQ Trust, Series 1",NASDAQ,QQQ
+iShares Russell 2000 ETF,NYSE Arca,IWM
+iShares Core S&P 500 ETF,NYSE Arca,IVV
+Vanguard S&P 500 ETF,NYSE Arca,VOO
+"SPDR Gold Trust, SPDR Gold Shares",NYSE Arca,GLD
+iShares Bitcoin Trust ETF,NASDAQ,IBIT
+iShares iBoxx $ Investment Grade Corporate Bond ETF,NYSE Arca,LQD
+iShares iBoxx $ High Yield Corporate Bond ETF,NYSE Arca,HYG
+iShares 20+ Year Treasury Bond ETF,NASDAQ,TLT
+Invesco S&P 500 Equal Weight ETF,NYSE Arca,RSP
+SPDR Dow Jones Industrial Average ETF Trust,NYSE Arca,DIA
+VanEck Semiconductor ETF,NASDAQ,SMH
+State Street Technology Select Sector SPDR ETF,NYSE Arca,XLK
+State Street Financial Select Sector SPDR ETF,NYSE Arca,XLF
+State Street Health Care Select Sector SPDR ETF,NYSE Arca,XLV
+iShares Semiconductor ETF,NASDAQ,SOXX
+State Street Industrial Select Sector SPDR ETF,NYSE Arca,XLI
+VanEck Gold Miners ETF,NYSE Arca,GDX
+iShares Ethereum Trust ETF,NASDAQ,ETHA
+iShares Silver Trust,NYSE Arca,SLV
+iShares MSCI EAFE ETF,NYSE Arca,EFA
+iShares 0-3 Month Treasury Bond ETF,NYSE Arca,SGOV
+State Street Consumer Discretionary Select Sector SPDR ETF,NYSE Arca,XLY
+State Street Energy Select Sector SPDR ETF,NYSE Arca,XLE
+iShares MSCI Emerging Markets ETF,NYSE Arca,EEM
+Vanguard Total Stock Market ETF,NYSE Arca,VTI
+State Street Consumer Staples Select Sector SPDR ETF,NYSE Arca,XLP
+iShares China Large-Cap ETF,NYSE Arca,FXI
+State Street SPDR S&P Regional Banking ETF,NYSE Arca,KRE
+State Street SPDR S&P Biotech ETF,NYSE Arca,XBI
+Invesco NASDAQ 100 ETF,NASDAQ,QQQM
+State Street Utilities Select Sector SPDR ETF,NYSE Arca,XLU
+iShares Core MSCI EAFE ETF,Cboe BZX,IEFA
+Vanguard Intermediate-Term Corporate Bond ETF,NASDAQ,VCIT
+iShares Core U.S. Aggregate Bond ETF,NYSE Arca,AGG
+iShares MSCI Brazil ETF,NYSE Arca,EWZ
+State Street SPDR Portfolio S&P 500 ETF,NYSE Arca,SPYM
+ARK Innovation ETF,Cboe BZX,ARKK
+State Street SPDR Bloomberg 1-3 Month T-Bill ETF,NYSE Arca,BIL
+iShares 7-10 Year Treasury Bond ETF,NASDAQ,IEF
+KraneShares CSI China Internet ETF,NYSE Arca,KWEB
+Vanguard FTSE Developed Markets ETF,NYSE Arca,VEA
+iShares Core MSCI Emerging Markets ETF,NYSE Arca,IEMG
+iShares J.P. Morgan USD Emerging Markets Bond ETF,NASDAQ,EMB
+iShares U.S. Real Estate ETF,NYSE Arca,IYR
+iShares Gold Trust,NYSE Arca,IAU
+iShares Russell 1000 Value ETF,NYSE Arca,IWD
+State Street Communication Services Select Sector SPDR ETF,NYSE Arca,XLC
+Vanguard Value ETF,NYSE Arca,VTV
+iShares Russell 1000 Growth ETF,NYSE Arca,IWF
+State Street Materials Select Sector SPDR ETF,NYSE Arca,XLB
+iShares Core S&P Small-Cap ETF,NYSE Arca,IJR
+iShares Core S&P Mid-Cap ETF,NYSE Arca,IJH
+iShares Expanded Tech-Software Sector ETF,Cboe BZX,IGV
+Vanguard Total Bond Market,NASDAQ,BND
+VanEck Junior Gold Miners ETF,NYSE Arca,GDXJ
+Vanguard Growth ETF,NYSE Arca,VUG
+SPDR S&P MidCap 400 ETF Trust,NYSE Arca,MDY
+iShares MSCI Japan ETF,NYSE Arca,EWJ
+Fidelity Wise Origin Bitcoin Fund,Cboe BZX,FBTC
+iShares National Muni Bond ETF,NYSE Arca,MUB
+Vanguard FTSE Emerging Markets ETF,NYSE Arca,VWO
+Schwab US Dividend Equity ETF,NYSE Arca,SCHD
+iShares MSCI South Korea ETF,NYSE Arca,EWY
+State Street SPDR S&P Retail ETF,NYSE Arca,XRT
+iShares MSCI ACWI ETF,NASDAQ,ACWI
+State Street SPDR Bloomberg High Yield Bond ETF,NYSE Arca,JNK
+SPDR Gold MiniShares,NYSE Arca,GLDM
+Vanguard Short-Term Corporate Bond ETF,NASDAQ,VCSH
+iShares Broad USD High Yield Corporate Bond ETF,Cboe BZX,USHY
+Vanguard Total World Stock ETF,NYSE Arca,VT
+Schwab U.S. Large- Cap ETF,NYSE Arca,SCHX
+Sprott Physical Silver Trust,NYSE Arca,PSLV
+State Street SPDR S&P Oil & Gas Exploration & Production ETF,NYSE Arca,XOP
+"United States Oil Fund, LP",NYSE Arca,USO
+Vanguard Information Technology ETF,NYSE Arca,VGT
+ProShares Bitcoin ETF,NYSE Arca,BITO
+iShares Russell 1000 ETF,NYSE Arca,IWB
+Vanguard Total International Stock ETF,NASDAQ,VXUS
+iShares MSCI USA Quality Factor ETF,Cboe BZX,QUAL
+Schwab U.S. Large-Cap Growth ETF,NYSE Arca,SCHG
+iShares TIPS Bond ETF,NYSE Arca,TIP
+iShares 1-3 Year Treasury Bond ETF,NASDAQ,SHY
+Vanguard Long-Term Corporate Bond ETF,NASDAQ,VCLT
+Vanguard Real Estate ETF,NYSE Arca,VNQ
+Grayscale Bitcoin Trust ETF,NYSE Arca,GBTC
+iShares Core S&P Total U.S. Stock Market ETF,NYSE Arca,ITOT
+J.P. Morgan Nasdaq Equity Premium Income ETF,NASDAQ,JEPQ
+iShares MSCI India ETF,Cboe BZX,INDA
+iShares MBS ETF,NASDAQ,MBB
+Vanguard Tax-Exempt Bond Index Fund,NYSE Arca,VTEB
+iShares Trust iShares 0-1 Year Treasury Bond ETF,NASDAQ,SHV
+State Street SPDR Portfolio S&P 500 Growth ETF,NYSE Arca,SPYG
+iPath Series B S&P 500 VIX Short-Term Futures ETN,Cboe BZX,VXX
+iShares Biotechnology ETF,NASDAQ,IBB
+Janus Henderson AAA CLO ETF,NYSE Arca,JAAA
+JPMorgan Ultra-Short Income ETF,NYSE Arca,JPST
+iShares U.S. Home Construction ETF,Cboe BZX,ITB
+State Street Real Estate Select Sector SPDR ETF,NYSE Arca,XLRE
+JPMorgan Equity Premium Income ETF,NYSE Arca,JEPI
+iShares S&P 500 Growth ETF,NYSE Arca,IVW
+State Street SPDR S&P Homebuilders ETF,NYSE Arca,XHB
+Direxion Daily TSLA Bear 1X Shares,NASDAQ,TSLS
+Vanguard Dividend Appreciation ETF,NYSE Arca,VIG
+Invesco S&P 500 Momentum ETF,NYSE Arca,SPMO
+Vanguard Russell 2000 ETF,NASDAQ,VTWO
+iShares 3-7 Year Treasury Bond ETF,NASDAQ,IEI
+Xtrackers Harvest CSI 300 China A-Shares ETF,NYSE Arca,ASHR
+Grayscale Ethereum Mini Trust ETF,NYSE Arca,ETH
+YieldMax TSLA Option Income Strategy ETF,NYSE Arca,TSLY
+Vanguard FTSE Europe ETF,NYSE Arca,VGK
+Global X Uranium ETF,NYSE Arca,URA
+ProShares Short QQQ,NYSE Arca,PSQ
+ProShares Short S&P500,NYSE Arca,SH
+Invesco S&P 500 Low Volatility ETF,NYSE Arca,SPLV
+Schwab International Equity ETF,NYSE Arca,SCHF
+Vanguard Short-Term Bond ETF,NYSE Arca,BSV
+ProShares Short Russell2000,NYSE Arca,RWM
+Grayscale Ethereum Trust ETF,NYSE Arca,ETHE
+State Street SPDR S&P Metals & Mining ETF,NYSE Arca,XME
+WisdomTree Floating Rate Treasury Fund,NYSE Arca,USFR
+iShares MSCI USA Momentum Factor ETF,Cboe BZX,MTUM
+iShares MSCI Taiwan ETF,NYSE Arca,EWT
+iShares MSCI USA Min Vol Factor ETF,Cboe BZX,USMV
+NEOS Nasdaq 100 High Income ETF,NASDAQ,QQQI
+abrdn Physical Gold Shares ETF,NYSE Arca,SGOL
+Schwab U.S. REIT ETF,NYSE Arca,SCHH
+Vanguard High Dividend Yield ETF,NYSE Arca,VYM
+iShares MSCI EAFE Value ETF,Cboe BZX,EFV
+Vanguard Small-Cap ETF,NYSE Arca,VB
+iShares U.S. Technology ETF,NYSE Arca,IYW
+Vanguard Mid-Cap ETF,NYSE Arca,VO
+Vanguard FTSE All-World Ex-US ETF,NYSE Arca,VEU
+iShares Russell Mid-Cap ETF,NYSE Arca,IWR
+Vanguard Total International Bond ETF,NASDAQ,BNDX
+SPDR Portfolio Developed World ex-US ETF,NYSE Arca,SPDW
+YieldMax Ultra Option Income Strategy ETF,NYSE Arca,ULTY
+State Street SPDR Portfolio Intermediate Term Corporate Bond ETF,NYSE Arca,SPIB
+Invesco Senior Loan ETF,NYSE Arca,BKLN
+iShares S&P 500 Value ETF,NYSE Arca,IVE
+Schwab U.S. Broad Market ETF,NYSE Arca,SCHB
+Invesco KBW Bank ETF,NASDAQ,KBWB
+Direxion Daily S&P 500 Bear 1X Shares,NYSE Arca,SPDN
+iShares U.S. Treasury Bond ETF,Cboe BZX,GOVT
+Roundhill Magnificent Seven ETF,Cboe BZX,MAGS
+iShares U.S. Equity Factor Rotation Active ETF,NYSE Arca,DYNF
+iShares MSCI China ETF,NASDAQ,MCHI
+State Street SPDR Portfolio Long Term Treasury ETF,NYSE Arca,SPTL
+Vanguard Russell 1000 Growth ETF,NASDAQ,VONG
+State Street SPDR Portfolio S&P 500 Value ETF,NYSE Arca,SPYV
+Amplify Junior Silver Miners ETF,NYSE Arca,SILJ
+iShares S&P 100 ETF,NYSE Arca,OEF
+Capital Group Dividend Value ETF,NYSE Arca,CGDV
+iShares Trust iShares Core Universal USD Bond ETF,NASDAQ,IUSB
+Vanguard Short-Term Treasury ETF,NASDAQ,VGSH
+iShares 10-20 Year Treasury Bond ETF,NYSE Arca,TLH
+YieldMax MSTR Option Income Strategy ETF,NYSE Arca,MSTY
+"United States Natural Gas Fund, LP Unit",NYSE Arca,UNG
+Fidelity Ethereum Fund,Cboe BZX,FETH
+Global X Silver Miners ETF (NEW),NYSE Arca,SIL
+Vanguard Intermediate-Term Treasury ETF,NASDAQ,VGIT
+iShares MSCI EAFE Growth ETF,Cboe BZX,EFG
+State Street Blackstone Senior Loan ETF,NYSE Arca,SRLN
+iShares Russell 2000 Value ETF,NYSE Arca,IWN
+iShares 1-5 Year Investment Grade Corporate Bond ETF,NASDAQ,IGSB
+iShares Core MSCI Total International Stock ETF,NASDAQ,IXUS
+Direxion Daily PLTR Bear 1X Shares,NASDAQ,PLTD
+iShares U.S. Aerospace & Defense ETF,Cboe BZX,ITA
+Schwab Fundamental U.S. Large Company ETF,NYSE Arca,FNDX
+First Trust Dow Jones Internet Index Fund ETF,NYSE Arca,FDN
+Invesco S&P 500 Top 50 ETF,NYSE Arca,XLG
+iShares Russell Mid-Cap Growth ETF,NYSE Arca,IWP
+Alpha Architect 1-3 Month Box ETF,Cboe BZX,BOXX
+Capital Group Growth ETF,NYSE Arca,CGGR
+Bitwise Bitcoin ETF,NYSE Arca,BITB
+Shares 5-10 Year Investment Grade Corporate Bond ETF,NASDAQ,IGIB
+Vanguard Mega Cap Growth ETF,NYSE Arca,MGK
+ARK 21Shares Bitcoin ETF,Cboe BZX,ARKB
+iShares Russell 2000 Growth ETF,NYSE Arca,IWO
+Vanguard Intermediate-Term Bond ETF,NYSE Arca,BIV
+PIMCO Enhanced Short Maturity Active Exchange-Traded Fund,NYSE Arca,MINT
+iShares Core Dividend Growth ETF,NYSE Arca,DGRO
+NEOS S&P 500 High Income ETF,Cboe BZX,SPYI
+Pacer US Cash Cows 100 ETF,Cboe BZX,COWZ
+iShares Gold Trust Micro,NYSE Arca,IAUM
+YieldMax COIN Option Income Strategy ETF,NYSE Arca,CONY
+Global X Copper Miners ETF (NEW),NYSE Arca,COPX
+Vanguard Extended Market ETF,NYSE Arca,VXF
+VanEck Oil Services ETF,NYSE Arca,OIH
+iShare MSCI Eurozone ETF of ISHARES INC.,Cboe BZX,EZU
+Sprott Physical Gold Trust,NYSE Arca,PHYS
+Vanguard Long-Term Treasury ETF,NASDAQ,VGLT
+PGIM Ultra Short Bond ETF,NYSE Arca,PULS
+State Street SPDR Portfolio S&P 400 Mid Cap ETF,NYSE Arca,SPMD
+Schwab U.S Small- Cap ETF,NYSE Arca,SCHA
+iShares MSCI Emerging Markets ex China ETF,NASDAQ,EMXC
+iShares Trust iShares Preferred and Income Securities ETF,NASDAQ,PFF
+State Street SPDR Portfolio High Yield Bond ETF,NYSE Arca,SPHY
+iShares Core MSCI International Developed Markets ETF,NYSE Arca,IDEV
+Fidelity Total Bond ETF,NYSE Arca,FBND
+JPMorgan BetaBuilders Japan ETF,Cboe BZX,BBJP
+Invesco S&P 500 Quality ETF,NYSE Arca,SPHQ
+State Street SPDR S&P Bank ETF,NYSE Arca,KBE
+Goldman Sachs Physical Gold ETF Shares,Cboe BZX,AAAU
+iShares MSCI Intl Quality Factor ETF,NYSE Arca,IQLT
+State Street SPDR Bloomberg Short Term High Yield Bond ETF,NYSE Arca,SJNK
+Global X NASDAQ-100 Covered Call ETF,NASDAQ,QYLD
+Vanguard 0-3 Month Treasury Bill ETF,NASDAQ,VBIL
+iShares Flexible Income Active ETF,NYSE Arca,BINC
+Fidelity MSCI Energy Index ETF,NYSE Arca,FENY
+iShares MSCI Mexico ETF,NYSE Arca,EWW
+iShares MSCI Canada ETF,NYSE Arca,EWC
+US Treasury 3 Month Bill ETF,NASDAQ,TBIL
+iShares MSCI Australia ETF,NYSE Arca,EWA
+YieldMax NVDA Option Income Strategy ETF,NYSE Arca,NVDY
+FundStrat Granny Shots US Large Cap ETF,NYSE Arca,GRNY
+iShares MSCI Germany ETF,NYSE Arca,EWG
+Vanguard S&P 500 Growth ETF,NYSE Arca,VOOG
+SPDR EURO STOXX 50 ETF,NYSE Arca,FEZ
+ProShares VIX Short-Term Futures ETF,Cboe BZX,VIXY
+Schwab U.S. TIPS ETF,NYSE Arca,SCHP
+Grayscale Bitcoin Mini Trust ETF,NYSE Arca,BTC
+State Street SPDR Portfolio S&P 600 Small Cap ETF,NYSE Arca,SPSM
+iShares MSCI United Kingdom ETF,NYSE Arca,EWU
+iShares MSCI EAFE Small-Cap ETF,NASDAQ,SCZ
+Dimensional U.S. Core Equity 2 ETF,NYSE Arca,DFAC
+SPDR Portfolio Emerging Markets ETF,NYSE Arca,SPEM
+U.S. Global Jets ETF,NYSE Arca,JETS
+iShares Expanded Tech Sector ETF,NYSE Arca,IGM
+Schwab U.S. Large-Cap Value ETF,NYSE Arca,SCHV
+ARK Genomic Revolution ETF,Cboe BZX,ARKG
+VanEck Uranium and Nuclear ETF,NYSE Arca,NLR
+First Trust Rising Dividend Achievers ETF,NASDAQ,RDVY
+ProShares Short VIX Short-Term Futures ETF,Cboe BZX,SVXY
+State Street SPDR Portfolio Short Term Corporate Bond ETF,NYSE Arca,SPSB
+Avantis U.S. Small Cap Value ETF,NYSE Arca,AVUV
+Vanguard Short-Term Inflation-Protected Securities Index Fund,NASDAQ,VTIP
+Vanguard Mortgage-Backed Securities ETF,NASDAQ,VMBS
+iShares Trust iShares ESG Aware MSCI USA ETF,NASDAQ,ESGU
+State Street SPDR S&P Insurance ETF,NYSE Arca,KIE
+abrdn Physical Silver Shares ETF,NYSE Arca,SIVR
+iShares A.I. Innovation and Tech Active ETF,NYSE Arca,BAI
+Global X Artificial Intelligence & Technology ETF,NASDAQ,AIQ
+Vanguard International High Dividend Yield ETF,NASDAQ,VYMI
+State Street SPDR Portfolio S&P 500 High Dividend ETF,NYSE Arca,SPYD
+iShares 0-5 Year TIPS Bond ETF,NYSE Arca,STIP
+VanEck Morningstar Wide Moat ETF,Cboe BZX,MOAT
+iShares Core S&P U.S. Value ETF,NASDAQ,IUSV
+Vanguard Financials ETF,NYSE Arca,VFH
+iShares Broad USD Investment Grade Corporate Bond ETF,NASDAQ,USIG
+Vanguard Russell 1000 Value ETF,NASDAQ,VONV
+PIMCO Multi Sector Bond Active ETF,NYSE Arca,PYLD
+Avantis Emerging Markets Equity ETF,NYSE Arca,AVEM
+Vanguard Small-Cap Value ETF,NYSE Arca,VBR
+iShares Floating Rate Bond ETF,Cboe BZX,FLOT
+iShares Russell Top 200 Growth ETF,NYSE Arca,IWY
+Vanguard Large-Cap ETF,NYSE Arca,VV
+Vanguard Health Care ETF,NYSE Arca,VHT
+State Street SPDR Portfolio Long Term Corporate Bond ETF,NYSE Arca,SPLB
+Vanguard World Funds Extended Duration ETF,NYSE Arca,EDV
+Alerian MLP ETF,NYSE Arca,AMLP
+WisdomTree Trust WisdomTree U.S. Quality Dividend Growth Fund,NASDAQ,DGRW
+JPMorgan BetaBuilders Europe ETF,Cboe BZX,BBEU
+Invesco Optimum Yield Diversified Commodity Strategy No K-1 ETF,NASDAQ,PDBC
+iShares MSCI Hong Kong ETF,NYSE Arca,EWH
+ProShares S&P 500 Dividend Aristocrats ETF,Cboe BZX,NOBL
+Invesco China Technology ETF,NYSE Arca,CQQQ
+First Trust NASDAQ Cybersecurity ETF,NASDAQ,CIBR
+VanEck Rare Earth and Strategic Metals ETF,NYSE Arca,REMX
+iShares 0-5 Year High Yield Corporate Bond ETF,NYSE Arca,SHYG
+iShares Russell Mid-Cap Value ETF,NYSE Arca,IWS
+iShares MSCI ACWI ex US ETF,NASDAQ,ACWX
+iShares Core S&P U.S. Growth ETF,NASDAQ,IUSG
+iShares MSCI World ETF,NYSE Arca,URTH
+Global X Defense Tech ETF,NYSE Arca,SHLD
+iShares Treasury Floating Rate Bond ETF,NYSE Arca,TFLO
+iShares U.S. Medical Devices ETF,NYSE Arca,IHI
+Schwab Short-Term U.S. Treasury ETF,NYSE Arca,SCHO
+Goldman Sachs Access Treasury 0-1 Year ETF,NYSE Arca,GBIL
+iShares Ultra Short Duration Bond Active ETF,Cboe BZX,ICSH
+-1x Short VIX Futures ETF,Cboe BZX,SVIX
+iShares Russell 3000 ETF,NYSE Arca,IWV
+iShares Latin America 40 ETF,NYSE Arca,ILF
+Schwab Fundamental International Equity ETF,NYSE Arca,FNDF
+Avantis International Small Cap Value ETF,NYSE Arca,AVDV
+iShares 10+ Year Investment Grade Corporate Bond ETF,NYSE Arca,IGLB
+VanEck J. P. Morgan EM Local Currency Bond ETF,NYSE Arca,EMLC
+iShares MSCI USA Value Factor ETF,Cboe BZX,VLUE
+AdvisorShares Pure US Cannabis ETF,NYSE Arca,MSOS
+Fidelity MSCI Information Technology Index ETF,NYSE Arca,FTEC
+Avantis International Equity ETF,NYSE Arca,AVDE
+iShares Core MSCI Europe ETF,NYSE Arca,IEUR
+iShares Core High Dividend ETF,NYSE Arca,HDV
+State Street SPDR Portfolio Aggregate Bond ETF,NYSE Arca,SPAB
+Vanguard Small-Cap Growth ETF,NYSE Arca,VBK
+Vanguard Ultra-Short Bond ETF,Cboe BZX,VUSB
+iShares Short-Term National Muni Bond ETF,NYSE Arca,SUB
+WisdomTree Japan Hedged Equity Fund,NYSE Arca,DXJ
+Defiance Quantum ETF,NASDAQ,QTUM
+abrdn Physical Platinum Shares ETF,NYSE Arca,PPLT
+State Street SPDR Portfolio Intermediate Term Treasury ETF,NYSE Arca,SPTI
+First Trust RBA American Industrial Renaissance ETF,NASDAQ,AIRR
+Vanguard Energy ETF,NYSE Arca,VDE
+Vanguard Long-Term Bond ETF,NYSE Arca,BLV
+iShares Select Dividend ETF,NASDAQ,DVY
+Dimensional International Value ETF,NYSE Arca,DFIV
+Schwab Emerging Markets Equity ETF,NYSE Arca,SCHE
+Vanguard Mid-Cap Growth ETF,NYSE Arca,VOT
+ProShares Short Dow30,NYSE Arca,DOG
+State Street SPDR Bloomberg Convertible Securities ETF,NYSE Arca,CWB
+Vanguard Mid-Cap Value ETF,NYSE Arca,VOE
+iShares Global Clean Energy ETF,NASDAQ,ICLN
+Direxion Daily NVDA Bear 1X Shares,NASDAQ,NVDD
+abrdn Physical Palladium Shares ETF,NYSE Arca,PALL
+VanEck Bitcoin ETF,Cboe BZX,HODL
+ProShares Short Bitcoin ETF,NYSE Arca,BITI
+Schwab Fundamental Emerging Markets Equity ETF,NYSE Arca,FNDE
+iShares Core International Aggregate Bond Fund,Cboe BZX,IAGG
+Fidelity High Dividend ETF,NYSE Arca,FDVV
+Vanguard Emerging Markets Government Bond ETF,NASDAQ,VWOB
+First Trust SMID Cap Rising Dividend Achievers ETF,NASDAQ,SDVY
+PGIM AAA CLO ETF,NYSE Arca,PAAA
+Schwab 1000 Index ETF,NYSE Arca,SCHK
+JPMorgan Income ETF,NYSE Arca,JPIE
+Vanguard FTSE Pacific ETF,NYSE Arca,VPL
+iShares Convertible Bond ETF,Cboe BZX,ICVT
+JPMorgan Ultra-Short Municipal Income ETF,Cboe BZX,JMST
+iShares MSCI All Country Asia ex Japan ETF,NASDAQ,AAXJ
+Schwab Intermediately-Term U.S. Treasury ETF,NYSE Arca,SCHR
+State Street SPDR Portfolio S&P 1500 Composite Stock Market ETF,NYSE Arca,SPTM
+VanEck Pharmaceutical ETF,NASDAQ,PPH
+JPMorgan Core Plus Bond ETF,Cboe BZX,JCPB
+iShares U.S. Financials ETF,NYSE Arca,IYF
+Xtrackers USD High Yield Corporate Bond ETF,NYSE Arca,HYLB
+Goldman Sachs ActiveBeta U.S. Large Cap Equity ETF,NYSE Arca,GSLC
+Dimensional US High Profitability ETF,NYSE Arca,DUHP
+Akre Focus ETF,NYSE Arca,AKRE
+Invesco Preferred ETF,NYSE Arca,PGX
+ARK Next Generation Internet ETF,Cboe BZX,ARKW
+iShares Global Infrastructure ETF,NASDAQ,IGF
+Capital Group Core Equity ETF,NYSE Arca,CGUS
+Global X U.S. Infrastructure Development ETF,Cboe BZX,PAVE
+First Trust NASDAQ Clean Edge Smart Grid Infrastructure Index Fund,NASDAQ,GRID
+Simplify Government Money Market ETF,NYSE Arca,SBIL
+JPMorgan U.S. Quality Factor ETF,NYSE Arca,JQUA
+Bitwise Ethereum ETF,NYSE Arca,ETHW
+Nuveen International Aggregate Bond ETF,NYSE Arca,NXUS
+First Trust Enhanced Short Maturity ETF,NASDAQ,FTSM
+Invesco S&P 500 High Beta ETF,NYSE Arca,SPHB
+State Street SPDR Bloomberg 3-12 Month T-Bill ETF,NYSE Arca,BILS
+Dimensional US Small Cap Value ETF,NYSE Arca,DFSV
+iShares U.S. Thematic Rotation Active ETF,NYSE Arca,THRO
+Putnam Focused Large Cap Value ETF,NYSE Arca,PVAL
+Pacer US Small Cap Cash Cows ETF,Cboe BZX,CALF
+Vanguard FTSE All-World EX-US Small-Cap Index Fund,NYSE Arca,VSS
+iShares U.S. Healthcare ETF,NYSE Arca,IYH
+Dimensional International Core Equity Market ETF,NYSE Arca,DFAI
+Sprott Uranium Miners ETF,NYSE Arca,URNM
+Vanguard Communication Services ETF,NYSE Arca,VOX
+VanEck Merk Gold ETF,NYSE Arca,OUNZ
+iShares U.S. Transportation ETF,Cboe BZX,IYT
+Invesco Solar ETF,NYSE Arca,TAN
+iShares U.S. Energy ETF,NYSE Arca,IYE
+iShares Global REIT ETF,NYSE Arca,REET
+VictoryShares Free Cash Flow ETF,NASDAQ,VFLO
+JPMorgan Active Bond ETF,NYSE,JBND
+iShares MSCI Europe Financials ETF,NASDAQ,EUFN
+Bitwise Solana Staking ETF,NYSE Arca,BSOL
+JPMorgan Active Growth ETF,NYSE Arca,JGRO
+JPMorgan Municipal ETF,Cboe BZX,JMUB
+Dimensional U.S. Equity Market ETF,NYSE Arca,DFUS
+Direxion Daily AMD Bear 1X Shares,NASDAQ,AMDD
+State Street SPDR S&P Aerospace & Defense ETF,NYSE Arca,XAR
+Fidelity Enhanced International ETF,NYSE Arca,FENI
+Invesco S&P 500 High Dividend Low Volatility ETF,NYSE Arca,SPHD
+T. Rowe Price Capital Appreciation Equity ETF,NYSE Arca,TCAF
+VanEck High Yield Muni ETF,Cboe BZX,HYD
+Schwab 5-10 Year Corporate Bond ETF,NYSE Arca,SCHI
+Schwab U.S. Mid-Cap ETF,NYSE Arca,SCHM
+Dimensional U.S. Small Cap ETF,NYSE Arca,DFAS
+Goldman Sachs Nasdaq-100 Premium Income ETF,NASDAQ,GPIQ
+Vanguard Mega Cap  Value ETF,NYSE Arca,MGV
+Fidelity Enhanced Large Cap Core ETF,NYSE Arca,FELC
+First Trust Capital Strength ETF,NASDAQ,FTCS
+Vanguard Mega Cap 300 Index ETF,NYSE Arca,MGC
+First Trust Morningstar Dividend Leaders Index Fund,NYSE Arca,FDL
+iShares MSCI EAFE Min Vol Factor ETF,Cboe BZX,EFAV
+Schwab US Aggregate Bond ETF,NYSE Arca,SCHZ
+Vanguard Utilities ETF,NYSE Arca,VPU
+Roundhill Innovation-100 0DTE Covered Call Strategy ETF,Cboe BZX,QDTE
+Janus Henderson Mortgage-Backed Securities ETF,NYSE Arca,JMBS
+State Street SPDR S&P Dividend ETF,NYSE Arca,SDY
+WisdomTree India Earnings Fund ETF,NYSE Arca,EPI
+Invesco S&P MidCap Momentum ETF,NYSE Arca,XMMO
+State Street SPDR Portfolio Short Term Treasury ETF,NYSE Arca,SPTS
+Sprott Physical Gold and Silver Trust,NYSE Arca,CEF
+State Street SPDR Dow Jones REIT ETF,NYSE Arca,RWR
+Global X MSCI Argentina ETF,NYSE Arca,ARGT
+FT Vest Laddered Buffer ETF,Cboe BZX,BUFR
+Invesco MSCI USA ETF,Cboe BZX,PBUS
+JPMorgan International Research Enhanced Equity ETF,NYSE Arca,JIRE
+Capital Group Global Growth Equity ETF,NYSE Arca,CGGO
+VanEck BDC Income ETF,NYSE Arca,BIZD
+Invesco DB US Dollar Index Bullish Fund,NYSE Arca,UUP
+Xtrackers MSCI EAFE Hedged Equity ETF,NYSE Arca,DBEF
+Global X S&P 500 Covered Call ETF,NYSE Arca,XYLD
+iShares MSCI Global Gold Miners ETF,NASDAQ,RING
+Dimensional Core Fixed Income ETF,NYSE Arca,DFCF
+Dimensional US Core Equity Market ETF,NYSE Arca,DFAU
+YieldMax Universe Fund of Option Income ETFs,NYSE Arca,YMAX
+Dimensional International Core Equity 2 ETF,Cboe BZX,DFIC
+PIMCO Active Bond Exchange-Traded Fund,NYSE,BOND
+NEOS Bitcoin High Income ETF,Cboe BZX,BTCI
+iShares Currency Hedged MSCI EAFE ETF,Cboe BZX,HEFA
+Schwab Fundamental U.S. Small Company ETF,NYSE Arca,FNDA
+Valkyrie ETF Trust II CoinShares Bitcoin Mining ETF,NASDAQ,WGMI
+iShares U.S. Telecommunications ETF,Cboe BZX,IYZ
+Invesco National AMT-Free Municipal Bond ETF,NYSE Arca,PZA
+iShares MSCI Emerging Markets Min Vol Factor ETF,Cboe BZX,EEMV
+First Trust Value Line Dividend Fund,NYSE Arca,FVD
+Invesco PHLX Semiconductor ETF,NASDAQ,SOXQ
+Vanguard Core Bond ETF,NASDAQ,VCRB
+Dimensional US Large Cap Value ETF,NYSE Arca,DFLV
+YieldMax PLTR Option Income Strategy ETF,NYSE Arca,PLTY
+Invesco Ultra Short Duration ETF,NYSE Arca,GSY
+Invesco Aerospace & Defense ETF,NYSE Arca,PPA
+Amplify CWP Enhanced Dividend Income ETF,NYSE Arca,DIVO
+iShares California Muni Bond ETF,NYSE Arca,CMF
+GraniteShares Gold Shares,NYSE Arca,BAR
+Roundhill WeeklyPay Universe ETF,Cboe BZX,WPAY
+Avantis U.S. Large Cap Value ETF,NYSE Arca,AVLV
+Capital Group Core Plus Income ETF,NYSE Arca,CGCP
+Capital Group Core Balanced ETF,NYSE Arca,CGBL
+Vanguard Consumer Staples ETF,NYSE Arca,VDC
+Solana ETF,NASDAQ,SOLZ
+iShares MSCI Spain ETF,NYSE Arca,EWP
+JPMorgan BetaBuilders U.S. Equity ETF,Cboe BZX,BBUS
+Avantis U.S. Equity ETF,NYSE Arca,AVUS
+ARK Autonomous Technology & Robotics ETF,Cboe BZX,ARKQ
+Goldman Sachs S&P 500 Premium Income ETF,NASDAQ,GPIX
+Tradr 1X Short Innovation Daily ETF,NASDAQ,SARK
+iShares MSCI Saudi Arabia ETF,NYSE Arca,KSA
+Vanguard International Dividend Appreciation ETF,NASDAQ,VIGI
+iShares International Select Dividend ETF,Cboe BZX,IDV
+Dan IVES Wedbush AI Revolution ETF,NYSE Arca,IVES
+First Trust Cloud Computing ETF,NASDAQ,SKYY
+Invesco S&P MidCap Quality ETF,NYSE Arca,XMHQ
+First Trust NASDAQ-100 Technology  Index Fund,NASDAQ,QTEC
+Columbia Research Enhanced Core ETF,NYSE Arca,RECS
+Eaton Vance Total Return Bond ETF,NYSE,EVTR
+State Street SPDR Bloomberg Investment Grade Floating Rate ETF,NYSE Arca,FLRN
+Horizon International Managed Risk ETF,NYSE Arca,SFTX
+iShares 20+ Year Treasury Bond BuyWrite Strategy ETF,Cboe BZX,TLTW
+ARK Blockchain & Fintech Innovation ETF,Cboe BZX,ARKF
+Schwab Long-Term U.S. Treasury ETF,NYSE Arca,SCHQ
+iShares S&P Small-Cap 600 Value ETF,NYSE Arca,IJS
+Nuveen High Yield Corporate Bond ETF,NYSE Arca,NHYB
+iShares Trust iShares ESG Aware MSCI EAFE ETF,NASDAQ,ESGD
+Invesco WilderHill Clean Energy ETF,NYSE Arca,PBW
+Global X Funds Global X Robotics & Artificial Intelligence ETF,NASDAQ,BOTZ
+Pacer US Large Cap Cash Cows Growth Leaders ETF,NASDAQ,COWG
+iShares MSCI Switzerland ETF,NYSE Arca,EWL
+Amplify Blockchain Technology ETF,NYSE Arca,BLOK
+Capital Group Core Bond ETF,NYSE Arca,CGCB
+iShares Future AI & Tech ETF,NYSE Arca,ARTY
+Vanguard ESG U.S. Stock ETF,Cboe BZX,ESGV
+First Trust Low Duration Opportunities ETF,NASDAQ,LMBS
+PIMCO 25+ Year Zero Coupon U.S. Treasury Index Exchange-Traded Fund,NYSE Arca,ZROZ
+First Trust Preferred Securities and Income ETF,NYSE Arca,FPE
+Janus Henderson B-BBB CLO ETF,Cboe BZX,JBBB
+Invesco S&P 500 Revenue ETF,NYSE Arca,RWL
+iShares MSCI Intl Value Factor ETF,NYSE Arca,IVLU
+Fidelity Blue Chip Growth ETF,Cboe BZX,FBCG
+"iShares, Inc. iShares ESG Aware MSCI EM ETF",NASDAQ,ESGE
+Roundhill Generative AI & Technology ETF,NYSE Arca,CHAT
+iShares Short Duration Bond Active ETF,Cboe BZX,NEAR
+SP Funds S&P 500 Sharia  ETF,NYSE Arca,SPUS
+Direxion Daily AAPL Bear 1X Shares,NASDAQ,AAPD
+iShares MSCI Italy ETF,NYSE Arca,EWI
+Dimensional Short-Duration Fixed Income ETF,NYSE Arca,DFSD
+State Street SPDR Portfolio Corporate Bond ETF,NYSE Arca,SPBO
+iShares MSCI Intl Momentum Factor ETF,NYSE Arca,IMTM
+JPMorgan BetaBuilders Canada ETF,Cboe BZX,BBCA
+Fidelity Nasdaq Composite Index ETF,NASDAQ,ONEQ
+iShares U.S. Broker-Dealers & Securities Exchanges ETF,NYSE Arca,IAI
+Dimensional World ex U.S. Core Equity 2 ETF,NYSE Arca,DFAX
+Global X 1-3 Month T-Bill ETF,NYSE Arca,CLIP
+Capital Group U.S. Multi-Sector Income ETF,NYSE Arca,CGMS
+JPMorgan U.S. Tech Leaders ETF,NASDAQ,JTEK
+Capital Group U.S. Small and Mid Cap ETF,NYSE Arca,CGMM
+JPMorgan Hedged Equity Laddered Overlay ETF,NYSE Arca,HELO
+Capital Group Dividend Growers ETF,NYSE Arca,CGDG
+JPMorgan Limited Duration Bond ETF,Cboe BZX,JPLD
+State Street SPDR Nuveen ICE Municipal Bond ETF,NYSE Arca,TFI
+JPMorgan Active Value ETF,NYSE Arca,JAVA
+Fidelity Enhanced Mid Cap ETF,NYSE Arca,FMDE
+PIMCO Ultra Short Government Active ETF,NYSE Arca,BILZ
+Kensington Credit Opportunities ETF,Cboe BZX,KAMO
+Capital Group Municipal Income ETF,NYSE Arca,CGMU
+Vanguard Russell 1000 ETF,NASDAQ,VONE
+iShares Global 100 ETF,NYSE Arca,IOO
+iShares Fallen Angels USD Bond ETF,NASDAQ,FALN
+Dimensional International Small Cap ETF,Cboe BZX,DFIS
+iShares MSCI Chile ETF,Cboe BZX,ECH
+iShares Europe ETF,NYSE Arca,IEV
+Schwab High Yield Bond ETF,NYSE Arca,SCYB
+Global X MLP & Energy Infrastructure ETF,NYSE Arca,MLPX
+State Street SPDR Nuveen ICE High Yield Municipal Bond ETF,NYSE Arca,HYMB
+BlackRock ETF Trust II iShares AAA CLO Active ETF,NASDAQ,CLOA
+BondBloxx Bloomberg Six Month Target Duration US Treasury ETF,NYSE Arca,XHLF
+Global X Lithium & Battery Tech ETF,NYSE Arca,LIT
+Dimensional U.S. Targeted Value ETF,NYSE Arca,DFAT
+State Street SPDR Portfolio Mortgage Backed Bond ETF,NYSE Arca,SPMB
+Dimensional Emerging Markets Core Equity 2 ETF,NYSE Arca,DFEM
+iShares MSCI Singapore ETF,NYSE Arca,EWS
+Dimensional Emerging Core Equity Market ETF,NYSE Arca,DFAE
+Invesco S&P International Developed Momentum ETF,NYSE Arca,IDMO
+iShares Global Tech ETF,NYSE Arca,IXN
+Virtus Reaves Utilities ETF,NYSE Arca,UTES
+SPDR S&P Global Natural Resources ETF,NYSE Arca,GNR
+Fidelity Enhanced Large Cap Growth ETF,NYSE Arca,FELG
+FT Vest S&P 500 Dividend Aristocrats Target Income ETF,Cboe BZX,KNG
+Xtrackers S&P 500 Scored & Screened ETF,NYSE Arca,SNPE
+iShares S&P Mid-Cap 400 Growth ETF,NYSE Arca,IJK
+JPMorgan Mortgage-Backed Securities ETF,NYSE Arca,JMTG
+iShares U.S. Healthcare Providers ETF,NYSE Arca,IHF
+iShares U.S. Consumer Discretionary ETF,NYSE Arca,IYC
+Goldman Sachs ActiveBeta International Equity ETF,NYSE Arca,GSIE
+Direxion Daily GOOGL Bear 1X Shares,NASDAQ,GGLS
+VanEck IG Floating Rate ETF,NYSE Arca,FLTR
+Invesco Short Term Treasury ETF,NYSE Arca,TBLL
+REX-Osprey SOL + Staking ETF,Cboe BZX,SSK
+iShares iBonds Dec 2027 Term Corporate ETF,NYSE Arca,IBDS
+Vanguard Industrials ETF,NYSE Arca,VIS
+Schwab Municipal Bond ETF,NYSE Arca,SCMB
+iShares Core 1-5 Year USD Bond ETF of iShares Trust,NASDAQ,ISTB
+FlexShares Global Upstream Natural Resources Index Fund,NYSE Arca,GUNR
+Franklin International Low Volatility High Dividend Index ETF,Cboe BZX,LVHI
+VanEck Fallen Angel High Yield Bond ETF,NASDAQ,ANGL
+iShares iBonds Dec 2028 Term Corporate ETF,NYSE Arca,IBDT
+YieldMax SMCI Option Income Strategy ETF,NYSE Arca,SMCY
+State Street SPDR S&P 600 Small Cap Value ETF,NYSE Arca,SLYV
+Dimensional US Marketwide Value ETF,NYSE Arca,DFUV
+iShares U.S. Regional Banks ETF,NYSE Arca,IAT
+iShares S&P Mid-Cap 400 Value ETF,NYSE Arca,IJJ
+JPMorgan Global Select Equity ETF,NASDAQ,JGLO
+State Street SPDR S&P Semiconductor ETF,NYSE Arca,XSD
+Select STOXX Europe Aerospace & Defense ETF,Cboe BZX,EUAD
+iShares U.S. Utilities ETF,NYSE Arca,IDU
+iShares Core 60/40 Balanced Allocation ETF,NYSE Arca,AOR
+Janus Henderson Short Duration Income ETF,NYSE Arca,VNLA
+VanEck Ethereum ETF,Cboe BZX,ETHV
+Invesco S&P 500 Pure Value ETF,NYSE Arca,RPV
+PIMCO Intermediate Municipal Bond Active Exchange-Traded Fund,NYSE Arca,MUNI
+First Trust Nasdaq Semiconductor ETF,NASDAQ,FTXL
+Invesco BulletShares 2027 Corporate Bond ETF,NASDAQ,BSCR
+iShares iBonds Dec 2026 Term Corporate ETF,NYSE Arca,IBDR
+iMGP DBi Managed Futures Strategy ETF,NYSE Arca,DBMF
+Invesco S&P SmallCap Momentum ETF,NYSE Arca,XSMO
+Direxion NASDAQ-100 Equal Weighted Index Shares,NASDAQ,QQQE
+First Trust Utilities AlphaDEX Fund,NYSE Arca,FXU
+iShares Global Healthcare ETF,NYSE Arca,IXJ
+Schwab International Small-Cap Equity ETF,NYSE Arca,SCHC
+Capital Group Global Equity ETF,NYSE Arca,CGGE
+Capital Group Municipal High-Income ETF,NYSE Arca,CGHM
+BNY Mellon US Large Cap Core Equity ETF,NYSE Arca,BKLC
+iShares Core U.S. REIT ETF,NYSE Arca,USRT
+iShares U.S. Consumer Staples ETF,NYSE Arca,IYK
+Simplify Interest Rate Hedge ETF,NYSE Arca,PFIX
+First Trust Smith Opportunistic Fixed Income ETF,NASDAQ,FIXD
+iShares Global Energy ETF,NYSE Arca,IXC
+Franklin FTSE India ETF,NYSE Arca,FLIN
+Capital Group International Focus Equity ETF,NYSE Arca,CGXU
+YieldMax HOOD Option Income Strategy ETF,NYSE Arca,HOOY
+Baron First Principles ETF,NYSE,RONB
+iShares Asia 50 ETF,NASDAQ,AIA
+"United States Brent Oil Fund, LP",NYSE Arca,BNO
+WisdomTree U.S. LargeCap Dividend Fund,NYSE Arca,DLN
+iShares ESG MSCI KLD 400 ETF,NYSE Arca,DSI
+iShares Intermediate Government/Credit Bond ETF,Cboe BZX,GVI
+iShares MSCI Global Min Vol Factor ETF,Cboe BZX,ACWV
+TCW Flexible Income ETF,NYSE,FLXR
+Invesco S&P 500 Equal Weight Technology ETF,NYSE Arca,RSPT
+Vanguard S&P 500 Value ETF,NYSE Arca,VOOV
+iShares MSCI Pacific ex Japan ETF,NYSE Arca,EPP
+Franklin FTSE Japan ETF,NYSE Arca,FLJP
+iShares S&P Small-Cap 600 Growth ETF,NASDAQ,IJT
+VanEck Vietnam ETF,Cboe BZX,VNM
+Invesco Galaxy Bitcoin ETF,Cboe BZX,BTCO
+First Trust Smith Unconstrained Bond ETF,NYSE Arca,UCON
+Vanguard Consumer Discretionary ETF,NYSE Arca,VCR
+State Street DoubleLine Total Return Tactical ETF,NYSE Arca,TOTL
+Simplify Bond Bull ETF,NYSE Arca,RFIX
+Invesco CurrencyShares Euro Currency Trust,NYSE Arca,FXE
+Innovator Defined Wealth Shield ETF,Cboe BZX,BALT
+abrdn Bloomberg All Commodity Strategy K-1 Free ETF,NYSE Arca,BCI
+Dimensional International High Profitability ETF,Cboe BZX,DIHP
+United States Copper Index Fund,NYSE Arca,CPER
+iShares S&P  GSCI Commodity-Indexed Trust,NYSE Arca,GSG
+iShares ESG Aware U.S. Aggregate Bond ETF,NYSE Arca,EAGG
+YieldMax Magnificent 7 Fund of Option Income ETFs,NYSE Arca,YMAG
+iShares MSCI Global Metals & Mining Producers ETF,Cboe BZX,PICK
+Fidelity Enhanced Small Cap ETF,NYSE Arca,FESM
+iShares iBonds Dec 2029 Term Corporate ETF,NYSE Arca,IBDU
+VanEck Digital Transformation ETF,NASDAQ,DAPP
+Sprott Physical Platinum and Palladium Trust,NYSE Arca,SPPP
+Invesco RAFI US 1000 ETF,NYSE Arca,PRF
+Range Nuclear Renaissance Index ETF,NYSE Arca,NUKZ
+Virtus InfraCap U.S. Preferred Stock ETF,NYSE Arca,PFFA
+VistaShares Target 15 Berkshire Select Income ETF,NYSE Arca,OMAH
+First Trust Natural Gas ETF,NYSE Arca,FCG
+Invesco S&P 500 GARP ETF,NYSE Arca,SPGP
+Invesco CurrencyShares Japanese Yen Trust,NYSE Arca,FXY
+iShares Russell Top 200 Value ETF,NYSE Arca,IWX
+Invesco BulletShares 2026 Corporate Bond ETF,NASDAQ,BSCQ
+First Trust Global Tactical Commodity Strategy Fund,NASDAQ,FTGC
+FT Vest Rising Dividend Achievers Target Income ETF,Cboe BZX,RDVI
+Vanguard California Tax-Exempt Bond ETF,Cboe BZX,VTEC
+Bitwise XRP ETF,NYSE Arca,XRP
+Fundstrat Granny Shots US Small- & Mid-Cap ETF,NYSE Arca,GRNJ
+Harbor Commodity All-Weather Strategy ETF,NYSE,HGER
+YieldMax AMD Option Income Strategy ETF,NYSE Arca,AMDY
+iShares Mortgage Real Estate ETF,Cboe BZX,REM
+John Hancock Multifactor Mid Cap ETF,NYSE Arca,JHMM
+Dimensional US Real Estate ETF,NYSE Arca,DFAR
+First Trust Indxx Aerospace & Defense ETF,NYSE Arca,MISL
+iShares High Yield Muni Active ETF,Cboe BZX,HIMU
+iShares iBonds Dec 2030 Term Corporate ETF,NYSE Arca,IBDV
+Capital Group New Geography Equity ETF,NYSE Arca,CGNG
+Invesco Russell 1000 Dynamic Multifactor ETF,Cboe BZX,OMFL
+iShares MSCI USA Quality GARP ETF,Cboe BZX,GARP
+Invesco California AMT-Free Municipal Bond ETF,NYSE Arca,PWZ
+iShares 1-3 Year International Treasury Bond ETF,NASDAQ,IGOV
+First Trust Industrials/Producer Durables AlphaDEX Fund,NYSE Arca,FXR
+iShares iBonds Dec 2026 Term Treasury ETF,NASDAQ,IBTG
+iShares MSCI France ETF,NYSE Arca,EWQ
+iShares MSCI India Small-Cap ETF,Cboe BZX,SMIN
+iShares Russell 2500 ETF,Cboe BZX,SMMD
+Franklin Bitcoin ETF,Cboe BZX,EZBC
+iShares MSCI South Africa ETF,NYSE Arca,EZA
+Sprott Silver Miners & Physical Silver ETF,NASDAQ,SLVR
+JPMorgan BetaBuilders International Equity ETF,Cboe BZX,BBIN
+iShares Dynamic Equity Active ETF,NASDAQ,BDYN
+Vanguard Global ex-U.S. Real Estate ETF,NASDAQ,VNQI
+iShares MSCI Poland ETF,NYSE Arca,EPOL
+Canary XRP ETF,NASDAQ,XRPC
+iShares U.S. Small Cap Equity Factor ETF,NYSE Arca,SMLF
+Direxion Daily AMZN Bear 1X Shares,NASDAQ,AMZD
+Schwab International Dividend Equity ETF,NYSE Arca,SCHY
+Schwab Government Money Market ETF,NYSE Arca,SGVT
+Dimensional Ultrashort Fixed Income ETF,NYSE Arca,DUSB
+abrdn Physical Precious Metals Basket Shares ETF,NYSE Arca,GLTR
+iShares High Yield Systematic Bond ETF,Cboe BZX,HYDB
+Roundhill S&P 500 0DTE Covered Call Strategy ETF,Cboe BZX,XDTE
+iShares Top 20 U.S. Stocks ETF,NYSE Arca,TOPT
+iShares Aaa - A Rated Corporate Bond ETF,NYSE Arca,QLTA
+Invesco BulletShares 2028 Corporate Bond ETF,NASDAQ,BSCS
+First Trust Senior Loan Fund ETF,NASDAQ,FTSL
+State Street SPDR S&P 600 Small Cap Growth ETF,NYSE Arca,SLYG
+iShares 0-5 Year Investment Grade Corporate Bond ETF,NASDAQ,SLQD
+Grayscale CoinDesk Crypto 5 ETF,NYSE Arca,GDLC
+iShares Systematic Bond ETF,Cboe BZX,SYSB
+WisdomTree International Hedged Quality Dividend Growth Fund,NYSE Arca,IHDG
+Invesco MSCI North America Climate ETF,NYSE Arca,KLMN
+First Trust Exchange-Traded Fund VI First Trust BuyWrite Income ETF,NASDAQ,FTHI
+iShares U.S. Infrastructure ETF,Cboe BZX,IFRA
+Eldridge BBB-B CLO ETF,NYSE Arca,CLOZ
+AB Disruptors ETF,NYSE Arca,FWD
+JPMorgan BetaBuilders Developed Asia Pacific-ex Japan ETF,Cboe BZX,BBAX
+Fidelity MSCI Utilities Index ETF,NYSE Arca,FUTY
+Global X U.S. Preferred ETF,NYSE Arca,PFFD
+SPDR Bloomberg International Treasury Bond ETF,NYSE Arca,BWX
+AB Ultra Short Income ETF,NYSE Arca,YEAR
+Invesco Variable Rate Preferred ETF,NYSE Arca,VRP
+Fidelity MSCI Health Care Index ETF,NYSE Arca,FHLC
+Capital Group International Equity ETF,NYSE Arca,CGIE
+JPMorgan International Bond Opportunities ETF,Cboe BZX,JPIB
+Invesco BulletShares 2030 Corporate Bond ETF,NASDAQ,BSCU
+iShares MSCI Indonesia ETF,NYSE Arca,EIDO
+Volatility Shares Trust XRP ETF,NASDAQ,XRPI
+Capital Group Short Duration Income ETF,NYSE Arca,CGSD
+AGF U.S. Market Neutral Anti-Beta Fund,NYSE Arca,BTAL
+Xtrackers MSCI Emerging Markets Climate Selection ETF,NYSE Arca,EMCS
+Vanguard ESG International Stock ETF,Cboe BZX,VSGX
+Capital Group Conservative Equity ETF,NYSE Arca,CGCV
+Dimensional Global Real Estate ETF,NYSE Arca,DFGR
+iShares Morningstar Mid-Cap Growth ETF,NYSE Arca,IMCG
+Invesco Total Return Bond ETF,NYSE Arca,GTO
+Global X SuperDividend ETF,NYSE Arca,SDIV
+iShares U.S. Equity Factor ETF,NYSE Arca,LRGF
+iShares iBonds Dec 2027 Term Treasury ETF,NASDAQ,IBTH
+WisdomTree Cloud Computing Fund,NASDAQ,WCLD
+Global X MLP ETF,NYSE Arca,MLPA
+Fidelity Investment Grade Securitized ETF,NYSE Arca,FSEC
+Amplify CWP Growth & Income ETF,NYSE Arca,QDVO
+Dimensional International Small Cap Value ETF,Cboe BZX,DISV
+State Street SPDR NYSE Technology ETF,NYSE Arca,XNTK
+Vanguard Short-Term Tax-Exempt Bond ETF,NYSE Arca,VTES
+Schwab Mortgage-Backed Securities ETF,NYSE Arca,SMBS
+VanEck Intermediate Muni ETF,Cboe BZX,ITM
+Coinshares Bitcoin ETF Common Shares of Beneficial Interest,NASDAQ,BRRR
+WisdomTree U.S. Value Fund,NYSE Arca,WTV
+VanEck CLO ETF,NYSE Arca,CLOI
+WisdomTree U.S. Quality Growth Fund,NYSE Arca,QGRW
+Invesco S&P 500 Pure Growth ETF,NYSE Arca,RPG
+Vanguard Intermediate-Term Tax-Exempt Bond ETF,Cboe BZX,VTEI
+Vanguard S&P Small-Cap 600 ETF,NYSE Arca,VIOO
+Simplify Managed Futures Strategy ETF,NYSE Arca,CTA
+Invesco BulletShares 2029 Corporate Bond ETF,NASDAQ,BSCT
+BondBloxx CCC-Rated USD High Yield Corporate Bond ETF,NYSE Arca,XCCC
+ARK Space & Defense Innovation ETF,Cboe BZX,ARKX
+iShares MSCI Global Silver and Metals Miners ETF,Cboe BZX,SLVP
+PIMCO 0-5 Year High Yield Corporate Bond Index Exchange-Traded Fund,NYSE Arca,HYS
+Franklin XRP ETF,NYSE Arca,XRPZ
+Global X Russell 2000 Covered Call ETF,NYSE Arca,RYLD
+American Century U.S. Quality Growth ETF,NYSE Arca,QGRO
+First Trust Core Investment Grade ETF,NYSE Arca,FTCB
+Global X Cybersecurity ETF,NASDAQ,BUG
+First Trust NASDAQ Technology Dividend Index Fund,NASDAQ,TDIV
+State Street SPDR Nuveen ICE Short Term Municipal Bond ETF,NYSE Arca,SHM
+ProShares Ether ETF,NYSE Arca,EETH
+Roundhill Bitcoin Covered Call Strategy ETF,Cboe BZX,YBTC
+Invesco DB Commodity Index Tracking Fund,NYSE Arca,DBC
+Dimensional Global Core Plus Fixed Income ETF,NASDAQ,DFGP
+iShares International Equity Factor ETF,NYSE Arca,INTF
+Franklin Dynamic Municipal Bond ETF,NYSE Arca,FLMI
+iShares ESG Optimized MSCI USA ETF,NYSE Arca,SUSA
+Goldman Sachs Ultra Short Bond ETF,Cboe BZX,GSST
+First Trust NASDAQ - 100 Ex-Technology Sector Index Fund,NASDAQ,QQXT
+NEOS Enhanced Income 1-3 Month T-Bill ETF,NYSE Arca,CSHI
+Invesco S&P 100 Equal Weight ETF,NYSE Arca,EQWL
+SPDR Bridgewater All Weather ETF,NASDAQ,ALLW
+iShares 25+ Year Treasury STRIPS Bond ETF,Cboe BZX,GOVZ
+Pacer Trendpilot US Large Cap ETF,Cboe BZX,PTLC
+Principal U.S. Mega-Cap ETF,NASDAQ,USMC
+Vanguard Core Tax-Exempt Bond ETF,Cboe BZX,VCRM
+Simplify MBS ETF,NYSE Arca,MTBA
+GraniteShares Platinum Shares,NYSE Arca,PLTM
+iShares iBonds Dec 2031 Term Corporate ETF,NYSE Arca,IBDW
+VanEck Preferred Securities ex Financials ETF,NYSE Arca,PFXF
+SPDR MSCI ACWI ex-US ETF,NYSE Arca,CWI
+Direxion Daily MU Bear 1X Shares,NASDAQ,MUD
+Global X Blockchain ETF,NASDAQ,BKCH
+Vanguard Materials ETF,NYSE Arca,VAW
+Bitwise 10 Crypto Index ETF,NYSE Arca,BITW
+Fidelity Low Duration Bond Factor ETF,Cboe BZX,FLDR
+First Trust Long/Short Equity ETF,NYSE Arca,FTLS
+Sprott Junior Uranium Miners ETF,NASDAQ,URNJ
+iShares U.S. Insurance ETF,NYSE Arca,IAK
+Janus Henderson Securitized Income ETF,NYSE Arca,JSI
+Quadratic Interest Rate Volatility and Inflation Hedge ETF,NYSE Arca,IVOL
+Simplify Volatility Premium ETF,NYSE Arca,SVOL
+Fidelity MSCI Communication Services Index ETF,NYSE Arca,FCOM
+GMO U.S. Quality ETF,NYSE Arca,QLTY
+iShares Core MSCI Pacific ETF,NYSE Arca,IPAC
+Vanguard Russell 3000 ETF,NASDAQ,VTHR
+Franklin U.S. Core Bond ETF,NYSE Arca,FLCB
+Franklin Senior Loan ETF,Cboe BZX,FLBL
+Motley Fool 100 Index ETF,Cboe BZX,TMFC
+Principal U.S. Small-Cap ETF,NASDAQ,PSC
+Schwab Crypto Thematic ETF,NYSE Arca,STCE
+Vanguard Core Plus Bond ETF,NASDAQ,VPLS
+iShares Prime Money Market ETF,NYSE Arca,PMMF
+WisdomTree Emerging Markets High Dividend Fund,NYSE Arca,DEM
+First Trust Managed Municipal ETF,NASDAQ,FMB
+Calamos Autocallable Income ETF,NYSE Arca,CAIE
+Amplify Cybersecurity ETF,NYSE Arca,HACK
+First Trust Energy AlphaDEX Fund,NYSE Arca,FXN
+First Trust Tactical High Yield ETF,NASDAQ,HYLS
+Capital Group International Core Equity ETF,NYSE Arca,CGIC
+First Trust North American Energy Infrastructure Fund,NYSE Arca,EMLP
+Fidelity MSCI Consumer Discretionary Index ETF,NYSE Arca,FDIS
+NEOS Russell 2000 High Income ETF,Cboe BZX,IWMI
+Pacer Data and Digital Revolution ETF,NYSE Arca,TRFK
+Invesco Variable Rate Investment Grade ETF,NASDAQ,VRIG
+Schwab Core Bond ETF,NYSE Arca,SCCR
+ALPS Smith Core Plus Bond ETF,NYSE Arca,SMTH
+Avantis Core Fixed Income ETF,NYSE Arca,AVIG
+YieldMax Gold Miners Option Income Strategy ETF,NYSE Arca,GDXY
+iShares Core 80/20 Aggressive Allocation ETF,NYSE Arca,AOA
+Goldman Sachs MarketBeta U.S. Equity ETF,Cboe BZX,GSUS
+Fidelity MSCI Financials Index ETF,NYSE Arca,FNCL
+Victory Portfolios II VictoryShares Short-Term Bond ETF,NASDAQ,USTB
+Global X Funds Global X Data Center & Digital Infrastructure ETF,NASDAQ,DTCR
+iShares Russell Top 200 ETF,NYSE Arca,IWL
+State Street SPDR S&P 400 Mid Cap Growth ETF,NYSE Arca,MDYG
+iShares U.S. Industrials ETF,Cboe BZX,IYJ
+iShares U.S. Tech Independence Focused ETF,Cboe BZX,IETC
+iShares Core Dividend ETF,Cboe BZX,DIVB
+REX-Osprey XRP ETF,Cboe BZX,XRPR
+JPMorgan Short Duration Core Plus ETF,NYSE Arca,JSCP
+Vanguard Ultra-Short Treasury ETF,NASDAQ,VGUS
+First Trust Financials AlphaDEX Fund,NYSE Arca,FXO
+WisdomTree Emerging Markets ex-State-Owned Enterprises Fund,NYSE Arca,XSOE
+Dimensional National Municipal Bond ETF,NYSE Arca,DFNM
+Angel Oak UltraShort Income ETF,NASDAQ,UYLD
+State Street SPDR S&P Kensho New Economies Composite ETF,NYSE Arca,KOMP
+T. Rowe Price Ultra Short-Term Bond ETF,NYSE Arca,TBUX
+Franklin U.S. Mid Cap Multifactor Index ETF,Cboe BZX,FLQM
+YieldMax AMZN Option Income Strategy ETF,NYSE Arca,AMZY
+ERShares Private-Public Crossover ETF,NASDAQ,XOVR
+Innovator U.S. Equity Power Buffer ETF - October,Cboe BZX,POCT
+Vanguard Total Corporate Bond ETF,NASDAQ,VTC
+iShares Morningstar Growth ETF,NYSE Arca,ILCG
+iShares iBonds Dec 2032 Term Corporate ETF,NYSE Arca,IBDX
+First Trust Dorsey Wright Focus 5 ETF,NASDAQ,FV
+WisdomTree U.S. MidCap Dividend Fund,NYSE Arca,DON
+iShares Trust iShares Future Exponential Technologies ETF,NASDAQ,XT
+Roundhill Meme Stock ETF,NYSE Arca,MEME
+State Street SPDR S&P 400 Mid Cap Value ETF,NYSE Arca,MDYV
+WisdomTree Bloomberg U.S. Dollar Bullish Fund,NYSE Arca,USDU
+Goldman Sachs Equal Weight U.S. Large Cap Equity ETF,Cboe BZX,GSEW
+Invesco Equal Weight 0-30 Year Treasury ETF,NASDAQ,GOVI
+iShares U.S. Financial Services ETF,NYSE Arca,IYG
+Innovator Equity Managed Floor ETF,NYSE Arca,SFLR
+Vanguard S&P Mid-Cap 400 ETF,NYSE Arca,IVOO
+First Trust Nasdaq-100 Select Equal Weight ETF,NASDAQ,QQEW
+Franklin International Core Dividend Tilt Index ETF,NYSE Arca,DIVI
+Victory Portfolios II VictoryShares Core Intermediate Bond ETF,NASDAQ,UITB
+FlexShares iBoxx 3-Year Target Duration TIPS Index Fund,NYSE Arca,TDTT
+SPDR Bloomberg Emerging Markets Local Bond ETF,NYSE Arca,EBND
+Freedom 100 Emerging Markets ETF,Cboe BZX,FRDM
+Vanguard Total World Bond ETF,NASDAQ,BNDW
+iShares Investment Grade Systematic Bond ETF,Cboe BZX,IGEB
+"MicroSectors FANG+ ETNs due January 8, 2038",NYSE Arca,FNGS
+Nicholas Crypto Income ETF,NYSE Arca,BLOX
+iShares U.S. Basic Materials ETF,NYSE Arca,IYM
+Myriad Dynamic Asset Allocation ETF,NYSE Arca,MDAA
+Innovator Equity Dual Directional 15 Buffer ETF - December,Cboe BZX,DDFD
+Invesco CurrencyShares Swiss Franc Trust,NYSE Arca,FXF
+First Eagle Global Equity ETF,NYSE,FEGE
+Franklin Income Focus ETF,NYSE Arca,INCM
+TCW Transform Systems ETF,NASDAQ,PWRD
+Invesco BulletShares 2031 Corporate Bond ETF,NASDAQ,BSCV
+iShares International Dividend Growth ETF,Cboe BZX,IGRO
+Pacer Global Cash Cows Dividend ETF,Cboe BZX,GCOW
+Invesco High Yield Equity Dividend Achievers ETF,NASDAQ,PEY
+ProShares S&P 500 High Income ETF,Cboe BZX,ISPY
+US Treasury 6 Month Bill ETF,NASDAQ,XBIL
+iShares Short Maturity Municipal Bond Active ETF,Cboe BZX,MEAR
+VanEck Mortgage REIT Income ETF,NYSE Arca,MORT
+Innovator U.S. Equity Power Buffer ETF - July,Cboe BZX,PJUL
+iShares Core 40/60 Moderate Allocation ETF,NYSE Arca,AOM
+Dimensional US Core Equity 1 ETF,NYSE Arca,DCOR
+Invesco S&P 500 Equal Weight Industrials ETF,NYSE Arca,RSPN
+Dimensional Global ex US Core Fixed Income ETF,NASDAQ,DFGX
+JPMorgan Equity Focus ETF,NASDAQ,JPEF
+Invesco BulletShares 2026 High Yield Corporate Bond ETF,NASDAQ,BSJQ
+AB Tax-Aware Short Duration Municipal ETF,NYSE Arca,TAFI
+YieldMax Crypto Industry & Tech Portfolio Option Income ETF,NYSE Arca,LFGY
+Pacer Metaurus US Large Cap Dividend Multiplier 400 ETF,NYSE Arca,QDPL
+JPMorgan Small & Mid Cap Enhanced Equity ETF,NYSE Arca,JMEE
+iShares Micro-Cap ETF,NYSE Arca,IWC
+JPMorgan International Value ETF,NASDAQ,JIVE
+VanEck Fabless Semiconductor ETF,NASDAQ,SMHX
+Innovator IBD 50 ETF,NYSE Arca,FFTY
+iShares MSCI USA Equal Weighted ETF,NYSE Arca,EUSA
+T. Rowe Price U.S. Equity Research ETF,NYSE Arca,TSPA
+Global X MSCI Greece ETF,NYSE Arca,GREK
+First Trust Limited Duration Investment Grade Corporate ETF,NYSE Arca,FSIG
+Direxion Daily AVGO Bear 1X Shares,NASDAQ,AVS
+Roundhill Magnificent Seven Covered Call ETF,Cboe BZX,MAGY
+Fidelity MSCI Consumer Staples Index ETF,NYSE Arca,FSTA
+Fidelity MSCI Real Estate Index ETF,NYSE Arca,FREL
+iShares iBonds 2026 Term High Yield and Income ETF,Cboe BZX,IBHF
+WisdomTree Bitcoin Fund,Cboe BZX,BTCW
+iShares Disciplined Volatility Equity Active ETF,NASDAQ,BDVL
+Invesco Emerging Markets Sovereign Debt ETF,NYSE Arca,PCY
+WisdomTree Efficient Gold Plus Equity Strategy Fund,Cboe BZX,GDE
+VictoryShares Core Plus Intermediate Bond ETF,NASDAQ,UBND
+iShares iBonds Dec 2028 Term Treasury ETF,NASDAQ,IBTI
+REX FANG & Innovation Equity Premium Income ETF,NASDAQ,FEPI
+Franklin Ethereum ETF,Cboe BZX,EZET
+FT Vest Laddered Deep Buffer ETF,Cboe BZX,BUFD
+AllianzIM U.S. Equity Buffer20 Oct ETF,Cboe BZX,OCTW
+First Trust Institutional Preferred Securities and Income ETF,NYSE Arca,FPEI
+Main Sector Rotation ETF,Cboe BZX,SECT
+Fidelity Solana Fund,NYSE Arca,FSOL
+iShares MSCI Malaysia ETF,NYSE Arca,EWM
+Oakmark U.S. Large Cap ETF,NYSE Arca,OAKM
+Nuveen ESG Large-Cap Growth ETF,Cboe BZX,NULG
+Hartford Total Return Bond ETF,NYSE Arca,HTRB
+FT Vest U.S. Equity Moderate Buffer ETF - July,Cboe BZX,GJUL
+Schwab Fundamental International Small Equity ETF,NYSE Arca,FNDC
+Xtrackers USD High Yield BB-B ex Financials ETF,Cboe BZX,BHYB
+NYLI MacKay Muni Intermediate ETF,NYSE Arca,MMIT
+iShares Emerging Markets Equity Factor ETF,Cboe BZX,EMGF
+Fidelity Small-Mid Multifactor ETF,NYSE Arca,FSMD
+Avantis U.S. Small Cap Equity ETF,NYSE Arca,AVSC
+Fidelity Low Volatility Factor ETF,NYSE Arca,FDLO
+iShares MSCI Israel ETF,NYSE Arca,EIS
+Horizon International Equity ETF,NYSE Arca,FRGN
+Invesco S&P SmallCap 600 Revenue ETF,NYSE Arca,RWJ
+ROBO Global Robotics & Automation Index ETF,NYSE Arca,ROBO
+iShares Global Industrials ETF,NYSE Arca,EXI
+iShares ESG Aware MSCI USA Small-Cap ETF,Cboe BZX,ESML
+Aptus Collared Investment Opportunity ETF,Cboe BZX,ACIO
+Grayscale Solana Trust ETF,NYSE Arca,GSOL
+AllianzIM U.S. Equity 6 Month Buffer10 Mar/Sep ETF,Cboe BZX,SIXP
+Eaton Vance Floating-Rate ETF,NYSE Arca,EVLN
+REX AI Equity Premium Income ETF,NASDAQ,AIPI
+BondBloxx Bloomberg Ten Year Target Duration US Treasury ETF,NYSE Arca,XTEN
+State Street Ultra Short Term Bond ETF,NYSE Arca,ULST
+Franklin FTSE Taiwan ETF,NYSE Arca,FLTW
+NEOS Gold High Income ETF,Cboe BZX,IAUI
+iShares iBonds Dec 2029 Term Treasury ETF,NASDAQ,IBTJ
+Roundhill Ether Covered Call Strategy ETF,Cboe BZX,YETH
+iShares MSCI Emerging Markets Asia ETF,NASDAQ,EEMA
+Bitwise Crypto Industry Innovators ETF,NYSE Arca,BITQ
+First Trust WCM International Equity ETF,NYSE Arca,WCMI
+YieldMax AI Option Income Strategy ETF,NYSE Arca,AIYY
+21Shares Ethereum ETF,Cboe BZX,TETH
+PIMCO Investment Grade Corporate Bond Index Exchange-Traded Fund,NYSE Arca,CORP
+Innovator U.S. Equity Power Buffer ETF - September,Cboe BZX,PSEP
+iShares U.S. Oil & Gas Exploration & Production ETF,Cboe BZX,IEO
+Invesco DB Agriculture Fund,NYSE Arca,DBA
+Innovator U.S. Equity Power Buffer ETF - December,Cboe BZX,PDEC
+Simplify Short Term Treasury Futures Strategy ETF,NYSE Arca,TUA
+SPDR Portfolio MSCI Global Stock Market ETF,NYSE Arca,SPGM
+PIMCO Senior Loan Active Exchange-Traded Fund,NYSE Arca,LONZ
+Eaton Vance Short Duration Income ETF,NASDAQ,EVSD
+Neuberger Berman Short Duration Income ETF,NYSE Arca,NBSD
+Fidelity MSCI Industrials Index ETF,NYSE Arca,FIDU
+Grayscale Chainlink Trust ETF,NYSE Arca,GLNK
+Simplify High Yield ETF,NYSE Arca,CDX
+State Street SPDR S&P Oil & Gas Equipment & Services ETF,NYSE Arca,XES
+WisdomTree Emerging Markets SmallCap Dividend Fund,NYSE Arca,DGS
+NYLI Winslow Large Cap Growth ETF,NYSE Arca,IWLG
+Capital Group Short Duration Municipal Income ETF,NYSE Arca,CGSM
+BNY Mellon Core Bond ETF,NYSE Arca,BKAG
+T. Rowe Price Blue Chip Growth ETF,NYSE Arca,TCHP
+Direxion Daily META Bear 1X Shares,NASDAQ,METD
+YieldMax GOOGL Option Income Strategy ETF,NYSE Arca,GOOY
+Innovator U.S. Equity Power Buffer ETF - November,Cboe BZX,PNOV
+T. Rowe Price Small-Mid Cap ETF,NYSE Arca,TMSL
+State Street SPDR Portfolio TIPS ETF,NYSE Arca,SPIP
+WisdomTree Dynamic International Equity Fund,Cboe BZX,DDWM
+Invesco BulletShares 2032 Corporate Bond ETF,NASDAQ,BSCW
+BondBloxx BB-Rated USD High Yield Corporate Bond ETF,NYSE Arca,XBB
+AllianzIM U.S. Equity 6 Month Buffer10 Jan/Jul ETF,Cboe BZX,SIXJ
+T. Rowe Price International Equity ETF,NYSE Arca,TOUS
+Eagle Capital Select Equity ETF,NYSE Arca,EAGL
+iShares J.P. Morgan EM Local Currency Bond ETF,NYSE Arca,LEMB
+iShares New York Muni Bond ETF,NYSE Arca,NYF
+WisdomTree Efficient Gold Plus Gold Miners Strategy Fund,Cboe BZX,GDMN
+PIMCO Enhanced Low Duration Active Exchange-Traded Fund,NYSE Arca,LDUR
+VanEck Long Muni ETF,Cboe BZX,MLN
+PeakShares RMR Prime Equity ETF,NASDAQ,PRMR
+Innovator U.S. Equity Power Buffer ETF - August,Cboe BZX,PAUG
+MFS Active International ETF,NYSE,MFSI
+State Street Blackstone High Income ETF,Cboe BZX,HYBL
+YieldMax MARA Option Income Strategy ETF,NYSE Arca,MARO
+Bahl & Gaynor Small/Mid Cap Income Growth ETF,NYSE Arca,SMIG
+Transamerica Bond Active ETF,NYSE Arca,TABD
+Strive Enhanced Income Short Maturity ETF,NYSE,BUXX
+State Street SPDR S&P Capital Markets ETF,NYSE Arca,KCE
+Vanguard U.S. Momentum Factor ETF,Cboe BZX,VFMO
+iShares MSCI Sweden ETF,NYSE Arca,EWD
+VanEck Video Gaming and eSports ETF,NASDAQ,ESPO
+Horizon Kinetics Inflation Beneficiaries ETF,NYSE Arca,INFL
+FT Vest Gold Strategy Target Income ETF,Cboe BZX,IGLD
+Amplify CWP International Enhanced Dividend Income ETF,NYSE Arca,IDVO
+iShares Trust iShares ESG Aware USD Corporate Bond ETF,NASDAQ,SUSC
+FT Vest Laddered Nasdaq Buffer ETF,Cboe BZX,BUFQ
+Distillate U.S. Fundamental Stability & Value ETF,NYSE Arca,DSTL
+iShares Large Cap 10% Target Buffer Dec ETF,Cboe BZX,TEND
+FlexShares STOXX Global Broad Infrastructure Index Fund,NYSE Arca,NFRA
+iShares GSCI Commodity Dynamic Roll Strategy ETF,NASDAQ,COMT
+First Trust Growth Strength ETF,NASDAQ,FTGS
+WisdomTree Artificial Intelligence and Innovation Fund,Cboe BZX,WTAI
+First Trust US Equity Opportunities ETF,NYSE Arca,FPX
+iShares Core 30/70 Conservative Allocation ETF,NYSE Arca,AOK
+BNY Mellon Dynamic Value ETF,NYSE Arca,BKDV
+State Street SPDR S&P 500 Fossil Fuel Reserves Free ETF,NYSE Arca,SPYX
+iShares Emerging Markets Dividend ETF,NYSE Arca,DVYE
+Eaton Vance Mortgage Opportunities ETF,NYSE Arca,EVMO
+First Trust STOXX European Select Dividend Income Fund,NYSE Arca,FDD
+iShares MSCI Thailand ETF,NYSE Arca,THD
+iShares U.S. Large Cap Premium Income Active ETF,Cboe BZX,BALI
+Franklin FTSE United Kingdom ETF,NYSE Arca,FLGB
+PIMCO Mortgage-Backed Securities Active Exchange-Traded Fund,NASDAQ,PMBS
+PIMCO Short Term Municipal Bond Active Exchange-Traded Fund,NYSE Arca,SMMU
+YieldMax MRNA Option Income Strategy ETF,NYSE Arca,MRNY
+First Trust Hedged BuyWrite Income ETF,NASDAQ,FTQI
+ActivePassive U.S. Equity ETF,NYSE Arca,APUE
+iShares MSCI Turkey ETF,NASDAQ,TUR
+FlexShares Ultra-Short Income Fund,NYSE Arca,RAVI
+Wahed FTSE USA Shariah ETF,NASDAQ,HLAL
+Procure Space ETF,NASDAQ,UFO
+Renaissance IPO ETF,NYSE Arca,IPO
+iShares S&P India Nifty 50 Index Fund,NASDAQ,INDY
+FlexShares High Yield Value-Scored Bond Index Fund,NYSE Arca,HYGV
+iShares U.S. Pharmaceuticals ETF,NYSE Arca,IHE
+iShares International Treasury Bond ETF,NASDAQ,ISHG
+Invesco Large Cap Growth ETF,NYSE Arca,PWB
+Invesco S&P 500 Equal Weight Energy ETF,NYSE Arca,RSPG
+Invesco QQQ Income Advantage ETF,NASDAQ,QQA
+Morgan Stanley Pathway Large Cap Equity ETF,NYSE Arca,MSLC
+Thrivent Small-Mid Cap Equity ETF,NYSE Arca,TSME
+T. Rowe Price Growth Stock ETF,NYSE Arca,TGRW
+Invesco RAFI Emerging Markets ETF,NYSE Arca,PXH
+Angel Oak Income ETF,NASDAQ,CARY
+Aptus Defined Risk ETF,Cboe BZX,DRSK
+BondBloxx Bloomberg One Year Target Duration US Treasury ETF,NYSE Arca,XONE
+BlackRock ETF Trust II iShares Total Return Active ETF,NASDAQ,BRTR
+iShares Global Consumer Staples ETF,NYSE Arca,KXI
+WisdomTree Europe Hedged Equity Fund,NYSE Arca,HEDJ
+Spear Alpha ETF,NASDAQ,SPRX
+iShares ESG Advanced MSCI USA ETF,NASDAQ,USXF
+State Street SPDR Bloomberg 1-10 Year TIPS ETF,NYSE Arca,TIPX
+VanEck Social Sentiment ETF,NYSE Arca,BUZZ
+Pacer Aristotle Pacific Floating Rate High Income ETF,NYSE Arca,FLRT
+iShares Select U.S. REIT ETF,Cboe BZX,ICF
+State Street SPDR US Large Cap Low Volatility Index ETF,NYSE Arca,LGLV
+JPMorgan Flexible Debt ETF,NYSE Arca,JFLX
+State Street SPDR MSCI USA StrategicFactors ETF,NYSE Arca,QUS
+YieldMax MSTR Short Option Income Strategy ETF,NYSE Arca,WNTR
+Grayscale XRP Trust ETF,NYSE Arca,GXRP
+State Street SPDR S&P 500 ESG ETF,NYSE Arca,EFIV
+iShares Interest Rate Hedged High Yield Bond ETF,NYSE Arca,HYGH
+ProShares Short Ether ETF,NYSE Arca,SETH
+SPDR Bloomberg International Corporate Bond ETF,NYSE Arca,IBND
+ProShares S&P MidCap 400 Dividend Aristocrats ETF,Cboe BZX,REGL
+Invesco DB Oil Fund,NYSE Arca,DBO
+First Trust Long Duration Opportunities ETF,NYSE Arca,LGOV
+Cambria Shareholder Yield ETF,Cboe BZX,SYLD
+JPMorgan BetaBuilders U.S. Aggregate Bond ETF,NYSE Arca,BBAG
+AllianzIM U.S. Equity 6 Month Buffer10 Apr/Oct ETF,Cboe BZX,SIXO
+Invesco S&P 500 Equal Weight Income Advantage ETF,NYSE Arca,RSPA
+Principal Spectrum Preferred Securities Active ETF,NYSE Arca,PREF
+First Trust NASDAQ Clean Edge Green Energy Index Fund,NASDAQ,QCLN
+Dimensional US Sustainability Core 1 ETF,NYSE Arca,DFSU
+Pacer Developed Markets International Cash Cows 100 ETF,Cboe BZX,ICOW
+First Trust Municipal High Income ETF,NASDAQ,FMHI
+First Trust Water ETF,NYSE Arca,FIW
+Harbor PanAgora Dynamic Large Cap Core ETF,NYSE,INFO
+Vanguard Core-Plus Bond Index ETF,NASDAQ,BNDP
+JPMorgan U.S. Momentum Factor ETF,NYSE Arca,JMOM
+Innovator U.S. Equity 10 Buffer ETF - Quarterly,Cboe BZX,ZALT
+Main BuyWrite ETF,Cboe BZX,BUYW
+Vanguard S&P Small-Cap 600 Value ETF,NYSE Arca,VIOV
+Franklin U.S. Large Cap Multifactor Index ETF,Cboe BZX,FLQL
+Sprott Junior Gold Miners ETF,NYSE Arca,SGDJ
+SPDR S&P Emerging Markets Dividend ETF,NYSE Arca,EDIV
+WisdomTree U.S. SmallCap Dividend Fund,NYSE Arca,DES
+Goldman Sachs ActiveBeta World Low Vol Plus Equity ETF,Cboe BZX,GLOV
+AB International Low Volatility Equity ETF,NYSE Arca,ILOW
+Franklin High Yield Corporate ETF,Cboe BZX,FLHY
+Simplify Health Care ETF,NYSE Arca,PINK
+VanEck Agribusiness ETF,NYSE Arca,MOO
+Tidal Trust II STKd 100% Bitcoin & 100% Gold ETF,NASDAQ,BTGD
+LSV Disciplined Value ETF,NYSE Arca,LSVD
+iShares Nasdaq Top 30 Stocks ETF,NASDAQ,QTOP
+Fidelity Enhanced Large Cap Value ETF,NYSE Arca,FELV
+JPMorgan BetaBuilders Emerging Markets Equity ETF,Cboe BZX,BBEM
+Invesco NASDAQ Next Gen 100 ETF,NASDAQ,QQQJ
+Eaton Vance Short Duration Municipal Income ETF,NYSE Arca,EVSM
+FT Vest U.S. Equity Moderate Buffer ETF - September,Cboe BZX,GSEP
+Vanguard High-Yield Active ETF,Cboe BZX,VGHY
+iShares MSCI Brazil Small-Cap ETF,NASDAQ,EWZS
+Cambria Global Value ETF,Cboe BZX,GVAL
+iShares Residential and Multisector Real Estate ETF,NYSE Arca,REZ
+iShares Dow Jones U.S. ETF,NYSE Arca,IYY
+PGIM Active High Yield Bond ETF,NYSE Arca,PHYL
+PL Growth and Income ETF,Cboe BZX,PLGI
+Janus Henderson Small/Mid Cap Growth Alpha ETF,NASDAQ,JSMD
+iShares International Dividend Active ETF,NYSE Arca,BIDD
+iShares Large Cap 10% Target Buffer Mar ETF,Cboe BZX,TENM
+Invesco Water Resources ETF,NASDAQ,PHO
+Invesco RAFI US 1500 Small-Mid ETF,NASDAQ,PRFZ
+iShares Trust iShares MSCI UAE ETF,NASDAQ,UAE
+SPDR Bloomberg Short Term International Treasury Bond ETF,NYSE Arca,BWZ
+FT Vest Laddered Moderate Buffer ETF,Cboe BZX,BUFZ
+WisdomTree U.S. LargeCap Fund,NYSE Arca,EPS
+Invesco Semiconductors ETF,NYSE Arca,PSI
+T. Rowe Price Dividend Growth ETF,NYSE Arca,TDVG
+EA Bridgeway Omni Small-Cap Value ETF,NASDAQ,BSVO
+Fidelity Fundamental Large Cap Core ETF,Cboe BZX,FFLC
+SEI Enhanced U.S. Large Cap Momentum Factor ETF,Cboe BZX,SEIM
+YieldMax Short COIN Option Income Strategy ETF,NYSE Arca,FIAT
+iShares iBonds Dec 2033 Term Corporate ETF,NYSE Arca,IBDY
+First Trust Dow Jones Global Select Dividend Index Fund,NYSE Arca,FGD
+DoubleLine Mortgage ETF,NYSE Arca,DMBS
+AB Short Duration High Yield ETF,NYSE Arca,SYFI
+Defiance AI & Power Infrastructure ETF,NASDAQ,AIPO
+Xtrackers MSCI EAFE High Dividend Yield Equity ETF,NYSE Arca,HDEF
+SEI Enhanced U.S. Large Cap Value Factor ETF,Cboe BZX,SEIV
+Vanguard Russell 2000 Growth ETF,NASDAQ,VTWG
+Nuveen ESG Large-Cap Value ETF,Cboe BZX,NULV
+PIMCO Commodity Strategy Active Exchange-Traded Fund,NYSE Arca,CMDT
+Oakmark International Large Cap ETF,NYSE Arca,OAKI
+First Trust Nasdaq Artificial Intelligence and Robotics ETF,NASDAQ,ROBT
+Invesco Galaxy Ethereum ETF,Cboe BZX,QETH
+iShares iBonds Dec 2030 Term Treasury ETF,NASDAQ,IBTK
+iShares J.P. Morgan EM High Yield Bond ETF,Cboe BZX,EMHY
+iShares Short Duration High Yield Muni Active ETF,Cboe BZX,SHYM
+iShares North American Natural Resources ETF,Cboe BZX,IGE
+Invesco Taxable Municipal Bond ETF,NYSE Arca,BAB
+Global X SuperDividend U.S. ETF,NYSE Arca,DIV
+Hartford Strategic Income ETF,Cboe BZX,HFSI
+Fidelity Crypto Industry and Digital Payments ETF,NASDAQ,FDIG
+Franklin Responsibly Sourced Gold ETF,NYSE Arca,FGDL
+YieldMax Semiconductor Portfolio Option Income ETF,NYSE Arca,CHPY
+Invesco BulletShares 2033 Corporate Bond ETF,NASDAQ,BSCX
+First Trust Intermediate Duration Investment Grade Corporate ETF,NYSE Arca,FIIG
+Schwab 1-5 Year Corporate Bond ETF,NYSE Arca,SCHJ
+SPDR SSGA IG Public & Private Credit ETF,NYSE Arca,PRIV
+Tidal Trust II Defiance Nasdaq 100 Weekly Distribution ETF,NASDAQ,QQQY
+BNY Mellon International Equity ETF,NYSE Arca,BKIE
+21Shares XRP ETF,Cboe BZX,TOXR
+Innovator Laddered Allocation Power Buffer ETF,Cboe BZX,BUFF
+Nuveen ESG Small-Cap ETF,Cboe BZX,NUSC
+NYLI FTSE International Equity Currency Neutral ETF,NYSE Arca,HFXI
+Sprott Gold Miners ETF,NYSE Arca,SGDM
+First Trust Small Cap Growth AlphaDEX Fund,NASDAQ,FYC
+iShares Morningstar Mid-Cap ETF,NYSE Arca,IMCB
+BondBloxx JP Morgan USD Emerging Markets 1-10 Year Bond ETF,Cboe BZX,XEMD
+iShares ESG Advanced MSCI EAFE ETF,NASDAQ,DMXF
+JPMorgan BetaBuilders USD High Yield Corporate Bond ETF,Cboe BZX,BBHY
+SPDR Bloomberg Enhanced Roll Yield Commodity Strategy No K-1 ETF,NYSE Arca,CERY
+iShares MSCI Japan Value ETF,NASDAQ,EWJV
+Roundhill Russell 2000 0DTE Covered Call Strategy ETF,Cboe BZX,RDTE
+"UBS AG ETRACS Crude Oil Shares Covered Call ETNs due April 24, 2037",NASDAQ,USOI
+iShares iBonds Dec 2032 Term Treasury ETF,NASDAQ,IBTM
+Innovator Equity Dual Directional 15 Buffer ETF - October,Cboe BZX,DDFO
+ALPS  O'Shares U.S. Small-Cap Quality Dividend ETF,NYSE Arca,OUSM
+Invesco BulletShares 2027 High Yield Corporate Bond ETF,NASDAQ,BSJR
+Horizon Small/Mid Cap Core Equity ETF,NYSE Arca,SMOX
+iShares BB Rated Corporate Bond ETF,NYSE Arca,HYBB
+Dimensional World Equity ETF,NYSE Arca,DFAW
+First Trust Developed Markets ex-US AlphaDEX Fund,NASDAQ,FDT
+Invesco S&P MidCap 400 Revenue ETF,NYSE Arca,RWK
+Invesco BuyBack Achievers ETF,NASDAQ,PKW
+Columbia EM Core ex-China ETF,NYSE Arca,XCEM
+First Eagle Overseas Equity ETF,NYSE,FEOE
+Sprott Funds Trust Sprott Critical Materials ETF,NASDAQ,SETM
+iShares Interest Rate Hedged Corporate Bond ETF,NYSE Arca,LQDH
+PIMCO 15+ Year U.S. TIPS Index Exchange-Traded Fund,NYSE Arca,LTPZ
+Direxion Daily ORCL Bear 1X ETF,NASDAQ,ORCS
+Alger AI Enablers & Adopters ETF,NYSE Arca,ALAI
+T. Rowe Price QM U.S. Bond ETF,NYSE Arca,TAGG
+Franklin U.S. Equity Index ETF,NYSE Arca,USPX
+State Street SPDR ICE Preferred Securities ETF,NYSE Arca,PSK
+Invesco RAFI Developed Markets ex-U.S. ETF,NYSE Arca,PXF
+SPDR MSCI EAFE StrategicFactors ETF,NYSE Arca,QEFA
+iShares U.S. Oil Equipment & Services ETF,NYSE Arca,IEZ
+Abacus FCF Leaders ETF,Cboe BZX,ABFL
+Amplify CEF High Income ETF,NYSE Arca,YYY
+Amplify Alternative Harvest ETF,NYSE Arca,MJ
+Q3 All-Season Tactical Advantage ETF,Cboe BZX,QTAC
+Fidelity Hedged Equity ETF,Cboe BZX,FHEQ
+Alpha Architect Tail Risk ETF,Cboe BZX,CAOS
+State Street Fixed Income Sector Rotation ETF,NYSE Arca,FISR
+SPDR Portfolio Europe ETF,NYSE Arca,SPEU
+iShares MSCI China A ETF,Cboe BZX,CNYA
+Global X Adaptive U.S. Factor ETF,NYSE Arca,AUSF
+FlexShares iBoxx 5-Year Target Duration TIPS Index Fund,NYSE Arca,TDTF
+John Hancock Multifactor Developed International ETF,NYSE Arca,JHMD
+FT Vest U.S. Equity Buffer ETF - July,Cboe BZX,FJUL
+Vanguard Short Duration Tax-Exempt Bond ETF,Cboe BZX,VSDM
+Dimensional Global Credit ETF,NASDAQ,DGCB
+Pacer Trendpilot 100 ETF,NASDAQ,PTNQ
+Dimensional Emerging Markets Value ETF,NYSE Arca,DFEV
+Dimensional Inflation-Protected Securities ETF,NYSE Arca,DFIP
+Goldman Sachs Access Investment Grade Corporate Bond ETF,NYSE Arca,GIGB
+WisdomTree Equity Premium Income Fund,NYSE Arca,WTPI
+ Defiance R2000 Weekly Distribution ETF,NYSE Arca,IWMY
+Hartford Municipal Opportunities ETF,NYSE Arca,HMOP
+First Trust NYSE Arca Biotechnology Index Fund,NYSE Arca,FBT
+Principal Active High Yield ETF,NYSE Arca,YLD
+Invesco KBW High Dividend Yield Financial ETF,NASDAQ,KBWD
+Global X U.S. Electrification ETF,NASDAQ,ZAP
+Hedgeye Capital Allocation ETF,NYSE Arca,HECA
+Xtrackers MSCI Europe Hedged Equity ETF,NYSE Arca,DBEU
+WisdomTree Yield Enhanced U.S. Aggregate Bond Fund,NYSE Arca,AGGY
+Goldman Sachs Technology Opportunities ETF,NASDAQ,GTOP
+iShares MSCI Netherlands ETF,NYSE Arca,EWN
+BondBloxx Bloomberg Five Year Target Duration US Treasury ETF,NYSE Arca,XFIV
+Strive 500 ETF,NYSE,STRV
+State Street SPDR S&P Software & Services ETF,NYSE Arca,XSW
+Simplify Treasury Option Income ETF,NYSE Arca,BUCK
+YieldMax NFLX Option Income Strategy ETF,NYSE Arca,NFLY
+American Century Diversified Corporate Bond ETF,NYSE Arca,KORP
+"UBS AG ETRACS Silver Shares Covered Call ETNs due April 21, 2033",NASDAQ,SLVO
+Cambria Tail Risk ETF,Cboe BZX,TAIL
+Invesco S&P 500 Equal Weight Utilities ETF,NYSE Arca,RSPU
+Franklin FTSE China ETF,NYSE Arca,FLCH
+iShares iBonds Dec 2034 Term Corporate ETF,NYSE Arca,IBDZ
+Teucrium Wheat Fund,NYSE Arca,WEAT
+iShares ESG MSCI USA Leaders ETF,NASDAQ,SUSL
+YieldMax META Option Income Strategy ETF,NYSE Arca,FBY
+WisdomTree U.S. Efficient Core Fund,NYSE Arca,NTSX
+Innovator U.S. Equity Power Buffer ETF - January,Cboe BZX,PJAN
+VictoryShares Free Cash Flow Growth ETF,NASDAQ,GFLW
+Horizon Managed Risk ETF,Cboe BZX,SFTY
+iShares Paris-Aligned Climate Optimized MSCI USA ETF,NASDAQ,PABU
+Vanguard S&P Mid-Cap 400 Growth ETF,NYSE Arca,IVOG
+Dimensional California Municipal Bond ETF,NYSE Arca,DFCA
+YieldMax SNOW Option Income Strategy  ETF,NYSE Arca,SNOY
+iShares Global Comm Services ETF,NYSE Arca,IXP
+Innovator U.S. Equity Ultra Buffer ETF - December,Cboe BZX,UDEC
+Nuveen Growth Opportunities ETF,NYSE Arca,NUGO
+Virtus SEIX Senior Loan ETF,NYSE Arca,SEIX
+PGIM Total Return Bond ETF,NYSE Arca,PTRB
+Invesco DB US Dollar Index Bearish Fund,NYSE Arca,UDN
+FT Vest U.S. Equity Moderate Buffer ETF - August,Cboe BZX,GAUG
+FT Vest SMID Rising Dividend Achievers Target Income ETF,Cboe BZX,SDVD
+FT Vest U.S. Equity Buffer ETF - October,Cboe BZX,FOCT
+Inspire 500 ETF,NYSE Arca,PTL
+Direxion Daily MSFT Bear 1X Shares,NASDAQ,MSFD
+SP Funds Dow Jones Global Sukuk ETF,NYSE Arca,SPSK
+iShares ESG Aware MSCI USA Value ETF,Cboe BZX,EVUS
+Franklin Short Duration U.S. Government ETF,NYSE Arca,FTSD
+Simplify Aggregate Bond ETF,NYSE Arca,AGGH
+iShares Cybersecurity and Tech ETF,NYSE Arca,IHAK
+Eaton Vance Income Opportunities ETF,NYSE Arca,XAGG
+Putnam BDC Income ETF,NYSE Arca,PBDC
+VictoryShares US Small Mid Cap Value Momentum ETF,NASDAQ,USVM
+PIMCO Municipal Income Opportunities Active ETF,NYSE Arca,MINO
+YieldMax Bitcoin Option Income Strategy ETF,NYSE Arca,YBIT
+FT Vest U.S. Equity Buffer ETF - August,Cboe BZX,FAUG
+NEOS Real Estate High Income ETF,Cboe BZX,IYRI
+WisdomTree International Quality Dividend Growth Fund,Cboe BZX,IQDG
+Global X Funds Global X DAX Germany ETF,NASDAQ,DAX
+iShares ESG Aware 1-5 Year USD Corporate Bond ETF,NASDAQ,SUSB
+AllianzIM U.S. Equity Buffer20 Dec ETF,Cboe BZX,DECW
+Invesco KBW Premium Yield Equity REIT ETF,NASDAQ,KBWY
+Invesco Large Cap Value ETF,NYSE Arca,PWV
+BNY Mellon Global Infrastructure Income ETF,Cboe BZX,BKGI
+TappAlpha SPY Growth & Daily Income ETF,NASDAQ,TSPY
+iShares CMBS ETF,NYSE Arca,CMBS
+SoFi Select 500 ETF,NYSE Arca,SFY
+FT Vest U.S. Equity Moderate Buffer ETF - December,Cboe BZX,GDEC
+Invesco BulletShares 2028 High Yield Corporate Bond ETF,NASDAQ,BSJS
+Federated Hermes U.S. Strategic Dividend ETF,NYSE Arca,FDV
+iShares ESG Advanced Universal USD Bond ETF,NYSE Arca,EUSB
+Goldman Sachs ActiveBeta Emerging Markets Equity ETF,NYSE Arca,GEM
+iShares MSCI Philippines ETF,NYSE Arca,EPHE
+US Treasury 2 Year Note ETF,NASDAQ,UTWO
+iShares International Small Cap Equity Factor ETF,NYSE Arca,ISCF
+iShares Global Financials ETF,NYSE Arca,IXG
+Swan Hedged Equity US Large Cap ETF,Cboe BZX,HEGD
+Invesco Leisure and Entertainment ETF,NYSE Arca,PEJ
+ProShares Nasdaq-100 High Income ETF,NASDAQ,IQQQ
+Roundhill Weekly T-Bill ETF,Cboe BZX,WEEK
+Fidelity Emerging Markets Multifactor ETF,Cboe BZX,FDEM
+Defiance Connective Technologies ETF,NASDAQ,SIXG
+VanEck Alternative Asset Manager ETF,NYSE Arca,GPZ
+iShares Currency Hedged MSCI Eurozone ETF of ISHARES TRUST,NYSE Arca,HEZU
+Avantis International Large Cap Value ETF,NYSE Arca,AVIV
+AllianzIM U.S. Equity Buffer20 Sep ETF,Cboe BZX,SEPW
+Innovator Equity Dual Directional 10 Buffer ETF - July,Cboe BZX,DDTL
+SGI Enhanced Core ETF,NASDAQ,USDX
+Franklin International Aggregate Bond ETF,Cboe BZX,FLIA
+Hartford Schroders Tax-Aware Bond ETF,NYSE Arca,HTAB
+Avantis U.S. Large Cap Equity ETF,NYSE Arca,AVLC
+Harbor Long-Term Growers ETF,NYSE,WINN
+NYLI Hedge Multi-Strategy Tracker ETF,NYSE Arca,QAI
+ActivePassive International Equity ETF,NYSE Arca,APIE
+Invesco International BuyBack Achievers  ETF,NASDAQ,IPKW
+Simplify Hedged Equity ETF,NYSE Arca,HEQT
+Invesco AAA CLO Floating Rate Note ETF,Cboe BZX,ICLO
+Schwab Ultra-Short Income ETF,NYSE Arca,SCUS
+FT Vest Growth-100 Buffer ETF - December,Cboe BZX,QDEC
+SEI Select International Equity ETF,NASDAQ,SEIE
+Alger Concentrated Equity ETF,NYSE Arca,CNEQ
+Tema Electrification ETF,NASDAQ,VOLT
+ProShares Short High Yield,NYSE Arca,SJB
+Invesco KBW Property & Casualty Insurance ETF,NASDAQ,KBWP
+State Street SPDR S&P Pharmaceuticals ETF,NYSE Arca,XPH
+iShares Intermediate Muni Income Active ETF,NYSE Arca,INMU
+T. Rowe Price Floating Rate ETF,NYSE Arca,TFLR
+Fidelity Enhanced High Yield ETF,NYSE Arca,FDHY
+AllianzIM U.S. Equity Buffer15 Uncapped Dec ETF,Cboe BZX,DECU
+Hartford Multifactor Developed Markets (ex-US) ETF,NYSE Arca,RODM
+SMI 3Fourteen Full-Cycle Trend ETF,NASDAQ,FCTE
+iShares iBonds Dec 2031 Term Treasury ETF,NASDAQ,IBTL
+DoubleLine Opportunistic Core Bond ETF,NYSE Arca,DBND
+USCF SummerHaven Dynamic Commodity Strategy No K-1 Fund,NYSE Arca,SDCI
+Global X Cloud Computing ETF,NASDAQ,CLOU
+Natixis Loomis Sayles Focused Growth ETF,NYSE Arca,LSGR
+Schwab Fundamental U.S. Broad Market ETF,NYSE Arca,FNDB
+KraneShares Bosera MSCI China A 50 Connect Index ETF,NYSE Arca,KBA
+State Street SPDR Russell 1000 Yield Focus ETF,NYSE Arca,ONEY
+Hartford Equity Premium Income ETF,Cboe BZX,HEMI
+Global X S&P 500 Catholic Values ETF,NASDAQ,CATH
+Xtrackers Low Beta High Yield Bond ETF,NYSE Arca,HYDW
+Vanguard S&P Mid-Cap 400 Value ETF,NYSE Arca,IVOV
+Invesco AI and Next Gen Software ETF,NYSE Arca,IGPT
+Fundstrat Granny Shots US Large Cap & Income ETF,NYSE Arca,GRNI
+T. Rowe Price Capital Appreciation Premium Income ETF,NYSE Arca,TCAL
+Innovator Growth-100 Power Buffer ETF - July,Cboe BZX,NJUL
+iShares Enhanced Short-Term Bond Active ETF,NYSE Arca,CSHP
+Innovator Equity Dual Directional 15 Buffer ETF - November,Cboe BZX,DDFN
+T. Rowe Price Growth ETF,NYSE Arca,TGRT
+iShares Core 10+ Year USD Bond ETFof iShares Trust,NYSE Arca,ILTB
+First Trust Technology AlphaDEX Fund,NYSE Arca,FXL
+Fidelity Fundamental Small-Mid Cap ETF,Cboe BZX,FFSM
+Goldman Sachs Access U.S. Aggregate Bond ETF,NYSE Arca,GCOR
+Touchstone Ultra Short Income ETF,Cboe BZX,TUSI
+Global X PureCap MSCI Information Technology ETF,NYSE Arca,GXPT
+Invesco CEF Income Composite ETF,NYSE Arca,PCEF
+AllianzIM U.S. Equity Buffer20 Jan ETF,Cboe BZX,JANW
+Man Active Emerging Markets Alternative ETF,NASDAQ,MEMA
+VanEck Steel ETF,NYSE Arca,SLX
+First Trust Active Factor Large Cap ETF,NYSE Arca,AFLG
+WisdomTree U.S. Total Dividend Fund,NYSE Arca,DTD
+Global X Conscious Companies ETF,NASDAQ,KRMA
+REX-Osprey DOGE ETF,Cboe BZX,DOJE
+State Street US Sector Rotation ETF,NYSE Arca,XLSR
+SPDR S&P Emerging Markets Small Cap ETF,NYSE Arca,EWX
+VanEck Emerging Markets High Yield Bond ETF,NYSE Arca,HYEM
+iShares Morningstar Mid-Cap Value ETF,NASDAQ,IMCV
+THOR Index Rotation ETF,NYSE,THIR
+State Street Multi-Asset Real Return ETF,NYSE Arca,RLY
+AB US Large Cap Strategic Equities ETF,NYSE Arca,LRGC
+ProShares VIX Mid-Term Futures ETF,Cboe BZX,VIXM
+iShares ESG Select Screened S&P 500 ETF,Cboe BZX,XVV
+Sprott Active Gold & Silver Miners ETF,NASDAQ,GBUG
+JPMorgan ActiveBuilders Emerging Markets Equity ETF,Cboe BZX,JEMA
+First Trust Large Cap Growth AlphaDEX Fund,NASDAQ,FTC
+NEOS MLP & Energy Infrastructure High Income ETF,Cboe BZX,MLPI
+Invesco Dorsey Wright Developed Markets Momentum ETF,NASDAQ,PIZ
+Simplify Barrier Income ETF,NYSE Arca,SBAR
+FT Vest U.S. Equity Buffer ETF - November,Cboe BZX,FNOV
+Avantis Real Estate ETF,NYSE Arca,AVRE
+WisdomTree U.S. High Dividend Fund,NYSE Arca,DHS
+Vanguard ESG U.S. Corporate Bond ETF,Cboe BZX,VCEB
+Columbia Multi-Sector Municipal Income ETF,NYSE Arca,MUST
+Roundhill Ball Metaverse ETF,NYSE Arca,METV
+Eldridge AAA CLO ETF,NYSE Arca,CLOX
+Fidelity Momentum Factor ETF,NYSE Arca,FDMO
+BondBloxx Bloomberg Seven Year Target Duration US Treasury ETF,NYSE Arca,XSVN
+Global X Russell 2000 ETF,NYSE Arca,RSSL
+iShares Morningstar Value ETF,NYSE Arca,ILCV
+Invesco S&P SmallCap Value with Momentum ETF,NYSE Arca,XSVM
+Direxion Daily NFLX Bear 1X Shares,NASDAQ,NFXS
+iShares iBonds Dec 2026 Term Muni Bond ETF,Cboe BZX,IBMO
+FT Vest U.S. Equity Buffer ETF - December,Cboe BZX,FDEC
+First Trust Large Cap Value AlphaDEX Fund,NASDAQ,FTA
+AB New York Intermediate Municipal ETF,NYSE Arca,NYM
+3EDGE Dynamic Fixed Income ETF,NYSE Arca,EDGF
+AAM Low Duration Preferred and Income Securities ETF,NYSE Arca,PFLD
+Global X MSCI Colombia ETF,NYSE Arca,COLO
+VanEck Morningstar SMID Moat ETF,Cboe BZX,SMOT
+Vanguard Russell 2000 Value ETF,NASDAQ,VTWV
+GS ActiveBeta U.S. Small Cap Equity ETF,NYSE Arca,GSSC
+FlexShares Quality Dividend Index Fund,NYSE Arca,QDF
+Dimensional International Sustainability Core 1 ETF,NYSE Arca,DFSI
+Harbor International Compounders ETF,NYSE Arca,OSEA
+WisdomTree U.S. MidCap Fund,NYSE Arca,EZM
+Invesco Global Listed Private Equity ETF,NYSE Arca,PSP
+Hedgeye 130/30 Equity ETF,NYSE Arca,HELS
+YieldMax AAPL Option Income Strategy ETF,NYSE Arca,APLY
+iShares Currency Hedged MSCI Japan ETF,NYSE Arca,HEWJ
+Avantis Emerging Markets Value ETF,NYSE Arca,AVES
+First Trust Emerging Markets Local Currency Bond ETF,NASDAQ,FEMB
+First Trust Health Care AlphaDEX Fund,NYSE Arca,FXH
+Lazard International Dynamic Equity ETF,NYSE Arca,IDEQ
+YieldMax CVNA Option Income Strategy ETF,NYSE Arca,CVNY
+FT Vest U.S. Equity Quarterly Dynamic Buffer ETF,Cboe BZX,FHDG
+Capital Group Ultra Short Income ETF,NYSE Arca,CGUI
+Neuberger Core Equity ETF,NYSE Arca,NBCR
+iShares Global Consumer Discretionary ETF,NYSE Arca,RXI
+VanEck Technology TruSector ETF,NASDAQ,TRUT
+SPDR  Dow Jones  Global Real Estate ETF,NYSE Arca,RWO
+Fidelity Investment Grade Bond ETF,NYSE Arca,FIGB
+Calamos Nasdaq Autocallable Income ETF,NASDAQ,CAIQ
+JPMorgan International Growth ETF,NYSE Arca,JIG
+YieldMax AI & Tech Portfolio Option Income ETF,NYSE Arca,GPTY
+Fidelity Quality Factor ETF,NYSE Arca,FQAL
+HCM Defender 100 Index ETF,NYSE Arca,QQH
+VictoryShares Small Cap Free Cash Flow ETF,NASDAQ,SFLO
+iShares Morningstar Small-Cap Growth ETF,NYSE Arca,ISCG
+Fidelity Value Factor ETF,NYSE Arca,FVAL
+Invesco BulletShares 2034 Corporate Bond ETF,NASDAQ,BSCY
+Franklin FTSE South Korea ETF,NYSE Arca,FLKR
+Franklin U.S. Low Volatility High Dividend Index ETF,NASDAQ,LVHD
+Invesco S&P 500 Equal Weight Health Care ETF,NYSE Arca,RSPH
+iShares iBonds 2029 Term High Yield and Income ETF,Cboe BZX,IBHI
+Avantis All International Markets Equity ETF,NYSE Arca,AVNM
+Invesco S&P MidCap 400 GARP ETF,NYSE Arca,GRPM
+Vanguard S&P Small-Cap 600 Growth ETF,NYSE Arca,VIOG
+iShares MSCI Peru and Global Exposure ETF,NYSE Arca,EPU
+WisdomTree International SmallCap Dividend Fund,NYSE Arca,DLS
+Strategy Shares Gold Enhanced Yield ETF,Cboe BZX,GOLY
+YieldMax Ultra Short Option Income Strategy ETF,NYSE Arca,SLTY
+iShares iBonds Dec 2028 Term Muni Bond ETF,Cboe BZX,IBMQ
+FlexShares Credit-Scored US Corporate Bond Index Fund,NASDAQ,SKOR
+SEI Enhanced U.S. Large Cap Quality Factor ETF,Cboe BZX,SEIQ
+Innovator U.S. Equity Power Buffer ETF - February,Cboe BZX,PFEB
+FlexShares International Quality Dividend Index Fund,NYSE Arca,IQDF
+Invesco BulletShares 2029 High Yield Corporate Bond ETF,NASDAQ,BSJT
+Invesco RAFI Strategic US ETF,NASDAQ,IUS
+Teucrium Soybean Fund,NYSE Arca,SOYB
+iShares Agency Bond ETF,NYSE Arca,AGZ
+American Century Diversified Municipal Bond ETF,NYSE Arca,TAXF
+Davis Select U.S. Equity ETF,Cboe BZX,DUSA
+PIMCO 1-5 Year U.S. TIPS Index Exchange-Traded Fund,NYSE Arca,STPZ
+Invesco Financial Preferred ETF,NYSE Arca,PGF
+Pacer Data & Infrastructure Real Estate ETF,NYSE Arca,SRVR
+Invesco S&P International Developed Quality ETF,NYSE Arca,IDHQ
+AB Core Bond ETF,NYSE Arca,CORB
+Innovator Nasdaq-100 Managed Floor ETF,NYSE Arca,QFLR
+Invesco Dorsey Wright Industrials Momentum ETF,NASDAQ,PRN
+State Street SPDR S&P Telecom ETF,NYSE Arca,XTL
+Vanguard Wellington U.S. Value Active ETF,Cboe BZX,VUSV
+Pacer Swan SOS Fund of Funds ETF,Cboe BZX,PSFF
+iShares iBonds 2028 Term High Yield and Income ETF,Cboe BZX,IBHH
+VistaShares Artificial Intelligence Supercycle ETF,NYSE Arca,AIS
+iShares MSCI China Small-Cap ETF,NYSE Arca,ECNS
+Invesco Dorsey Wright Momentum ETF,NASDAQ,PDP
+FT Vest U.S. Equity Buffer ETF - September,Cboe BZX,FSEP
+Invesco NASDAQ Internet ETF,NASDAQ,PNQI
+Invesco MSCI EAFE Income Advantage ETF,NYSE Arca,EFAA
+Global X Gold Explorers ETF (NEW),NYSE Arca,GOEX
+Oakmark Global Large Cap ETF,NYSE Arca,OAKG
+FT Vest Technology Dividend Target Income ETF,Cboe BZX,TDVI
+AB Tax-Aware Intermediate Municipal ETF,NYSE Arca,TAFM
+Equable Shares Hedged Equity ETF,NYSE Arca,HEDG
+iShares iBonds 2027 Term High Yield and Income ETF,Cboe BZX,IBHG
+YieldMax TSM Option Income Strategy ETF,NYSE Arca,TSMY
+iShares iBonds Dec 2027 Term Muni Bond ETF,Cboe BZX,IBMP
+GQG US Equity ETF,NYSE Arca,GQGU
+Roundhill S&P 500 Target 20 Managed Distribution ETF,NYSE Arca,XPAY
+ProShares Short 20+ Year Treasury ETF,NYSE Arca,TBF
+First Trust Mid Cap Core AlphaDEX Fund,NASDAQ,FNX
+AllianzIM U.S. Equity Buffer20 Jul ETF,Cboe BZX,JULW
+Innovator Nasdaq-100 10 Buffer ETF Quarterly,NASDAQ,QBUF
+Franklin U.S. Treasury Bond ETF,NYSE Arca,FLGV
+Vanguard Multi-Sector Income Bond ETF,Cboe BZX,VGMS
+Xtrackers MSCI USA Selection Equity ETF,NYSE Arca,USSG
+First Trust NASDAQ ABA Community Bank Index Fund,NASDAQ,QABA
+Invesco Dorsey Wright SmallCap Momentum ETF,NASDAQ,DWAS
+Strategas Macro Thematic Opportunities ETF,NYSE Arca,SAMT
+Vanguard Long-Term Tax-Exempt Bond ETF,Cboe BZX,VTEL
+SPDR S&P International Small Cap ETF,NYSE Arca,GWX
+US Treasury 10 Year Note ETF,NASDAQ,UTEN

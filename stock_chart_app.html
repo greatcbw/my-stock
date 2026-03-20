@@ -1,0 +1,1994 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>개인용 주식 트레이딩 PRO+</title>
+<script src="https://cdn.jsdelivr.net/npm/lightweight-charts@4.1.1/dist/lightweight-charts.standalone.production.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+/* ═══════════════════════════
+   테마 변수
+═══════════════════════════ */
+:root {
+  --bg:#e8edf5;  --hbg:#0f172a;  --panel:#fff;
+  --text:#1e293b; --muted:#64748b; --border:#cbd5e1;
+  --hover:#f1f5f9; --cbg:#fff; --ctxt:#333; --gcol:#f0f0f0;
+  --ibg:#fff;   --legbg:rgba(255,255,255,.93); --legbd:#e2e8f0;
+  --cshadow:0 2px 10px rgba(0,0,0,.08);
+  --wshadow:0 8px 32px rgba(0,0,0,.18);
+  --wfocus:0 12px 40px rgba(59,130,246,.22);
+  --taskbar:#f8fafc;
+}
+body.dark-theme {
+  --bg:#0d1424; --hbg:#020617; --panel:#1a2234;
+  --text:#f0f4fc; --muted:#8899bb; --border:#2a3650;
+  --hover:#243050; --cbg:#111827; --ctxt:#e2e8f0; --gcol:#1e2a3a;
+  --ibg:#0f172a; --legbg:rgba(18,26,44,.95); --legbd:#2a3650;
+  --cshadow:0 2px 10px rgba(0,0,0,.35);
+  --wshadow:0 8px 32px rgba(0,0,0,.45);
+  --wfocus:0 12px 40px rgba(59,130,246,.28);
+  --taskbar:#1a2234;
+}
+
+*,*::before,*::after { box-sizing:border-box; }
+html,body { margin:0; padding:0; width:100vw; height:100vh;
+  font-family:'Segoe UI',Arial,sans-serif;
+  background:var(--bg); color:var(--text);
+  overflow:hidden; transition:background .3s; }
+
+/* ─── 헤더 ─── */
+header {
+  height:50px; padding:0 16px;
+  background:var(--hbg); color:#fff;
+  display:flex; align-items:center; justify-content:space-between;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  position:relative; z-index:10;
+}
+.hlogo { font-size:15px; font-weight:700; display:flex; align-items:center; gap:7px; }
+.hlogo small { font-size:11px; font-weight:400; opacity:.5; }
+.hright { display:flex; align-items:center; gap:5px; }
+
+/* ─── 레이아웃 ─── */
+#layout { display:flex; width:100%; height:calc(100vh - 50px - 44px); }
+/* 하단 태스크바 높이 44px 확보 */
+
+/* ─── 좌측 사이드바 제거 ─── */
+#sidebar { display:none; }
+#sb-head { display:none; }
+.srch-wrap { position:relative; }
+#search {
+  width:100%; padding:7px 10px; font-size:13px;
+  border:1px solid var(--border); border-radius:6px;
+  background:var(--ibg); color:var(--text); outline:none; transition:border .2s;
+}
+#search:focus { border-color:#3b82f6; }
+#results {
+  position:absolute; top:calc(100% + 4px); left:0; right:0;
+  background:var(--panel); border:1px solid var(--border); border-radius:7px;
+  max-height:250px; overflow-y:auto; z-index:9999;
+  box-shadow:0 8px 24px rgba(0,0,0,.2);
+}
+.si { padding:8px 10px; cursor:pointer; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:6px; font-size:12px; }
+.si:last-child { border-bottom:none; }
+.si:hover { background:var(--hover); }
+.si-name { font-weight:600; flex:1; }
+.si-code { color:var(--muted); font-size:11px; }
+#sb-act { padding:6px 8px; border-bottom:1px solid var(--border); display:flex; gap:6px; }
+#sb-act button { flex:1; font-size:11px; padding:5px 4px; }
+/* 사이드바 2컬럼 */
+#watch-list {
+  flex:1; overflow:hidden; display:flex; gap:0; min-height:0;
+}
+.wl-col {
+  flex:1; display:flex; flex-direction:column; min-width:0;
+  border-right:1px solid var(--border);
+  overflow:hidden;
+}
+.wl-col:last-child { border-right:none; }
+/* 내종목 컬럼: 연한 amber 틴트 */
+#my-col { background: rgba(251,191,36,.10); }
+#my-col .wl-col-head {
+  background: rgba(251,191,36,.18);
+  color: #92620a;
+  border-bottom-color: rgba(251,191,36,.4);
+}
+/* 관심종목 컬럼: 연한 blue 틴트 */
+#watch-col { background: rgba(59,130,246,.04); }
+#watch-col .wl-col-head {
+  background: rgba(59,130,246,.12);
+  color: #1d4ed8;
+  border-bottom-color: rgba(59,130,246,.25);
+}
+.wl-col-head {
+  padding:5px 6px 4px; border-bottom:1px solid var(--border);
+  font-size:10px; font-weight:700;
+  text-transform:uppercase; letter-spacing:.4px;
+  display:flex; align-items:center; justify-content:space-between;
+  flex-shrink:0;
+}
+.wl-col-head span { flex:1; }
+.wl-col-body { flex:1; overflow-y:auto; padding:4px; }
+/* 내종목/관심종목 항목 */
+.watch-item {
+  display:flex; align-items:center; gap:3px;
+  padding:5px 5px; border-radius:6px; margin-bottom:3px;
+  border:1px solid var(--border); background:var(--panel);
+  cursor:pointer; transition:all .15s;
+}
+.watch-item:hover { border-color:#3b82f6; background:var(--hover); }
+.watch-item.dragging { opacity:.3; }
+.watch-item.over { border:2px dashed #3b82f6; }
+.wi-drag { cursor:grab; color:var(--muted); font-size:11px; flex-shrink:0; }
+.wi-info { flex:1; min-width:0; }
+.wi-name { font-size:12px; font-weight:600; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.wi-sub  { font-size:9px; color:var(--muted); margin-top:1px; }
+.wi-del  { background:none; border:none; cursor:pointer; color:var(--muted); padding:1px 3px; border-radius:3px; font-size:11px; flex-shrink:0; line-height:1; }
+.wi-del:hover { color:#ef4444; background:rgba(239,68,68,.1); }
+/* 검색결과 추가 버튼 */
+#sb-add-btns {
+  display:flex; padding:6px 8px; border-bottom:1px solid var(--border);
+  gap:6px; background:var(--panel);
+}
+#sb-add-btns.visible { display:flex; }
+#sb-add-btns .add-sel { font-size:11px; color:var(--muted); flex:none; align-self:center; max-width:90px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-weight:600; }
+/* 카드 테두리 — 국가별 */
+/* ── 기본 테두리 상태 (유지) ── */
+.wc-card.kr-card { border-color: rgba(59,130,246,.55); border-width: 1.5px; }
+.wc-card.us-card { border-color: rgba(239,68,68,.55); border-width: 1.5px; }
+
+/* ── 🌟 한국 주식 Hover: 3D 입체감 + 파란색 빛 반사 병합 ── */
+.wc-card.kr-card:hover { 
+  border-color: #3b82f6; 
+  /* 3D 구조용 그림자 + 파란색 네온 그림자 추가 */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1),
+              0 4px 8px rgba(0, 0, 0, 0.06),
+              0 10px 26px rgba(59,130,246,.22), /* 한국 파란색 글로우 */
+              inset 0 1px 0 rgba(255, 255, 255, 0.2); 
+}
+
+/* ── 🌟 미국 주식 Hover: 3D 입체감 + 빨간색 빛 반사 병합 ── */
+.wc-card.us-card:hover { 
+  border-color: #ef4444; 
+  /* 3D 구조용 그림자 + 빨간색 네온 그림자 추가 */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1),
+              0 4px 8px rgba(0, 0, 0, 0.06),
+              0 10px 26px rgba(239,68,68,.22), /* 미국 빨간색 글로우 */
+              inset 0 1px 0 rgba(255, 255, 255, 0.2); 
+}
+
+/* ── 내종목 배경 및 테두리 (유지) ── */
+.wc-card.my-stock { background: rgba(251,191,36,.10); }
+.wc-card.my-stock.kr-card { border-color: rgba(59,130,246,.65); border-width: 1.5px; }
+.wc-card.my-stock.us-card { border-color: rgba(239,68,68,.65); border-width: 1.5px; }
+/* 상단 컬러바도 국가별 */
+.wc-card.kr-card::after { background:linear-gradient(90deg,#3b82f6,#60a5fa); }
+.wc-card.us-card::after { background:linear-gradient(90deg,#ef4444,#f87171); }
+#watch-list { flex:1; overflow-y:auto; padding:8px; }
+
+.watch-item { display:flex; align-items:center; gap:5px; padding:8px 9px; border-radius:8px; margin-bottom:5px; border:1px solid var(--border); background:var(--panel); cursor:pointer; transition:all .15s; }
+.watch-item:hover { border-color:#3b82f6; background:var(--hover); transform:translateX(2px); }
+.watch-item.dragging { opacity:.3; }
+.watch-item.over { border:2px dashed #3b82f6; }
+.wi-drag { cursor:grab; color:var(--muted); font-size:13px; flex-shrink:0; }
+.wi-info { flex:1; min-width:0; }
+.wi-name { font-size:13px; font-weight:600; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.wi-sub { font-size:10px; color:var(--muted); margin-top:2px; }
+.wi-del { background:none; border:none; cursor:pointer; color:var(--muted); padding:2px 4px; border-radius:4px; font-size:13px; flex-shrink:0; line-height:1; }
+.wi-del:hover { color:#ef4444; background:rgba(239,68,68,.1); }
+
+/* ─── 메인 대시보드 ─── */
+#main { flex:1; min-width:0; min-height:0; overflow:hidden; display:flex; flex-direction:column; position:relative; }
+#dashboard { flex:1; min-height:0; overflow-y:auto; padding:10px 14px; }
+.sec-title { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.6px; margin:0 0 6px; }
+
+/* 지수 카드 */
+#idx-grid { display:grid; grid-template-columns:repeat(9,1fr); gap:5px; margin-bottom:10px; }
+.idx-card { background:var(--panel); border:1px solid var(--border); border-radius:7px; padding:5px 8px; box-shadow:var(--cshadow); transition:transform .15s; }
+.idx-card:hover { transform:translateY(-2px); }
+.idx-name { font-size:10px; font-weight:700; color:var(--muted); margin-bottom:2px; }
+.idx-price { font-size:13px; font-weight:700; letter-spacing:-.3px; }
+.idx-chg { font-size:10px; margin-top:1px; font-weight:600; }
+.idx-spin { color:var(--muted); font-size:12px; animation:spin 1.2s infinite; }
+@keyframes spin { 0%,100%{opacity:.3}50%{opacity:1} }
+
+@keyframes flashUp { 0%{background:#fde68a} 100%{background:transparent} }
+@keyframes flashDn { 0%{background:#bfdbfe} 100%{background:transparent} }
+.flash-up { animation:flashUp .8s ease; border-radius:4px; }
+.flash-dn { animation:flashDn .8s ease; border-radius:4px; }
+
+.kr-up{color:#ef4444;} .kr-dn{color:#3b82f6;}
+.us-up{color:#22c55e;} .us-dn{color:#ef4444;}
+
+/* 관심종목 카드 */
+#watch-cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:7px; margin-top:4px; }
+/* 필터 드롭다운 */
+.dash-filter-wrap { position:relative; display:inline-block; }
+.dash-filter-btn {
+  font-size:11px; font-weight:700; padding:2px 10px 2px 8px;
+  border:1px solid var(--border); border-radius:5px;
+  background:var(--ibg); color:var(--text); cursor:pointer;
+  display:flex; align-items:center; gap:4px;
+}
+.dash-filter-btn:hover { border-color:#3b82f6; color:#3b82f6; }
+.dash-filter-menu {
+  display:none; position:fixed; top:auto; right:auto;
+  background:var(--panel); border:1px solid var(--border);
+  border-radius:8px; box-shadow:0 8px 24px rgba(0,0,0,.2);
+  z-index:99999; min-width:140px; overflow:hidden;
+}
+.dash-filter-menu.open { display:block; }
+.dfm-item {
+  padding:7px 14px; font-size:12px; font-weight:600; cursor:pointer;
+  display:flex; align-items:center; gap:6px; transition:background .12s;
+  border-bottom:1px solid rgba(148,163,184,.08);
+}
+<<<<<<< HEAD
+=======
+.sort-btn {
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all .15s;
+  white-space: nowrap;
+}
+.sort-btn:hover { border-color: #3b82f6; color: #3b82f6; }
+.sort-btn.active { 
+  background: #3b82f6; 
+  color: #fff; 
+  border-color: #3b82f6; 
+  font-weight: bold;
+}
+
+>>>>>>> 20a1089 (주식모니터링 시스템 Vw)
+.dfm-item:last-child { border-bottom:none; }
+.dfm-item:hover { background:var(--hover); color:#3b82f6; }
+.dfm-item.active { color:#3b82f6; }
+.dfm-item .dfm-check { font-size:10px; margin-left:auto; opacity:0; }
+.dfm-item.active .dfm-check { opacity:1; }
+/* 우클릭 컨텍스트 메뉴 */
+#ctx-menu {
+  display:none; position:fixed; z-index:9999;
+  background:var(--panel); border:1px solid var(--border);
+  border-radius:8px; box-shadow:0 8px 24px rgba(0,0,0,.25);
+  min-width:160px; overflow:hidden; padding:4px 0;
+}
+#ctx-menu.open { display:block; }
+.ctx-item {
+  padding:7px 16px; font-size:12px; font-weight:600; cursor:pointer;
+  display:flex; align-items:center; gap:8px; transition:background .12s;
+}
+.ctx-item:hover { background:var(--hover); color:#3b82f6; }
+.ctx-item.active { color:#3b82f6; }
+.ctx-divider { height:1px; background:var(--border); margin:3px 0; }
+/* ── 1. 기본 상태 (살짝 튀어나온 3D 느낌) ── */
+.wc-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px; /* 모서리를 둥글게 하여 부드러운 느낌 강조 */
+  
+  /* 🌟 [수정됨] 기존의 필수 레이아웃 속성 복구! */
+  padding: 9px 11px; /* 안쪽 여백 유지 */
+  position: relative; /* ::after 그라데이션 바의 위치 기준점 */
+  overflow: hidden; /* 모서리 둥글기를 벗어나는 배경 잘라내기 */
+
+  /* 다중 그림자로 입체감 생성: 하단 그림자 + 상단 빛 반사 효과 */
+	box-shadow: 0 2px 4px rgba(0,0,0,0.5),
+				0 6px 16px rgba(0,0,0,0.4),
+				inset 0 1px 0 rgba(255,255,255,0.08);
+	background: linear-gradient(160deg, var(--panel) 0%, rgba(0,0,0,0.2) 100%);             
+  /* 변화가 일어날 때 쫀득하고 부드럽게 움직이도록 설정 */
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+/* ── 2. 마우스를 올렸을 때 (Hover - 공중으로 떠오르는 효과) ── */
+.wc-card:hover {
+	transform: translateY(-4px) scale(1.01);
+	box-shadow: 0 8px 24px rgba(0,0,0,0.6),
+				0 2px 8px rgba(0,0,0,0.4),
+				inset 0 1px 0 rgba(255,255,255,0.15);
+}
+
+/* ── 3. 클릭했을 때 (Active - 버튼이 눌리는 효과) ── */
+.wc-card:active {
+  transform: translateY(1px) scale(0.99);
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1),
+              inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* ── 4. 부가 효과 (상단 그라데이션 및 드래그 앤 드롭) ── */
+.wc-card::after { 
+  content: ''; 
+  position: absolute; 
+  top: 0; left: 0; right: 0; 
+  height: 3px; 
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6); 
+  opacity: 0; 
+  transition: opacity .18s; 
+}
+
+.wc-card:hover::after { opacity: 1; }
+.wc-card.card-dragging { opacity: .35; transform: scale(.97); }
+.wc-card.card-over { border: 2px dashed #3b82f6; transform: translateY(-2px); }
+
+/* ── 5. 텍스트 스타일 ── */
+.wc-name { font-size: 11px; font-weight: 700; margin-bottom: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.wc-meta { font-size: 9px; color: var(--muted); margin-bottom: 4px; }
+/* 카드 2단 레이아웃 */
+.wc-body { display:flex; gap:8px; align-items:flex-start; margin-bottom:4px; }
+.wc-left { flex:1; min-width:0; }
+.wc-right { flex:1; min-width:0; display:none; }
+.wc-right.visible { display:block; }
+.wc-holding { font-size:10px; line-height:1.6; }
+.wc-hold-row { display:flex; justify-content:space-between; gap:4px; }
+.wc-hold-label { color:var(--muted); font-size:9px; }
+.wc-hold-val { font-weight:700; font-size:10px; white-space:nowrap; }
+.wc-hold-val.pos { color:#ef4444; }
+.wc-hold-val.neg { color:#3b82f6; }
+.wc-btn { display:inline-flex; align-items:center; gap:4px; padding:3px 9px; background:linear-gradient(135deg,#3b82f6,#6366f1); color:#fff; border:none; border-radius:5px; font-size:11px; font-weight:700; cursor:pointer; }
+.wc-btn:hover { opacity:.85; }
+/* 크로스 뱃지 */
+.cross-badges { display:flex; gap:3px; flex-wrap:wrap; margin-top:3px; min-height:16px; }
+.cross-badge {
+  font-size:9px; font-weight:700; padding:1px 5px; border-radius:3px;
+  white-space:nowrap; line-height:1.4;
+}
+.cb-golden { background:rgba(251,191,36,.2); color:#92620a; border:1px solid rgba(251,191,36,.5); }
+.cb-dead   { background:rgba(99,102,241,.15); color:#4338ca; border:1px solid rgba(99,102,241,.35); }
+/* 크로스 토글 버튼 */
+.cross-toggle {
+  font-size:10px; font-weight:700; padding:2px 8px; border-radius:4px; cursor:pointer;
+  border:1px solid var(--border); background:var(--ibg); color:var(--muted);
+  transition:.15s;
+}
+.cross-toggle.on { border-color:#f59e0b; color:#92620a; background:rgba(251,191,36,.12); }
+.wc-memo { font-size:11px; color:var(--muted); margin-top:9px; padding-top:8px; border-top:1px solid var(--border); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.wc-empty { padding:30px 20px; text-align:center; color:var(--muted); }
+.wc-empty p { font-size:13px; line-height:1.9; }
+
+/* ── 섹터 그룹화 ── */
+.sector-group { margin-bottom:10px; }
+.sector-group-header {
+  display:flex; align-items:center; gap:7px; padding:5px 10px;
+  background:var(--panel); border:1px solid var(--border);
+  border-radius:7px; cursor:pointer; margin-bottom:6px; user-select:none;
+  transition:background .15s;
+}
+.sector-group-header:hover { background:var(--hover); }
+.sector-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+.sector-group-title { font-size:12px; font-weight:700; }
+.sector-group-count {
+  font-size:10px; color:var(--muted); background:var(--ibg);
+  padding:1px 7px; border-radius:10px; font-weight:700;
+}
+.sector-group-arrow { font-size:10px; color:var(--muted); margin-left:2px; }
+.sector-group-cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:7px; }
+.sector-group.collapsed .sector-group-cards { display:none; }
+/* 카드 내 섹터 뱃지 */
+.sector-badge {
+  font-size:8px; font-weight:700; padding:1px 5px; border-radius:3px;
+  background:rgba(139,92,246,.15); color:#7c3aed;
+  border:1px solid rgba(139,92,246,.25); vertical-align:middle;
+}
+.sdot-sm { display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:4px; vertical-align:middle; }
+/* 섹터 뷰 토글 버튼 */
+.sector-view-btn {
+  font-size:10px; font-weight:700; padding:2px 8px; border-radius:4px; cursor:pointer;
+  border:1px solid var(--border); background:var(--ibg); color:var(--muted);
+  transition:.15s; white-space:nowrap;
+}
+.sector-view-btn.on { border-color:#8b5cf6; color:#7c3aed; background:rgba(139,92,246,.12); }
+/* 섹터 지정 모달 */
+#sector-modal {
+  display:none; position:fixed; inset:0; z-index:99000;
+  background:rgba(0,0,0,.5); align-items:center; justify-content:center;
+}
+#sector-modal.open { display:flex; }
+#sector-modal-inner {
+  background:var(--panel); border:1px solid var(--border);
+  border-radius:10px; width:340px; max-width:90vw;
+  box-shadow:0 20px 60px rgba(0,0,0,.4); padding:20px;
+}
+#sector-modal-title { font-size:13px; font-weight:700; margin-bottom:12px; display:flex; align-items:center; justify-content:space-between; }
+.sm-label { font-size:11px; color:var(--muted); margin-bottom:6px; }
+#sector-modal-input {
+  width:100%; padding:7px 10px; font-size:13px; font-weight:700;
+  background:var(--ibg); border:1px solid var(--border);
+  border-radius:6px; color:var(--text); box-sizing:border-box; margin-bottom:10px;
+}
+#sector-modal-input:focus { outline:none; border-color:#8b5cf6; }
+#sector-modal-btns { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:14px; }
+.sector-preset-btn {
+  display:flex; align-items:center; padding:4px 10px; font-size:11px; font-weight:700;
+  border:1px solid var(--border); border-radius:5px;
+  background:var(--ibg); color:var(--text); cursor:pointer; transition:.15s;
+}
+.sector-preset-btn:hover { border-color:#8b5cf6; color:#7c3aed; }
+.sector-preset-btn.active { border-color:#8b5cf6; background:rgba(139,92,246,.15); color:#7c3aed; }
+.sm-btns { display:flex; gap:8px; }
+.sm-save  { flex:1; padding:7px; background:#8b5cf6; color:#fff; border:none; border-radius:6px; font-size:12px; font-weight:700; cursor:pointer; }
+.sm-save:hover { background:#7c3aed; }
+.sm-clear { padding:7px 12px; background:var(--ibg); color:var(--muted); border:1px solid var(--border); border-radius:6px; font-size:12px; cursor:pointer; }
+.sm-close { background:none; border:none; cursor:pointer; color:var(--muted); font-size:14px; }
+/* 삭제 확인 모달 */
+#confirm-modal {
+  display:none; position:fixed; inset:0; z-index:99100;
+  background:rgba(0,0,0,.55); align-items:center; justify-content:center;
+}
+#confirm-modal.open { display:flex; }
+#confirm-inner {
+  background:var(--panel); border:1px solid var(--border);
+  border-radius:10px; width:300px; max-width:90vw;
+  box-shadow:0 20px 60px rgba(0,0,0,.5); padding:22px 20px 18px;
+  text-align:center;
+}
+#confirm-icon  { font-size:28px; margin-bottom:8px; }
+#confirm-msg   { font-size:13px; font-weight:600; margin-bottom:16px; line-height:1.6; color:var(--text); }
+.confirm-btns  { display:flex; gap:8px; justify-content:center; }
+.confirm-ok    { padding:7px 22px; background:#ef4444; color:#fff; border:none; border-radius:6px; font-size:12px; font-weight:700; cursor:pointer; }
+.confirm-ok:hover { background:#dc2626; }
+.confirm-cancel { padding:7px 18px; background:var(--ibg); color:var(--muted); border:1px solid var(--border); border-radius:6px; font-size:12px; cursor:pointer; }
+/* 관심종목 카드 가격 */
+.wc-price-row { display:flex; flex-direction:column; margin-bottom:5px; gap:1px; }
+.wc-price { font-size:12px; font-weight:800; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.wc-price.up   { color:#ef4444; }
+.wc-price.down { color:#3b82f6; }
+.wc-chg { font-size:10px; font-weight:700; white-space:nowrap; }
+.wc-chg.up   { color:#ef4444; }
+.wc-chg.down { color:#3b82f6; }
+.wc-chg.flat { color:var(--muted); }
+.wc-price-loading { font-size:11px; color:var(--muted); margin-bottom:6px; }
+
+/* ═══════════════════════════
+   팝업 윈도우 시스템
+═══════════════════════════ */
+
+/* 팝업은 body 전체 위에 고정, 메인 레이아웃과 완전 독립 */
+.cpopup {
+  position:fixed; z-index:600;
+  background:var(--panel); border:1px solid var(--border);
+  border-radius:10px; box-shadow:var(--wshadow);
+  display:flex; flex-direction:column;
+  width:min(900px,90vh); height:min(900px,90vh);
+  overflow:hidden;
+  transition:box-shadow .15s, opacity .15s;
+  animation:popIn .18s ease;
+  min-width:420px; min-height:300px;
+}
+/* 리사이즈 핸들 — 8방향 */
+.rs { position:absolute; z-index:20; }
+.rs-n  { top:0;    left:6px;  right:6px; height:5px; cursor:n-resize; }
+.rs-s  { bottom:0; left:6px;  right:6px; height:5px; cursor:s-resize; }
+.rs-e  { right:0;  top:6px;   bottom:6px; width:5px; cursor:e-resize; }
+.rs-w  { left:0;   top:6px;   bottom:6px; width:5px; cursor:w-resize; }
+.rs-ne { top:0;    right:0;   width:10px; height:10px; cursor:ne-resize; }
+.rs-nw { top:0;    left:0;    width:10px; height:10px; cursor:nw-resize; }
+.rs-se { bottom:0; right:0;   width:10px; height:10px; cursor:se-resize; border-radius:0 0 10px 0; }
+.rs-sw { bottom:0; left:0;    width:10px; height:10px; cursor:sw-resize; border-radius:0 0 0 10px; }
+/* 우하단 코너 시각적 힌트 */
+.rs-se::after {
+  content:'';
+  position:absolute; right:3px; bottom:3px;
+  width:8px; height:8px;
+  border-right:2px solid var(--muted); border-bottom:2px solid var(--muted);
+  border-radius:0 0 3px 0; opacity:.5;
+}
+@keyframes popIn { from{opacity:0;transform:scale(.95)} to{opacity:1;transform:scale(1)} }
+
+.cpopup.focused { box-shadow:var(--wfocus); border-color:#3b82f6; }
+.cpopup.maximized {
+  top:50px !important; left:0 !important;
+  width:100vw !important; height:calc(100vh - 50px - 44px) !important;
+  border-radius:0; transform:none !important;
+}
+.cpopup.minimized { display:none; }
+
+/* 윈도우 타이틀바 */
+.win-bar {
+  height:38px; padding:0 10px;
+  background:var(--hbg);
+  display:flex; align-items:center; gap:8px;
+  cursor:move; user-select:none; flex-shrink:0;
+  border-radius:10px 10px 0 0;
+}
+.cpopup.maximized .win-bar { border-radius:0; }
+.win-title { display:flex; align-items:center; gap:7px; flex:1; min-width:0; overflow:hidden; }
+.win-title b { color:#fff; font-size:13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.win-title span.sym { color:#94a3b8; font-size:11px; }
+
+/* macOS 스타일 윈도우 버튼 */
+.win-btns { display:flex; align-items:center; gap:6px; flex-shrink:0; }
+.wbtn {
+  width:13px; height:13px; border-radius:50%; border:none; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  font-size:8px; font-weight:900; color:transparent;
+  transition:color .15s, filter .15s; flex-shrink:0;
+}
+.wbtn:hover { color:rgba(0,0,0,.65); }
+.wbtn-close  { background:#ff5f57; }
+.wbtn-min    { background:#febc2e; }
+.wbtn-max    { background:#28c840; }
+.wbtn-close:hover  { filter:brightness(.85); }
+.wbtn-min:hover    { filter:brightness(.85); }
+.wbtn-max:hover    { filter:brightness(.85); }
+
+/* 컨트롤 바 (타임프레임·지표·신호) */
+.win-ctrl {
+  padding:6px 12px; border-bottom:1px solid var(--border);
+  display:flex; align-items:center; gap:8px; flex-shrink:0;
+  background:var(--panel); flex-wrap:wrap;
+}
+/* 기간 수익률 */
+.returns-bar {
+  display:flex; align-items:center; gap:6px; flex-wrap:wrap;
+  font-size:12px; font-weight:600;
+}
+.ret-label { color:var(--muted); font-weight:700; margin-right:2px; }
+.ret-item { white-space:nowrap; display:inline-flex; align-items:center; gap:2px; }
+.ret-item .ret-name {
+  font-size:10px; font-weight:700; cursor:pointer;
+  padding:1px 5px; border-radius:3px;
+  border:1px solid var(--border); color:var(--muted);
+  background:var(--ibg); transition:.15s; line-height:1.5;
+}
+.ret-item .ret-name:hover { border-color:#3b82f6; color:#3b82f6; }
+.ret-item .ret-name.active { background:#3b82f6; color:#fff; border-color:#3b82f6; }
+.ret-item .ret-val { font-weight:800; }
+.ret-item .ret-val.up   { color:#ef4444; }
+.ret-item .ret-val.down { color:#3b82f6; }
+.ret-item .ret-val.flat { color:var(--muted); }
+.win-ctrl select, .win-ctrl-select {
+  padding:4px 6px; font-size:12px; border:1px solid var(--border);
+  border-radius:4px; background:var(--ibg); color:var(--text); cursor:pointer;
+}
+
+/* 차트 분할 패널 */
+.win-body {
+  flex:1; display:flex; flex-direction:column;
+  min-height:0; overflow:hidden; background:var(--cbg);
+}
+.chart-pane {
+  position:relative; overflow:hidden; min-height:40px;
+}
+.chart-pane-main  { flex:3; }
+.chart-pane-macd  { flex:1.4; }
+.chart-pane-rsi   { flex:1; }
+.chart-divider {
+  height:5px; background:var(--border); cursor:ns-resize;
+  flex-shrink:0; position:relative; z-index:5;
+  transition:background .15s;
+}
+.chart-divider:hover, .chart-divider.dragging {
+  background:#3b82f6;
+}
+.chart-divider::after {
+  content:''; position:absolute; left:50%; top:50%;
+  transform:translate(-50%,-50%);
+  width:30px; height:3px; border-radius:2px;
+  background:rgba(255,255,255,.25);
+}
+.pane-label {
+  position:absolute; top:4px; right:8px; z-index:8;
+  font-size:10px; font-weight:700; color:var(--muted);
+  background:var(--legbg); padding:2px 7px; border-radius:4px;
+  pointer-events:none; opacity:.7;
+}
+/* 팝아웃 버튼 */
+.pane-popout {
+  position:absolute; top:4px; left:8px; z-index:10;
+  font-size:10px; font-weight:700; cursor:pointer;
+  background:var(--legbg); color:var(--muted);
+  border:1px solid var(--border); border-radius:4px;
+  padding:1px 6px; opacity:.6; transition:.15s;
+  line-height:1.5;
+}
+.pane-popout:hover { opacity:1; color:#3b82f6; border-color:#3b82f6; }
+/* 차트 분리 모달 */
+.chart-modal-backdrop {
+  display:none; position:fixed; inset:0; z-index:8000;
+  pointer-events:none;
+}
+.chart-modal-backdrop.open { display:block; }
+.chart-modal {
+  position:absolute; background:var(--panel);
+  border:1px solid var(--border); border-radius:10px;
+  box-shadow:0 20px 60px rgba(0,0,0,.4);
+  display:flex; flex-direction:column;
+  pointer-events:all; min-width:320px; min-height:200px;
+  overflow:hidden;
+}
+.chart-modal-bar {
+  display:flex; align-items:center; gap:8px;
+  padding:6px 10px; background:var(--hbg);
+  border-bottom:1px solid var(--border);
+  cursor:move; flex-shrink:0; user-select:none;
+}
+.chart-modal-title {
+  font-size:11px; font-weight:700; color:var(--text); flex:1;
+}
+.chart-modal-close {
+  background:none; border:none; cursor:pointer; color:var(--muted);
+  font-size:13px; padding:2px 5px; border-radius:4px;
+}
+.chart-modal-close:hover { background:rgba(239,68,68,.15); color:#ef4444; }
+.chart-modal-body {
+  flex:1; min-height:0; position:relative; overflow:hidden;
+}
+/* Rubber Band 선택 영역 */
+.rb-selection {
+  position: absolute; pointer-events: none; z-index: 100;
+  border: 2px solid #3b82f6;
+  background: rgba(59,130,246,.12);
+  box-sizing: border-box;
+  display: none;
+}
+
+/* 리사이즈 핸들 */
+.cm-resize {
+  position:absolute; z-index:10;
+  background:transparent;
+}
+.cm-resize.se { bottom:0; right:0; width:14px; height:14px; cursor:se-resize; }
+.cm-resize.s  { bottom:0; left:14px; right:14px; height:6px; cursor:s-resize; }
+.cm-resize.e  { right:0; top:14px; bottom:14px; width:6px; cursor:e-resize; }
+.cm-resize.sw { bottom:0; left:0; width:14px; height:14px; cursor:sw-resize; }
+.cm-resize.w  { left:0; top:14px; bottom:14px; width:6px; cursor:w-resize; }
+.cm-resize.n  { top:0; left:14px; right:14px; height:6px; cursor:n-resize; }
+.cm-resize.nw { top:0; left:0; width:14px; height:14px; cursor:nw-resize; }
+.cm-resize.ne { top:0; right:0; width:14px; height:14px; cursor:ne-resize; }
+
+/* 메모 */
+.win-memo {
+  border-top:1px solid var(--border); padding:6px 12px;
+  background:var(--panel); flex-shrink:0;
+  display:flex; align-items:center; gap:7px;
+}
+.win-memo textarea {
+  flex:1; height:30px; padding:5px 9px;
+  border:1px solid var(--border); border-radius:5px;
+  font-size:12px; resize:none; background:var(--ibg);
+  color:var(--text); font-family:inherit;
+  transition:border .2s, height .2s;
+}
+.win-memo textarea:focus { outline:none; border-color:#3b82f6; height:56px; }
+
+/* 차트 범례 */
+.chart-legend {
+  position:absolute; top:30px; left:30px; z-index:10;
+  background:var(--legbg); padding:8px 12px; border-radius:7px;
+  font-size:11px; border:1px solid var(--legbd);
+  backdrop-filter:blur(6px); box-shadow:0 2px 8px rgba(0,0,0,.1);
+  pointer-events:auto;
+}
+.legend-title { font-weight:700; margin-bottom:5px; font-size:12px; color:var(--text); }
+.legend-item { margin-bottom:3px; display:flex; align-items:center; color:var(--text); }
+.legend-item input { margin-right:6px; cursor:pointer; }
+
+/* ═══════════════════════════
+   하단 태스크바
+═══════════════════════════ */
+#taskbar {
+  height:44px; background:var(--taskbar);
+  border-top:1px solid var(--border);
+  display:flex; align-items:center; gap:6px;
+  padding:0 12px; overflow-x:auto; flex-shrink:0;
+  position:relative; z-index:5;
+}
+#taskbar::-webkit-scrollbar { height:3px; }
+#taskbar::-webkit-scrollbar-thumb { background:var(--border); border-radius:2px; }
+.tb-chip {
+  display:flex; align-items:center; gap:6px; flex-shrink:0;
+  padding:5px 10px 5px 8px; border-radius:6px;
+  background:var(--panel); border:1px solid var(--border);
+  cursor:pointer; font-size:12px; font-weight:600;
+  transition:all .15s; max-width:160px;
+  animation:chipIn .2s ease;
+}
+@keyframes chipIn { from{opacity:0;transform:scale(.8)} to{opacity:1;transform:scale(1)} }
+.tb-chip:hover { border-color:#3b82f6; background:var(--hover); }
+.tb-chip.active { border-color:#3b82f6; background:rgba(59,130,246,.08); color:#3b82f6; }
+.tb-chip-name { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; flex:1; }
+.tb-chip-x { color:var(--muted); font-size:11px; line-height:1; padding:1px 2px; border-radius:3px; }
+.tb-chip-x:hover { color:#ef4444; background:rgba(239,68,68,.12); }
+#tb-empty { font-size:12px; color:var(--muted); }
+
+/* ═══════════════════════════
+   공통 컴포넌트
+═══════════════════════════ */
+.badge { padding:3px 8px; border-radius:4px; font-size:11px; font-weight:700; }
+.b-buy  { background:rgba(34,197,94,.1); color:#16a34a; border:1px solid #22c55e; }
+.b-sell { background:rgba(239,68,68,.1); color:#dc2626; border:1px solid #ef4444; }
+.b-hold { background:rgba(148,163,184,.1); color:var(--muted); border:1px solid var(--border); }
+/* win-bar 조합신호 */
+.combo-signals {
+  display:flex; align-items:center; gap:4px; flex-wrap:nowrap; overflow:hidden;
+  margin-left:6px; flex-shrink:1;
+}
+.combo-badge {
+  font-size:10px; font-weight:700; padding:2px 6px; border-radius:4px;
+  white-space:nowrap; flex-shrink:0; line-height:1.4;
+}
+.cb-strong-buy  { background:rgba(34,197,94,.15);  color:#15803d; border:1px solid rgba(34,197,94,.5); }
+.cb-strong-sell { background:rgba(239,68,68,.15);  color:#b91c1c; border:1px solid rgba(239,68,68,.5); }
+.cb-squeeze     { background:rgba(251,191,36,.15); color:#92620a; border:1px solid rgba(251,191,36,.5); }
+.cb-breakout    { background:rgba(168,85,247,.15); color:#6b21a8; border:1px solid rgba(168,85,247,.5); }
+.cb-caution     { background:rgba(249,115,22,.15); color:#c2410c; border:1px solid rgba(249,115,22,.5); }
+
+.market-badge { font-size:10px; padding:2px 6px; border-radius:4px; font-weight:700; white-space:nowrap; }
+.market-badge.코스피 { background:#dbeafe; color:#1e40af; }
+.market-badge.코스닥 { background:#fce7f3; color:#9d174d; }
+.market-badge.nyse   { background:#fef3c7; color:#92400e; }
+.market-badge.nasdaq { background:#e0e7ff; color:#3730a3; }
+.market-badge.etf    { background:#dcfce7; color:#166534; }
+.market-badge.etn    { background:#f3e8ff; color:#6b21a8; }
+.market-badge.기타   { background:#f1f5f9; color:#475569; }
+
+button.btn-primary { padding:5px 11px; cursor:pointer; background:#3b82f6; color:#fff; border:none; border-radius:6px; font-weight:700; font-size:12px; }
+button.btn-primary:hover { background:#2563eb; }
+button.btn-icon { padding:5px 8px; cursor:pointer; background:transparent; border:1px solid rgba(255,255,255,.2); color:#fff; border-radius:5px; font-size:15px; transition:.15s; }
+button.btn-icon:hover { background:rgba(255,255,255,.12); }
+button.btn-icon.active { background:rgba(34,197,94,.3); border-color:#22c55e; }
+
+#toast-cont { position:fixed; bottom:54px; right:20px; z-index:9999; display:flex; flex-direction:column; gap:7px; }
+.toast { background:var(--hbg); color:#10b981; padding:11px 16px; border-radius:8px; box-shadow:0 4px 14px rgba(0,0,0,.4); font-weight:700; font-size:13px; animation:tin .25s ease; max-width:320px; }
+@keyframes tin { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+
+::-webkit-scrollbar { width:5px; }
+
+/* ═══ KIS 실시간 패널 ═══ */
+.kis-panel {
+  display:flex; flex-direction:column; flex-shrink:0;
+  border-bottom:1px solid var(--border);
+  background:var(--panel); overflow:hidden;
+}
+/* 현재가+펀더멘털 내부 → 고정 높이로 탭전환 시 흔들림 없음 */
+.kis-panel-inner {
+  display:flex; min-width:0;
+  height:44px; flex-shrink:0; overflow:hidden;
+}
+/* 현재가 바 */
+.kis-price-bar {
+  display:flex; align-items:center; gap:10px; padding:5px 12px 2px;
+  flex-shrink:0;
+}
+.kis-price-main {
+  font-size:18px; font-weight:800; color:var(--text); white-space:nowrap;
+}
+.kis-price-main.up   { color:#ef4444; }
+.kis-price-main.down { color:#3b82f6; }
+.kis-change {
+  font-size:12px; font-weight:700; white-space:nowrap;
+}
+.kis-change.up   { color:#ef4444; }
+.kis-change.down { color:#3b82f6; }
+.kis-info { font-size:9px; color:var(--muted); white-space:nowrap; }
+.kis-info-row {
+  font-size:9px; color:var(--muted);
+  display:flex; align-items:center; gap:6px; white-space:nowrap;
+}
+.kis-mktcap { font-size:11px; font-weight:700; color:var(--muted);
+  background:rgba(148,163,184,.1); border:1px solid var(--border);
+  border-radius:4px; padding:1px 6px; white-space:nowrap; }
+.kis-dot {
+  width:8px; height:8px; border-radius:50%; background:#6b7280; flex-shrink:0;
+  animation:none;
+}
+/* 펀더멘털 패널 */
+.kis-fund-panel {
+  border-top:none;
+  font-size:10px;
+  display:flex; flex-direction:column; min-width:0;
+}
+.kis-fund-tabs {
+  display:flex; gap:4px; flex-shrink:0; padding:4px 6px 3px;
+  align-items:center;
+}
+.kis-fund-tab {
+  padding:1px 8px; cursor:pointer; font-weight:700;
+  font-size:10px; white-space:nowrap; border-radius:4px;
+  border:1px solid var(--border); color:var(--muted);
+  background:var(--ibg); transition:.15s;
+}
+.kis-fund-tab:hover { border-color:#3b82f6; color:#3b82f6; }
+.kis-fund-tab.active {
+  color:#fff; background:#3b82f6; border-color:#3b82f6;
+}
+/* 값: 탭 아래 가로 한줄 */
+.kis-fund-page {
+  display:none; padding:1px 6px 3px;
+  flex-wrap:nowrap; gap:0 14px;
+  align-items:center; white-space:nowrap; overflow:hidden;
+}
+.kis-fund-page.active { display:flex; }
+.kis-fund-item {
+  display:flex; align-items:baseline; gap:2px; white-space:nowrap; flex-shrink:0;
+}
+.kis-fund-label { color:var(--muted); font-weight:600; font-size:10px; }
+.kis-fund-val   { color:var(--text);  font-weight:700; font-size:10px; }
+.kis-fund-val.pos { color:#ef4444; }
+.kis-fund-val.neg { color:#3b82f6; }
+.kis-dot.live { background:#22c55e; animation:pulse-dot 1.5s infinite; }
+@keyframes pulse-dot {
+  0%,100%{ opacity:1; transform:scale(1); }
+  50%{ opacity:.5; transform:scale(1.3); }
+}
+/* 호가창 토글 버튼 */
+.kis-ob-btn {
+  padding:2px 8px; font-size:11px; font-weight:700; cursor:pointer;
+  background:transparent; border:1px solid var(--border); border-radius:4px;
+  color:var(--muted); white-space:nowrap; flex-shrink:0;
+  transition:.15s;
+}
+.kis-ob-btn:hover, .kis-ob-btn.active {
+  border-color:#3b82f6; color:#3b82f6; background:rgba(59,130,246,.08);
+}
+/* ═══ 호가창 + 체결 모달 ═══ */
+.ob-modal-backdrop {
+  display:none; position:fixed; inset:0; z-index:900;
+  pointer-events:none; /* 배경 클릭 통과 — 차트 사용 가능 */
+}
+.ob-modal-backdrop.visible { display:block; }
+
+.ob-modal {
+  position:fixed; z-index:950;
+  background:var(--panel); border:1px solid var(--border);
+  border-radius:12px; box-shadow:0 16px 48px rgba(0,0,0,.5);
+  display:none; flex-direction:row;
+  overflow:hidden; pointer-events:all;
+  animation:popIn .18s ease;
+  height:auto !important;
+}
+.ob-modal.visible { display:flex; }
+
+/* 모달 타이틀바 (드래그용) */
+.ob-modal-bar {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:7px 10px; border-bottom:1px solid var(--border);
+  background:var(--hbg); cursor:move; user-select:none; flex-shrink:0;
+}
+.ob-modal-title { font-size:12px; font-weight:700; color:var(--text); }
+.ob-modal-close {
+  width:18px; height:18px; border-radius:50%; background:#ef4444;
+  border:none; cursor:pointer; font-size:10px; color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  line-height:1; padding:0;
+}
+.ob-modal-close:hover { background:#dc2626; }
+
+/* 호가창 컬럼 */
+.ob-col {
+  display:flex; flex-direction:column; width:210px; flex-shrink:0;
+  border-right:1px solid var(--border);
+}
+.ob-col:last-child { border-right:none; }
+.ob-col-header {
+  padding:5px 8px; font-size:10px; font-weight:700; color:var(--muted);
+  border-bottom:1px solid var(--border); background:var(--hbg);
+  display:flex; justify-content:space-between;
+}
+.ob-body { overflow-y:auto; max-height:560px; }
+.ob-row {
+  display:grid; grid-template-columns:72px 80px 72px;
+  padding:2px 6px; font-size:11px; align-items:center;
+  border-bottom:1px solid rgba(148,163,184,.07); gap:0;
+}
+.ob-row:hover { background:var(--hover); }
+.ob-ask-qty { color:#3b82f6; text-align:right; font-weight:600; }
+.ob-bid-qty { color:#ef4444; text-align:left; font-weight:600; }
+.ob-price {
+  text-align:center; font-weight:700; padding:1px 4px; border-radius:3px;
+  white-space:nowrap;
+}
+.ob-price.ask { color:#3b82f6; background:rgba(59,130,246,.08); }
+.ob-price.bid { color:#ef4444; background:rgba(239,68,68,.08); }
+.ob-price.current {
+  background:linear-gradient(135deg,#f59e0b,#ef4444);
+  color:#fff; font-size:12px;
+}
+.ob-total {
+  padding:4px 6px; border-top:1px solid var(--border);
+  display:flex; justify-content:space-between; font-size:10px;
+  background:var(--hbg); flex-shrink:0;
+}
+.ob-total-ask { color:#3b82f6; font-weight:700; }
+.ob-total-bid { color:#ef4444; font-weight:700; }
+
+/* 체결 컬럼 */
+.tick-col {
+  display:flex; flex-direction:column; width:200px; flex-shrink:0;
+}
+.tick-body { overflow-y:auto; max-height:560px; }
+.tick-row {
+  display:grid; grid-template-columns:38px 1fr 72px;
+  padding:2px 6px; font-size:11px; gap:0; align-items:center;
+  border-bottom:1px solid rgba(148,163,184,.07);
+}
+.tick-row.up   { background:rgba(239,68,68,.04); }
+.tick-row.down { background:rgba(59,130,246,.04); }
+.tick-time  { color:var(--muted); font-size:10px; }
+.tick-price { font-weight:700; }
+.tick-price.up   { color:#ef4444; }
+.tick-price.down { color:#3b82f6; }
+.tick-qty   { color:var(--muted); font-size:10px; text-align:right; }
+
+/* ═══ 투자자별 매매동향 패널 ═══ */
+.investor-panel {
+  position:absolute; bottom:44px; left:12px;
+  width:340px; background:var(--panel);
+  border:1px solid var(--border); border-radius:10px;
+  box-shadow:0 8px 32px rgba(0,0,0,.35);
+  display:none; flex-direction:column; z-index:50;
+  overflow:hidden;
+}
+.investor-panel.visible { display:flex; }
+.inv-header {
+  display:flex; align-items:center; gap:0;
+  border-bottom:1px solid var(--border); background:var(--hbg);
+  padding:6px 10px; justify-content:space-between;
+}
+.inv-title { font-size:12px; font-weight:700; color:var(--text); }
+.inv-tabs { display:flex; gap:4px; }
+.inv-tab {
+  padding:3px 10px; font-size:11px; font-weight:700; cursor:pointer;
+  border-radius:5px; border:1px solid transparent; color:var(--muted);
+  background:transparent; transition:.15s;
+}
+.inv-tab.active { background:#3b82f6; color:#fff; border-color:#3b82f6; }
+.inv-tab:hover:not(.active) { border-color:var(--border); color:var(--text); }
+.inv-close {
+  font-size:13px; cursor:pointer; color:var(--muted); padding:2px 6px;
+  border-radius:4px; border:none; background:transparent;
+}
+.inv-close:hover { color:var(--text); background:var(--hover); }
+.inv-table { width:100%; border-collapse:collapse; }
+.inv-table th {
+  padding:5px 10px; font-size:10px; font-weight:700; color:var(--muted);
+  border-bottom:1px solid var(--border); text-align:right; background:var(--hbg);
+}
+.inv-table th:first-child { text-align:left; }
+.inv-table td {
+  padding:6px 10px; font-size:12px; font-weight:600;
+  border-bottom:1px solid rgba(148,163,184,.08); text-align:right;
+}
+.inv-table td:first-child { text-align:left; font-weight:700; color:var(--text); }
+.inv-table tr:last-child td { border-bottom:none; }
+.inv-table tr:hover td { background:var(--hover); }
+.inv-buy  { color:#ef4444; }
+.inv-sell { color:#3b82f6; }
+.inv-net-pos { color:#ef4444; font-weight:800; }
+.inv-net-neg { color:#3b82f6; font-weight:800; }
+.inv-bar-wrap { padding:6px 10px 8px; border-top:1px solid var(--border); }
+.inv-bar-label { font-size:10px; color:var(--muted); margin-bottom:4px; }
+.inv-bar-row { display:flex; align-items:center; gap:6px; margin-bottom:3px; font-size:11px; }
+.inv-bar-name { width:36px; color:var(--muted); font-weight:700; flex-shrink:0; }
+.inv-bar-track { flex:1; height:8px; background:var(--border); border-radius:4px; overflow:hidden; position:relative; }
+.inv-bar-fill-buy  { position:absolute; left:0; top:0; height:100%; background:#ef4444; border-radius:4px; transition:width .4s; }
+.inv-bar-fill-sell { position:absolute; left:0; top:0; height:100%; background:#3b82f6; border-radius:4px; transition:width .4s; }
+.inv-loading { text-align:center; padding:16px; color:var(--muted); font-size:12px; }
+
+/* ═══ AI 채팅 패널 ═══ */
+.ai-img-name { font-size:11px; color:var(--muted); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:140px; }
+
+/* 메시지 안 이미지 */
+.ai-bubble img.chat-img {
+  max-width:100%; border-radius:8px; margin-top:6px; display:block;
+  border:1px solid var(--border);
+}
+::-webkit-scrollbar-track { background:transparent; }
+::-webkit-scrollbar-thumb { background:var(--border); border-radius:3px; }
+
+/* ═══ 뉴스 패널 ═══ */
+#news-panel {
+  background:var(--panel); border:1px solid var(--border);
+  border-radius:8px; margin-bottom:8px;
+  overflow:hidden; box-shadow:var(--cshadow);
+  flex-shrink:0;
+}
+/* 뉴스 리사이즈 핸들 */
+#news-resizer {
+  height:5px; cursor:ns-resize; background:transparent;
+  border-top:1px solid var(--border);
+  transition:background .15s; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+}
+#news-resizer:hover, #news-resizer.dragging { background:#3b82f6; }
+#news-resizer::after {
+  content:''; width:32px; height:2px;
+  border-radius:2px; background:var(--border);
+}
+#news-header {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:5px 10px; border-bottom:1px solid var(--border);
+  background:var(--hbg);
+}
+#news-header-left { display:flex; align-items:center; gap:8px; }
+#news-title { font-size:11px; font-weight:700; color:var(--text); }
+#news-update { font-size:10px; color:var(--muted); }
+#news-list {
+  height:78px; overflow-y:auto;
+  padding:2px 0;
+}
+.news-item {
+  display:flex; align-items:center; gap:6px;
+  padding:4px 10px; cursor:pointer; transition:background .12s;
+  border-bottom:1px solid rgba(148,163,184,.07);
+  text-decoration:none;
+}
+.news-item:last-child { border-bottom:none; }
+.news-item:hover { background:var(--hover); }
+.news-cat {
+  font-size:10px; font-weight:700; padding:2px 6px; border-radius:4px;
+  white-space:nowrap; flex-shrink:0; margin-top:1px;
+  background:rgba(59,130,246,.12); color:#3b82f6;
+}
+.news-cat.공시  { background:rgba(239,68,68,.12); color:#ef4444; }
+.news-cat.해외증시 { background:rgba(168,85,247,.12); color:#a855f7; }
+.news-cat.경제 { background:rgba(34,197,94,.12); color:#22c55e; }
+.news-txt {
+  font-size:11px; color:var(--text); line-height:1.4;
+  flex:1; word-break:keep-all; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.news-txt:hover { color:#3b82f6; }
+#news-loading { padding:16px; text-align:center; color:var(--muted); font-size:12px; }
+.news-refresh-btn {
+  padding:3px 8px; font-size:11px; font-weight:700;
+  background:transparent; border:1px solid var(--border);
+  border-radius:5px; color:var(--muted); cursor:pointer;
+}
+.news-refresh-btn:hover { border-color:#3b82f6; color:#3b82f6; }
+
+
+
+
+
+
+/* ── 투자 스냅샷 ── */
+#invest-snapshot {
+  display:inline-block; vertical-align:middle;
+}
+#isn-table {
+  border-collapse:collapse; font-size:10px;
+  border:1px solid var(--border); border-radius:5px;
+  overflow:hidden; background:var(--panel);
+}
+.isn-th {
+  background:var(--hbg); color:var(--muted);
+  padding:3px 8px; font-size:9px; font-weight:700;
+  text-align:right; border-bottom:1px solid var(--border);
+}
+.isn-th-cat { text-align:left; min-width:60px; }
+.isn-cat {
+  padding:3px 8px; font-size:10px; font-weight:700;
+  color:var(--text); border-top:1px solid var(--border);
+  white-space:nowrap;
+}
+.isn-val {
+  padding:3px 10px; text-align:right; font-weight:700;
+  font-size:10px; border-top:1px solid var(--border);
+  color:var(--text); white-space:nowrap; min-width:70px;
+}
+.isn-val.pos { color:#ef4444; }
+.isn-val.neg { color:#3b82f6; }
+.isn-val.muted { color:var(--muted); }
+.isn-total .isn-val { color:#f8fafc; }
+.isn-total .isn-val.pos { color:#fca5a5; }
+.isn-total .isn-val.neg { color:#93c5fd; }
+.isn-total td { background:var(--hbg); font-weight:800; color:#f8fafc; }
+.isn-toggle-btn {
+  padding:3px 9px; font-size:10px; font-weight:700;
+  border:1px solid var(--border); border-radius:5px;
+  background:var(--panel); color:var(--muted);
+  cursor:pointer; transition:.15s;
+}
+.isn-toggle-btn.on { border-color:#22c55e; color:#15803d; background:rgba(34,197,94,.1); }
+
+/* ── 보유정보 입력 모달 ── */
+#holding-modal {
+  display:none; position:fixed; inset:0; z-index:99000;
+  background:rgba(0,0,0,.5); align-items:center; justify-content:center;
+}
+#holding-modal.open { display:flex; }
+#hm-inner {
+  background:var(--panel); border:1px solid var(--border);
+  border-radius:10px; width:300px;
+  box-shadow:0 20px 60px rgba(0,0,0,.4); padding:20px;
+}
+#hm-title { font-size:13px; font-weight:700; margin-bottom:14px; }
+.hm-row { margin-bottom:10px; }
+.hm-label { font-size:11px; color:var(--muted); margin-bottom:3px; }
+.hm-input {
+  width:100%; padding:6px 10px; font-size:13px; font-weight:700;
+  background:var(--ibg); border:1px solid var(--border);
+  border-radius:6px; color:var(--text); box-sizing:border-box;
+}
+.hm-input:focus { outline:none; border-color:#3b82f6; }
+.hm-btns { display:flex; gap:8px; margin-top:16px; }
+.hm-save { flex:1; padding:7px; background:#3b82f6; color:#fff; border:none; border-radius:6px; font-size:12px; font-weight:700; cursor:pointer; }
+.hm-clear { padding:7px 12px; background:var(--ibg); color:var(--muted); border:1px solid var(--border); border-radius:6px; font-size:12px; cursor:pointer; }
+.hm-close { float:right; background:none; border:none; cursor:pointer; color:var(--muted); font-size:14px; margin-top:-4px; }
+/* 카드 내 편집 버튼 */
+.wc-edit-btn {
+  position:absolute; top:6px; right:24px; z-index:5;
+  background:none; border:none; cursor:pointer;
+  font-size:11px; color:var(--muted); opacity:0;
+  transition:.15s; padding:2px 4px;
+}
+.wc-card:hover .wc-edit-btn { opacity:1; }
+.wc-edit-btn:hover { color:#3b82f6; }
+.wc-del-btn {
+  position:absolute; top:6px; right:4px; z-index:5;
+  background:none; border:none; cursor:pointer;
+  font-size:11px; color:var(--muted); opacity:0;
+  transition:.15s; padding:2px 4px; line-height:1;
+}
+.wc-card:hover .wc-del-btn { opacity:1; }
+.wc-del-btn:hover { color:#ef4444; }
+
+/* ── 최근가격 모달 ── */
+#recent-price-modal {
+  display:none; position:fixed; inset:0; z-index:99000;
+  background:rgba(0,0,0,.5); align-items:center; justify-content:center;
+}
+#recent-price-modal.open { display:flex; }
+#rp-inner {
+  background:var(--panel); border:1px solid var(--border);
+  border-radius:10px; width:540px; max-height:80vh;
+  display:flex; flex-direction:column;
+  box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+#rp-header {
+  display:flex; align-items:center; gap:8px;
+  padding:10px 14px; border-bottom:1px solid var(--border);
+  flex-shrink:0;
+}
+#rp-title { font-size:13px; font-weight:700; flex:1; }
+#rp-chart-btn {
+  padding:3px 10px; font-size:11px; font-weight:700; cursor:pointer;
+  background:#3b82f6; color:#fff; border:none; border-radius:5px;
+}
+#rp-close {
+  background:none; border:none; cursor:pointer;
+  color:var(--muted); font-size:14px; padding:2px 6px;
+}
+#rp-close:hover { color:#ef4444; }
+#rp-table-wrap { overflow-y:auto; flex:1; }
+#rp-table {
+  width:100%; border-collapse:collapse; font-size:12px;
+}
+#rp-table th {
+  position:sticky; top:0; background:var(--hbg);
+  padding:7px 12px; font-size:11px; font-weight:700;
+  color:var(--muted); text-align:right; border-bottom:1px solid var(--border);
+}
+#rp-table th:first-child { text-align:left; }
+#rp-table td {
+  padding:6px 12px; border-bottom:1px solid rgba(148,163,184,.08);
+  text-align:right; font-weight:600;
+}
+#rp-table td:first-child { text-align:left; color:var(--muted); font-weight:400; }
+#rp-table tr:hover td { background:var(--hover); }
+.rp-up   { color:#ef4444; }
+.rp-down { color:#3b82f6; }
+.rp-flat { color:var(--muted); }
+/* 미니 바 차트 */
+#rp-bar-wrap {
+  display:none; padding:12px 14px; border-top:1px solid var(--border);
+  flex-shrink:0;
+}
+#rp-bar-wrap.open { display:block; }
+#rp-bar-canvas { width:100%; height:120px; display:block; }
+
+/* ── 투자 스냅샷 ── */
+#isn-table {
+  border-collapse:collapse; font-size:10px;
+  border:1px solid var(--border); border-radius:5px;
+  overflow:hidden; background:var(--panel);
+}
+.isn-th {
+  background:var(--hbg); color:var(--muted);
+  padding:3px 8px; font-size:9px; font-weight:700;
+  text-align:right; border-bottom:1px solid var(--border);
+}
+.isn-th-cat { text-align:left; min-width:60px; }
+.isn-cat {
+  padding:3px 8px; font-size:10px; font-weight:700;
+  color:var(--text); border-top:1px solid var(--border);
+  white-space:nowrap;
+}
+.isn-val {
+  padding:3px 10px; text-align:right; font-weight:700;
+  font-size:10px; border-top:1px solid var(--border);
+  color:var(--text); white-space:nowrap; min-width:70px;
+}
+.isn-val.pos { color:#ef4444; }
+.isn-val.neg { color:#3b82f6; }
+.isn-val.muted { color:var(--muted); }
+.isn-total td { background:var(--hbg); font-weight:800; color:#f8fafc; }
+.isn-toggle-btn {
+  padding:3px 9px; font-size:10px; font-weight:700;
+  border:1px solid var(--border); border-radius:5px;
+  background:var(--panel); color:var(--muted);
+  cursor:pointer; transition:.15s;
+}
+.isn-toggle-btn.on { border-color:#22c55e; color:#15803d; background:rgba(34,197,94,.1); }
+
+/* ── 보유정보 입력 모달 ── */
+#holding-modal {
+  display:none; position:fixed; inset:0; z-index:99000;
+  background:rgba(0,0,0,.5); align-items:center; justify-content:center;
+}
+#holding-modal.open { display:flex; }
+#hm-inner {
+  background:var(--panel); border:1px solid var(--border);
+  border-radius:10px; width:300px;
+  box-shadow:0 20px 60px rgba(0,0,0,.4); padding:20px;
+}
+#hm-title { font-size:13px; font-weight:700; margin-bottom:14px; }
+.hm-row { margin-bottom:10px; }
+.hm-label { font-size:11px; color:var(--muted); margin-bottom:3px; }
+.hm-input {
+  width:100%; padding:6px 10px; font-size:13px; font-weight:700;
+  background:var(--ibg); border:1px solid var(--border);
+  border-radius:6px; color:var(--text); box-sizing:border-box;
+}
+.hm-input:focus { outline:none; border-color:#3b82f6; }
+.hm-btns { display:flex; gap:8px; margin-top:16px; }
+.hm-save { flex:1; padding:7px; background:#3b82f6; color:#fff; border:none; border-radius:6px; font-size:12px; font-weight:700; cursor:pointer; }
+.hm-clear { padding:7px 12px; background:var(--ibg); color:var(--muted); border:1px solid var(--border); border-radius:6px; font-size:12px; cursor:pointer; }
+.hm-close { float:right; background:none; border:none; cursor:pointer; color:var(--muted); font-size:14px; margin-top:-4px; }
+/* 카드 내 편집 버튼 */
+.wc-edit-btn {
+  position:absolute; top:6px; right:24px; z-index:5;
+  background:none; border:none; cursor:pointer;
+  font-size:11px; color:var(--muted); opacity:0;
+  transition:.15s; padding:2px 4px;
+}
+.wc-card:hover .wc-edit-btn { opacity:1; }
+.wc-edit-btn:hover { color:#3b82f6; }
+.wc-del-btn {
+  position:absolute; top:6px; right:4px; z-index:5;
+  background:none; border:none; cursor:pointer;
+  font-size:11px; color:var(--muted); opacity:0;
+  transition:.15s; padding:2px 4px; line-height:1;
+}
+.wc-card:hover .wc-del-btn { opacity:1; }
+.wc-del-btn:hover { color:#ef4444; }
+
+/* ── 최근가격 모달 ── */
+#recent-price-modal {
+  display:none; position:fixed; inset:0; z-index:99000;
+  background:rgba(0,0,0,.5); align-items:center; justify-content:center;
+}
+#rp-inner {
+  background:var(--panel); border:1px solid var(--border);
+  border-radius:10px; width:540px; max-height:80vh;
+  display:flex; flex-direction:column;
+  box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+#rp-header {
+  display:flex; align-items:center; gap:8px;
+  padding:10px 14px; border-bottom:1px solid var(--border);
+  flex-shrink:0;
+}
+#rp-title { font-size:13px; font-weight:700; flex:1; }
+#rp-chart-btn {
+  padding:3px 10px; font-size:11px; font-weight:700; cursor:pointer;
+  background:#3b82f6; color:#fff; border:none; border-radius:5px;
+}
+#rp-close {
+  background:none; border:none; cursor:pointer;
+  color:var(--muted); font-size:14px; padding:2px 6px;
+}
+#rp-close:hover { color:#ef4444; }
+#rp-table-wrap { overflow-y:auto; flex:1; }
+#rp-table { width:100%; border-collapse:collapse; font-size:12px; }
+#rp-table th {
+  position:sticky; top:0; background:var(--hbg);
+  padding:7px 12px; font-size:11px; font-weight:700;
+  color:var(--muted); text-align:right; border-bottom:1px solid var(--border);
+}
+#rp-table th:first-child { text-align:left; }
+#rp-table td {
+  padding:6px 12px; border-bottom:1px solid rgba(148,163,184,.08);
+  text-align:right; font-weight:600;
+}
+#rp-table td:first-child { text-align:left; color:var(--muted); font-weight:400; }
+#rp-table tr:hover td { background:var(--hover); }
+.rp-up   { color:#ef4444; }
+.rp-down { color:#3b82f6; }
+.rp-flat { color:var(--muted); }
+#rp-bar-wrap { display:none; padding:12px 14px; border-top:1px solid var(--border); flex-shrink:0; }
+#rp-bar-wrap.open { display:block; }
+#rp-bar-canvas { width:100%; height:120px; display:block; }
+
+/* ── 마우스 플로팅 툴팁 ── */
+.floating-tooltip {
+    position: absolute; display: none;
+    padding: 6px 10px; box-sizing: border-box;
+    font-size: 12px; color: var(--text);
+    background-color: var(--panel);
+    border: 1px solid var(--border); border-radius: 6px;
+    box-shadow: var(--cshadow); text-align: left;
+    z-index: 9999; pointer-events: none; white-space: nowrap;
+}
+
+/* ─── 우측 패널 전체 ─── */
+#right-panel {
+  width: calc(100vw / 7); flex-shrink:0; height:100%;
+  background:var(--panel); border-left:1px solid var(--border);
+  display:flex; flex-direction:column; overflow:hidden;
+  min-width:180px; max-width:320px; font-size:11px; font-family:inherit;
+}
+/* 검색 */
+.rp-search-wrap {
+  padding:6px; border-bottom:1px solid var(--border);
+  flex-shrink:0; position:relative; box-sizing:border-box;
+}
+.rp-input {
+  display:block; width:100%; padding:5px 8px; font-size:11px;
+  border:1px solid var(--border); border-radius:5px;
+  background:var(--ibg); color:var(--text); outline:none;
+  box-sizing:border-box; font-family:inherit;
+}
+.rp-input:focus { border-color:#3b82f6; }
+.rp-search-results {
+  position:absolute; left:6px; right:6px; top:calc(100% - 2px);
+  background:var(--panel); border:1px solid var(--border); border-radius:6px;
+  max-height:200px; overflow-y:auto; z-index:9999;
+  box-shadow:0 8px 20px rgba(0,0,0,.2);
+}
+.rp-add-btns { display:flex; gap:4px; margin-top:5px; }
+.rp-add-btn  { flex:1; font-size:11px; padding:3px 4px; font-family:inherit; }
+/* 섹션 헤더 */
+.rp-section-header {
+  padding:5px 8px; font-size:11px; font-weight:700; color:var(--muted);
+  border-bottom:1px solid var(--border); flex-shrink:0;
+  display:flex; align-items:center; justify-content:space-between;
+  font-family:inherit;
+}
+.rp-save-btn {
+  font-size:11px; padding:2px 7px; background:#3b82f6; color:#fff;
+  border:none; border-radius:3px; cursor:pointer; font-family:inherit;
+}
+/* 캘린더 바 */
+.rp-cal-bar {
+  display:flex; align-items:center; gap:3px; padding:4px 6px;
+  background:var(--hbg); border-bottom:1px solid var(--border); flex-shrink:0;
+}
+.rp-cal-select {
+  flex:1; font-size:11px; padding:2px 3px; border:1px solid var(--border);
+  border-radius:3px; background:var(--ibg); color:var(--text);
+  cursor:pointer; font-family:inherit;
+}
+.rp-cal-btn {
+  font-size:11px; padding:1px 5px; border:1px solid var(--border);
+  border-radius:3px; background:var(--panel); color:var(--text);
+  cursor:pointer; font-family:inherit;
+}
+.rp-cal-btn:hover { border-color:#3b82f6; color:#3b82f6; }
+/* 메모 textarea */
+.rp-memo-text {
+  flex:1; width:100%; padding:7px 8px; font-size:11px; line-height:1.5;
+  background:var(--ibg); color:var(--text); border:none; outline:none;
+  resize:none; box-sizing:border-box; font-family:inherit; overflow-y:auto;
+}
+/* AI 메시지 */
+.rp-ai-msgs {
+  flex:1; overflow-y:auto; padding:7px;
+  display:flex; flex-direction:column; gap:5px; min-height:0;
+}
+.rp-ai-msg {
+  font-size:11px; line-height:1.5; padding:6px 8px; border-radius:6px;
+  max-width:100%; word-break:break-word; font-family:inherit; white-space:pre-wrap;
+}
+.rp-ai-user { background:#3b82f6; color:#fff; align-self:flex-end; }
+<!-- .rp-ai-bot  { background:var(--hbg); color:#f8fafc; align-self:flex-start; } -->
+.rp-ai-bot  { background:#E0F2FE; color:black; align-self:flex-start; }
+
+/* AI 입력 영역 (단일 정의) */
+.rp-ai-input-wrap {
+  padding:6px 7px; border-top:1px solid var(--border);
+  flex-shrink:0; background:var(--panel);
+}
+.rp-ai-input {
+  width:100%; padding:7px 9px; font-size:11px; line-height:1.6;
+  border:1px solid var(--border); border-radius:8px;
+  background:var(--ibg); color:var(--text); outline:none;
+  resize:none; font-family:inherit; box-sizing:border-box;
+  height:72px; overflow-y:auto;
+  white-space:pre-wrap; word-break:break-word;
+}
+.rp-ai-input:focus { border-color:#3b82f6; }
+/* stock_chart_app.html <style> 하단에 추가 */
+.top-sector-container { padding: 10px 15px; background: var(--panel); border-bottom: 1px solid var(--border); }
+.sector-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+.sector-row:last-child { margin-bottom: 0; }
+
+/* 섹터 애니메이션 */
+@keyframes sectorIn {
+  from { opacity:0; transform: scale(0.7) translateY(-10px); }
+  to   { opacity:1; transform: scale(1)   translateY(0); }
+}
+@keyframes sectorOut {
+  from { opacity:1; transform: scale(1); max-width:200px; }
+  to   { opacity:0; transform: scale(0.7); max-width:0; padding:0; margin:0; }
+}
+.sector-card { animation: sectorIn .25s cubic-bezier(0.34,1.56,0.64,1); }
+
+.sector-add-btn {
+  height: 48px; padding: 0 16px;
+  border: 2px dashed var(--border); border-radius: 10px;
+  background: transparent; color: var(--muted);
+  font-size: 20px; cursor: pointer;
+  transition: all .2s;
+  flex-shrink: 0;  /* ← 추가 */
+}
+
+.sc-name { flex:1; font-size:11px; font-weight:700; }
+.sc-del  { 
+  opacity:0; font-size:11px; color:var(--muted);
+  transition: opacity .15s;
+  line-height:1;
+}
+.sector-card:hover .sc-del { opacity:1; }
+.sector-card { display:flex; align-items:center; gap:4px; }
+
+.sector-add-btn:hover { border-color: #8b5cf6; color: #8b5cf6; transform: scale(1.05); }
+/* 🌟 종목 박스와 동일한 3D 입체감 스타일 적용 */
+.sector-card {
+  background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+  padding: 12px; font-size: 12px; font-weight: 700; text-align: center;
+  cursor: pointer; position: relative; overflow: hidden;
+  color: var(--text);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.18s ease;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  flex-shrink: 0;
+  min-width: 80px;
+  max-width: 120px;
+}
+
+/* Hover 시 떠오르고 네온 글로우 효과 */
+.sector-card:hover { transform: translateY(-3px) scale(1.01); border-color: #3b82f6; box-shadow: 0 10px 26px rgba(59, 130, 246, .22), inset 0 1px 0 rgba(255, 255, 255, 0.2); }
+/* Active 시 눌리는 효과 */
+.sector-card:active { transform: translateY(1px) scale(0.99); box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1); }
+
+/* 빈 박스 스타일 (구분을 위해 흐리게) */
+.sector-card.custom.empty { color: var(--muted); border-style: dashed; }
+
+/* 상단 그라데이션 포인트 (종목 박스와 통일) */
+.sector-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #3b82f6, #8b5cf6); opacity: 0; transition: opacity .18s; }
+.sector-card:hover::after { opacity: 1; }
+/* ── 선택된 섹터 박스 (Active 상태) ── */
+.sector-card.active {
+  background: rgba(59, 130, 246, 0.1); /* 파란색 은은한 배경 */
+  border-color: #3b82f6;               /* 파란색 테두리 */
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1), 0 0 15px rgba(59, 130, 246, 0.3); /* 눌린 상태 + 네온 효과 */
+  transform: translateY(1px);          /* 살짝 눌린 위치 고정 */
+}
+.sector-card.active::after { opacity: 1; } /* 상단 그라데이션 항상 켜짐 */
+/* stock_chart_app.html <style> 하단에 추가 */
+
+/* 🌟 움직이고 크기 조절되는 고급 모달 스타일 */
+.ob-modal.resizable-draggable {
+    display: flex; /* 자바스크립트로 제어하므로 기본값 유지 */
+    flex-direction: column;
+    overflow: hidden; /* 크기 조절 시 자식 요소 잘라내기 */
+    resize: both; /* CSS 기본 크기 조절 활성화 */
+    min-width: 600px; /* 두 행을 위한 최소 너비 */
+    min-height: 400px; /* 최소 높이 */
+}
+
+/* 모달 드래그 핸들바 */
+.ob-modal-bar.drag-handle {
+    cursor: move; /* 이동 마우스 포인터 */
+    user-select: none; /* 텍스트 선택 방지 */
+}
+
+/* 🌟 섹터 편집기 전용 두 분할 UI 스타일 (이미지 기반) */
+.sector-dual-pane {
+    display: flex;
+    flex: 1; /* 남은 높이 모두 차지 */
+    gap: 15px;
+    padding: 15px;
+    background: var(--panel);
+    overflow: hidden; /* 스크롤은 각 패널 안에서 */
+}
+
+/* 좌우 패널 공통 */
+.sector-pane-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg);
+}
+
+/* 패널 제목 */
+.sector-pane-title {
+    padding: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+}
+
+/* 검색바 영역 */
+.sector-search-area {
+    padding: 8px;
+    border-bottom: 1px solid var(--border);
+}
+
+/* 실제 종목 리스트가 들어가는 곳 */
+.sector-stock-list {
+    flex: 1;
+    padding: 8px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* 중간 이동 버튼 영역 */
+.sector-move-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* 종목 아이템 스타일 */
+.sector-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--panel);
+    padding: 8px 12px;
+    border-radius: 6px;
+    border-left: 4px solid transparent; /* 국가별 테두리용 */
+    cursor: pointer;
+    transition: background .1s;
+    user-select: none;
+}
+.sector-item:hover { background: rgba(59, 130, 246, 0.05); }
+.sector-item.selected { background: rgba(59, 130, 246, 0.15); border-color: #3b82f6; }
+
+/* 종목 정보 텍스트 */
+.sector-item-info { display: flex; flex-direction: column; gap: 2px; }
+.sector-item-name { font-size: 12px; font-weight: 700; color: var(--text); }
+.sector-item-symbol { font-size: 10px; color: var(--muted); }
+
+/* 🌟 국가별 색상 테두리 적용 */
+.sector-item.kr-card { border-left-color: rgba(59,130,246,.7); }
+.sector-item.us-card { border-left-color: rgba(239,68,68,.7); }
+/* AI 분석 버튼 스타일 */
+.btn-ai-analyze {
+  background: #8b5cf6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 3px 10px; /* 패딩을 살짝 늘려 엑셀 버튼과 맞춤 */
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(139, 92, 246, 0.3);
+  vertical-align: middle; /* 다른 버튼들과 수평 맞춤 */
+}
+
+.btn-ai-analyze:hover {
+  background: #7c3aed;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(139, 92, 246, 0.4);
+}
+
+.btn-ai-analyze:active {
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<!-- 헤더 -->
+<header>
+  <div class="hlogo">📈 트레이딩 PRO+ <small>실시간 주식 분석</small></div>
+  <div class="hright">
+    <button class="btn-icon" id="btn-sound" onclick="toggleSound()" title="소리 알림">🔕</button>
+    <button class="btn-icon" id="btn-style" onclick="toggleCandleStyle()" title="캔들 스타일">🇰🇷</button>
+    <button class="btn-icon" id="btn-theme" onclick="toggleTheme()" title="테마 전환">🌙</button>
+  </div>
+</header>
+
+<!-- 메인 레이아웃 (팝업과 완전 독립) -->
+<div id="layout">
+
+  <!-- 사이드바 -->
+  <div id="sidebar">
+    <div id="sb-head">
+      <div class="srch-wrap">
+        <input id="search" placeholder="🔍 종목명 / 코드 검색" onkeyup="debounceSearch()">
+        <div id="results"></div>
+      </div>
+    </div>
+    <!-- 검색 후 종목 선택 시 표시되는 추가 버튼 -->
+    <div id="sb-add-btns" class="visible">
+      <button class="btn-primary" style="flex:1;font-size:11px;padding:4px 6px;" onclick="addMyStock()">＋ 내종목</button>
+      <button class="btn-secondary" style="flex:1;font-size:11px;padding:4px 6px;" onclick="addWatch()">＋ 관심종목</button>
+    </div>
+    <!-- 2컬럼 리스트 -->
+    <div id="watch-list">
+      <div class="wl-col" id="my-col">
+        <div class="wl-col-body" id="my-list"></div>
+      </div>
+      <div class="wl-col" id="watch-col">
+        <div class="wl-col-body" id="watch-col-list"></div>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- 대시보드 -->
+  <div id="main">
+    <div id="dashboard">
+      <!-- 뉴스 패널 -->
+      <div id="news-panel">
+        <div id="news-header">
+          <div id="news-header-left">
+            <span id="news-title">📰 시장 뉴스 &amp; 공시</span>
+            <span id="news-update"></span>
+          </div>
+          <button class="news-refresh-btn" onclick="fetchNews()">↺ 새로고침</button>
+        </div>
+        <div id="news-list"><div id="news-loading">뉴스 불러오는 중...</div></div>
+        <div id="news-resizer"></div>
+      </div>
+
+      <p class="sec-title" style="display:flex;align-items:center;justify-content:space-between;">
+        <span>📊 주요 지수 &amp; 환율</span>
+        <span id="idx-status" style="font-size:11px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:6px;">
+          <span id="idx-live-dot" style="width:7px;height:7px;border-radius:50%;background:#94a3b8;display:inline-block;"></span>
+          <span id="idx-update-txt">로딩중...</span>
+          <span id="idx-countdown" style="font-size:10px;opacity:.7;"></span>
+        </span>
+      </p>
+      <div id="idx-grid">
+        <div class="idx-card" data-sym="^KS11"    data-kr="1"><div class="idx-name">KOSPI</div><div class="idx-price idx-spin">···</div></div>
+        <div class="idx-card" data-sym="^KQ11"    data-kr="1"><div class="idx-name">KOSDAQ</div><div class="idx-price idx-spin">···</div></div>
+        <div class="idx-card" data-sym="^GSPC"    data-kr="0"><div class="idx-name">S&amp;P500</div><div class="idx-price idx-spin">···</div></div>
+        <div class="idx-card" data-sym="^IXIC"    data-kr="0"><div class="idx-name">NASDAQ</div><div class="idx-price idx-spin">···</div></div>
+        <div class="idx-card" data-sym="^DJI"     data-kr="0"><div class="idx-name">DOW</div><div class="idx-price idx-spin">···</div></div>
+        <div class="idx-card" data-sym="USDKRW=X" data-kr="0"><div class="idx-name">USD/KRW</div><div class="idx-price idx-spin">···</div></div>
+        <div class="idx-card" data-sym="CL=F"     data-kr="0"><div class="idx-name">WTI유가</div><div class="idx-price idx-spin">···</div></div>
+        <div class="idx-card" data-sym="^TNX"     data-kr="0"><div class="idx-name">금리(10Y)</div><div class="idx-price idx-spin">···</div></div>
+        <div class="idx-card" data-sym="^VIX"     data-kr="0"><div class="idx-name">공포지수</div><div class="idx-price idx-spin">···</div></div>
+      </div>
+
+      <!-- 버튼 한 줄 -->
+      <div style="display:flex;align-items:center;gap:6px;flex-wrap:nowrap;margin-bottom:6px;">
+        <span class="sec-title" style="white-space:nowrap;margin:0;">⭐ 관심종목 &amp; 내종목</span>
+        <button class="isn-toggle-btn" id="isn-toggle" onclick="toggleSnapshot()">💰 ON/OFF</button>
+<<<<<<< HEAD
+=======
+		<button class="isn-toggle-btn" onclick="openHistoryModal()">📈 히스토리</button>
+>>>>>>> 20a1089 (주식모니터링 시스템 Vw)
+        <div class="dash-filter-wrap">
+          <button class="dash-filter-btn" onclick="toggleFilterMenu(event)">
+            <span id="filter-label">전체보기</span> ▾
+          </button>
+          <div class="dash-filter-menu" id="dash-filter-menu">
+            <div class="dfm-item active" onclick="setFilter('all',this)">📋 전체보기<span class="dfm-check">✓</span></div>
+            <div class="dfm-item" onclick="setFilter('my',this)">★ 내종목<span class="dfm-check">✓</span></div>
+            <div class="dfm-item" onclick="setFilter('watch',this)">⭐ 관심종목<span class="dfm-check">✓</span></div>
+            <div class="dfm-item" onclick="setFilter('kr',this)">🇰🇷 한국주식<span class="dfm-check">✓</span></div>
+            <div class="dfm-item" onclick="setFilter('us',this)">🇺🇸 미국주식<span class="dfm-check">✓</span></div>
+          </div>
+        </div>
+<<<<<<< HEAD
+=======
+<div id="sort-btn-group" style="display:flex;gap:4px;">
+  <button class="sort-btn" id="sort-btn-invest" onclick="toggleSort('invest')">💰 금액</button>
+  <button class="sort-btn" id="sort-btn-eval"   onclick="toggleSort('eval')">📈 평가금액</button>
+  <button class="sort-btn" id="sort-btn-name"   onclick="toggleSort('name')">🔤 이름</button>
+  <button class="sort-btn" id="sort-btn-change" onclick="toggleSort('change')">📊 등락률</button>
+</div>
+>>>>>>> 20a1089 (주식모니터링 시스템 Vw)
+        <button class="cross-toggle" id="cross-toggle-btn" onclick="toggleCrossAlert()">📡 크로스 알림 OFF</button>
+        <button class="sector-view-btn" id="sector-view-btn" onclick="toggleSectorView()">🗂 섹터 뷰</button>
+      </div>
+      <!-- 투자 스냅샷 (버튼 아래) -->
+      <div style="margin:0 0 6px;">
+        <span style="display:flex;align-items:center;gap:6px;">
+ <div style="margin:0 0 6px;">
+  <div id="invest-snapshot" style="display: flex; flex-direction: row; align-items: center; gap: 20px; flex-wrap: wrap;">
+    
+    <table id="isn-table" style="margin: 0;"> <thead>
+        <tr>
+          <th class="isn-th isn-th-cat"></th>
+          <th class="isn-th">원금</th>
+          <th class="isn-th">현재금액</th>
+          <th class="isn-th">손익</th>
+          <th class="isn-th">손익률</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="isn-cat">🇰🇷</td>
+          <td class="isn-val" id="isn-kr-buy">-</td>
+          <td class="isn-val" id="isn-kr-eval">-</td>
+          <td class="isn-val" id="isn-kr-profit">-</td>
+          <td class="isn-val" id="isn-kr-rate">-</td>
+        </tr>
+        <tr>
+          <td class="isn-cat" id="isn-us-flag" onclick="toggleUsUnit()" style="cursor:pointer;" title="달러($) 표시 중 — 클릭시 원화">🇺🇸</td>
+          <td class="isn-val" id="isn-us-buy">-</td>
+          <td class="isn-val" id="isn-us-eval">-</td>
+          <td class="isn-val" id="isn-us-profit">-</td>
+          <td class="isn-val" id="isn-us-rate">-</td>
+        </tr>
+        <tr class="isn-total">
+          <td class="isn-cat">합계</td>
+          <td class="isn-val" id="isn-tot-buy">-</td>
+          <td class="isn-val" id="isn-tot-eval">-</td>
+          <td class="isn-val" id="isn-tot-profit">-</td>
+          <td class="isn-val" id="isn-tot-rate">-</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="top-sector-container" style="flex: 1; min-width: 0px; padding: 0; border: none; background: transparent;">
+		<div class="sector-row" id="sector-card-row">
+		<!-- 섹터 카드들이 JS로 동적 생성됩니다 -->
+		<button class="sector-add-btn" onclick="sectorAddNew()" title="섹터 추가">＋</button>
+		</div>	  
+    </div>
+
+  </div> </div>```
+
+<!-- ### 💡 수정된 핵심 원리 -->
+<!-- 1. **`display: flex; flex-direction: row;`**: 부모인 `invest-snapshot`에게 이 두 가지 속성을 주면, 그 안에 있는 자식들(테이블과 섹터 컨테이너)이 블록 쌓기처럼 아래로 내려가지 않고 **왼쪽부터 오른쪽으로 나란히** 서게 됩니다. -->
+<!-- 2. **`align-items: center;`**: 테이블과 섹터 박스들의 세로 높이(수직 중앙)를 예쁘게 맞춰줍니다. -->
+<!-- 3. **`flex: 1;`**: 섹터 컨테이너가 오른쪽의 남은 화면 공간을 꽉 채우도록 쭉 늘려줍니다. 화면이 작아지면 자동으로 크기를 조절합니다. -->
+<!-- 4. **`gap: 20px;`**: 테이블과 섹터 컨테이너 사이의 간격을 띄워줍니다. 이 숫자를 조절해서 원하시는 간격을 맞추실 수 있습니다. -->
+
+<!-- 코드를 교체하시고 확인해 보세요! 가로로 예쁘게 잘 배치되었나요? 😊 (만약 공간이 좁아서 섹터 박스가 찌그러진다면 브라우저 창 크기를 키워보시거나, CSS에서 `.sector-card`의 `padding`이나 글자 크기를 살짝 줄여주시면 완벽합니다!) -->
+        </span>
+      </div><!-- /투자스냅샷 -->
+      <!-- 우클릭 컨텍스트 메뉴 -->
+      <div id="ctx-menu">
+        <div class="ctx-item" id="ctx-move-my"    onclick="ctxMoveCard('my')"    style="display:none">★ 내종목으로 이동</div>
+        <div class="ctx-item" id="ctx-move-watch" onclick="ctxMoveCard('watch')" style="display:none">⭐ 관심종목으로 이동</div>
+        <div class="ctx-divider" id="ctx-move-divider" style="display:none"></div>
+        <div class="ctx-item" onclick="setFilter('all'); closeCtx()">📋 전체보기</div>
+        <div class="ctx-divider"></div>
+        <div class="ctx-item" onclick="setFilter('my'); closeCtx()">★ 내종목만</div>
+        <div class="ctx-item" onclick="setFilter('watch'); closeCtx()">⭐ 관심종목만</div>
+        <div class="ctx-divider"></div>
+        <div class="ctx-item" onclick="setFilter('kr'); closeCtx()">🇰🇷 한국주식만</div>
+        <div class="ctx-item" onclick="setFilter('us'); closeCtx()">🇺🇸 미국주식만</div>
+        <div class="ctx-divider"></div>
+        <div class="ctx-item" id="ctx-sector-item" onclick="ctxSetSector()" style="display:none">📁 섹터 지정</div>
+      </div>
+      <div id="watch-cards">
+        <div class="wc-empty"><p>👈 종목을 검색하고 추가하세요.</p></div>
+      </div>
+    </div><!-- /dashboard -->
+  </div><!-- /main -->
+</div><!-- /layout -->
+
+<!-- 보유정보 입력 모달 -->
+<div id="holding-modal">
+  <div id="hm-inner">
+    <div id="hm-title">✏️ 보유정보 입력 <button class="hm-close" onclick="closeHoldingModal()">✕</button></div>
+    <div class="hm-row">
+      <div class="hm-label">매수 평균가 (원)</div>
+      <input class="hm-input" id="hm-avgprice" type="number" placeholder="예: 83500" min="0">
+    </div>
+<<<<<<< HEAD
+    <div class="hm-row">
+      <div class="hm-label">보유 수량 (주)</div>
+      <input class="hm-input" id="hm-qty" type="number" placeholder="예: 100" min="0">
+    </div>
+=======
+	<div class="hm-row">
+      <div class="hm-label">보유 수량 (주)</div>
+      <input class="hm-input" id="hm-qty" type="number" placeholder="예: 100" min="0">
+    </div>
+    <hr style="border-color:var(--border); margin:8px 0;">
+    <div class="hm-row">
+      <div class="hm-label">🎯 목표가</div>
+      <input class="hm-input" id="hm-target" type="number" placeholder="예: 100000" min="0">
+    </div>
+    <div class="hm-row">
+      <div class="hm-label">🛑 손절가</div>
+      <input class="hm-input" id="hm-stop" type="number" placeholder="예: 70000" min="0">
+    </div>
+>>>>>>> 20a1089 (주식모니터링 시스템 Vw)
+    <div class="hm-btns">
+      <button class="hm-save" onclick="saveHolding()">💾 저장</button>
+      <button class="hm-clear" onclick="clearHolding()">🗑 삭제</button>
+    </div>
+  </div>
+</div>
+
+<!-- 섹터 지정 모달 -->
+<div id="sector-modal">
+  <div id="sector-modal-inner">
+    <div id="sector-modal-title">📁 섹터 지정</div>
+    <div class="sm-label">섹터 선택 또는 직접 입력:</div>
+    <input id="sector-modal-input" type="text" placeholder="섹터명 입력 (예: 반도체, IT/기술 ...)" />
+    <div id="sector-modal-btns"></div>
+    <div class="sm-btns">
+      <button class="sm-save" onclick="saveSectorModal()">💾 저장</button>
+      <button class="sm-clear" onclick="clearSectorAssign()">🗑 해제</button>
+    </div>
+  </div>
+</div>
+<!-- 삭제 확인 모달 -->
+<div id="confirm-modal">
+  <div id="confirm-inner">
+    <div id="confirm-icon">🗑</div>
+    <div id="confirm-msg">삭제하시겠습니까?</div>
+    <div class="confirm-btns">
+      <button class="confirm-ok"     id="confirm-ok-btn" onclick="confirmOk()">삭제</button>
+      <button class="confirm-cancel"                      onclick="confirmCancel()">취소</button>
+    </div>
+  </div>
+</div>
+
+<div id="recent-price-modal">
+  <div id="rp-inner">
+    <div id="rp-header">
+      <span id="rp-title">최근 가격</span>
+      <button id="rp-chart-btn" onclick="toggleRpChart()">📊 차트 보기</button>
+      <button class="export-btn" onclick="exportRecentPrices()">📥 엑셀</button>
+      <button id="rp-close" onclick="closeRecentPrices()">✕</button>
+    </div>
+    <div id="rp-bar-wrap">
+      <canvas id="rp-bar-canvas"></canvas>
+    </div>
+    <div id="rp-table-wrap">
+      <table id="rp-table">
+        <thead>
+          <tr>
+            <th>날짜</th>
+            <th>종가</th>
+            <th>전일대비</th>
+            <th>등락률</th>
+            <th>거래량</th>
+          </tr>
+        </thead>
+        <tbody id="rp-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- 차트 분리 모달 백드롭 -->
+<div class="chart-modal-backdrop" id="chart-modal-backdrop"></div>
+
+<!-- 하단 태스크바 (최소화된 창 표시) -->
+<!-- AI 챗봇 제거됨 (우측 패널로 통합) -->
+
+
+<div id="taskbar">
+  <span id="tb-empty" style="font-size:12px;color:var(--muted);">열린 차트가 없습니다</span>
+</div>
+
+<div id="toast-cont"></div>
+
+
+<!-- 호가창 + 체결 글로벌 모달 -->
+<div class="ob-modal-backdrop" id="ob-global-backdrop"></div>
+<div class="ob-modal" id="ob-global-modal">
+  <div style="display:flex;flex-direction:column;flex:1;min-height:0;">
+    <div class="ob-modal-bar" id="ob-modal-bar">
+      <span class="ob-modal-title" id="ob-modal-title">📊 호가창</span>
+      <button class="ob-modal-close" onclick="closeObModal()">✕</button>
+    </div>
+    <div style="display:flex;flex:1;min-height:0;overflow:hidden;">
+      <!-- 호가창 컬럼 -->
+      <div class="ob-col" id="ob-modal-ob-col">
+        <div class="ob-col-header"><span>매도호가</span><span>가격</span><span>매수호가</span></div>
+        <div class="ob-body" id="ob-body-modal"></div>
+        <div class="ob-total">
+          <span class="ob-total-ask" id="ob-ask-total-modal">매도 -</span>
+          <span class="ob-total-bid" id="ob-bid-total-modal">매수 -</span>
+        </div>
+      </div>
+      <!-- 체결 컬럼 -->
+      <div class="tick-col" id="ob-modal-tick-col">
+        <div class="ob-col-header"><span>⚡ 실시간 체결</span></div>
+        <div class="tick-body" id="tick-body-modal"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="sector-edit-backdrop" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9998;" onclick="closeSectorEdit()"></div>
+
+<div id="sector-edit-modal" style="display:none; width:800px; height:600px; background:var(--panel, #ffffff); border:1px solid var(--border, #cbd5e1); box-shadow:0 10px 30px rgba(0,0,0,0.3); position:fixed; top:10%; left:50%; transform:translateX(-50%); z-index:9999; flex-direction:column; border-radius:12px; overflow:hidden; resize:both;">
+  
+  <div id="sector-drag-handle" style="display:flex; align-items:center; padding:10px 15px; background:#1e1e1e; border-bottom:1px solid #333; cursor:move; user-select:none;">
+    
+    <button onclick="closeSectorEdit()" 
+      style="display:block; width:12px; height:12px; background:#ff5f57; border:none; border-radius:50%; margin-right:15px; cursor:pointer; padding:0; box-shadow:0 1px 1px rgba(0,0,0,0.2); transition:background 0.1s;"
+      onmouseover="this.style.background='#ff7c77'" onmouseout="this.style.background='#ff5f57'">
+    </button>
+    
+    <span style="font-weight:bold; font-size:13px; color:#ffffff; letter-spacing:0.5px; margin-left:auto; margin-right:auto;">
+      🛠️ 섹터 편집 PRO+
+    </span>
+
+    <div style="width:12px; margin-left:15px;"></div>
+  </div>
+  
+  <div style="display:flex; flex:1; gap:15px; padding:15px; overflow:hidden; background:var(--panel, #ffffff);">
+    
+    <div style="flex:1; display:flex; flex-direction:column; border:1px solid var(--border, #cbd5e1); border-radius:8px; background:var(--bg, #f8fafc);">
+      <div style="padding:10px; border-bottom:1px solid var(--border, #cbd5e1); display:flex; align-items:center; justify-content:center; gap:5px;">
+        📦 
+        <input type="text" id="sector-edit-name" style="width:130px; font-size:12px; font-weight:bold; text-align:center; padding:4px; border:1px solid var(--border, #cbd5e1); border-radius:4px; background:var(--panel, #fff); color:var(--text, #333);">
+        (<span id="sector-edit-count" style="color:#3b82f6; font-weight:bold;">0</span>)
+      </div>
+      <div id="sector-target-list" style="flex:1; padding:8px; overflow-y:auto; display:flex; flex-direction:column; gap:6px;"></div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; justify-content:center; gap:10px;">
+      <button onclick="moveStockToSector()" style="padding:10px 15px; cursor:pointer; background:#3b82f6; color:#fff; border:none; border-radius:6px; font-weight:bold; box-shadow:0 2px 4px rgba(0,0,0,0.1);">&lt;&lt;</button>
+      <button onclick="moveStockFromSector()" style="padding:10px 15px; cursor:pointer; background:#ef4444; color:#fff; border:none; border-radius:6px; font-weight:bold; box-shadow:0 2px 4px rgba(0,0,0,0.1);">&gt;&gt;</button>
+    </div>
+
+    <div style="flex:1; display:flex; flex-direction:column; border:1px solid var(--border, #cbd5e1); border-radius:8px; background:var(--bg, #f8fafc);">
+      <div style="padding:8px; border-bottom:1px solid var(--border, #cbd5e1);">
+        <input type="text" id="source-stock-search" style="width:100%; box-sizing:border-box; padding:6px; border:1px solid var(--border, #cbd5e1); border-radius:4px; background:var(--panel, #fff); color:var(--text, #333);" placeholder="🔍 이름 또는 코드로 검색">
+      </div>
+      <div id="sector-source-list" style="flex:1; padding:8px; overflow-y:auto; display:flex; flex-direction:column; gap:6px;"></div>
+    </div>
+
+  </div> <div style="padding:12px 15px; border-top:1px solid var(--border, #cbd5e1); text-align:right; background:var(--bg, #f1f5f9);">
+    <button onclick="saveSectorEdit()" style="padding:10px 20px; font-size:14px; background:#3b82f6; color:#fff; border:none; border-radius:6px; cursor:pointer; font-weight:bold; box-shadow:0 2px 4px rgba(0,0,0,0.1);">최종 저장하기</button>
+  </div>
+
+</div>
+<<<<<<< HEAD
+=======
+<!-- 포트폴리오 히스토리 모달 -->
+<div id="history-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:9999; align-items:center; justify-content:center;">
+  <div id="history-inner" style="background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:20px; width:760px; max-width:95vw;">
+    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
+      <span style="font-size:15px; font-weight:bold;">📈 포트폴리오 히스토리</span>
+      <button onclick="closeHistoryModal()" style="background:none; border:none; color:var(--text); font-size:18px; cursor:pointer;">✕</button>
+    </div>
+    <!-- 기간 필터 버튼 -->
+    <div style="display:flex; gap:6px; margin-bottom:12px;">
+      <button class="sort-btn active" id="hist-btn-1w"  onclick="setHistoryRange('1w',this)">1주</button>
+      <button class="sort-btn"        id="hist-btn-1m"  onclick="setHistoryRange('1m',this)">1개월</button>
+      <button class="sort-btn"        id="hist-btn-3m"  onclick="setHistoryRange('3m',this)">3개월</button>
+      <button class="sort-btn"        id="hist-btn-all" onclick="setHistoryRange('all',this)">전체</button>
+    </div>
+    <!-- 요약 정보 -->
+    <div id="history-summary" style="display:flex; gap:16px; margin-bottom:12px; font-size:13px;"></div>
+    <!-- 차트 -->
+    <div id="history-chart" style="width:100%; height:300px;"></div>
+    <!-- 데이터 없을 때 -->
+    <div id="history-empty" style="display:none; text-align:center; color:var(--muted); padding:60px 0; font-size:13px;">
+      📭 아직 히스토리 데이터가 없습니다.<br>매일 자동으로 스냅샷이 저장됩니다.
+    </div>
+  </div>
+</div>
+>>>>>>> 20a1089 (주식모니터링 시스템 Vw)
+<!-- 섹터 모달 편집 기능 제미나이랑 같이 추가 여기까지-->
+<script src="forecast.js"></script>
+<script src="chart.js"></script>
+<script src="panel.js"></script>
+</body>
+</html>
