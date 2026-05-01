@@ -1,104 +1,24 @@
 {
   "myList": [
     {
+      "market": "KOSPI",
+      "name": "삼성전자",
+      "symbol": "005930"
+    },
+    {
+      "market": "KOSPI",
+      "name": "SK하이닉스",
+      "symbol": "000660"
+    },
+    {
       "market": "ETF",
       "name": "ACE KRX금현물",
       "symbol": "411060"
     },
     {
-      "market": "코스피",
-      "name": "삼성전자",
-      "symbol": "005930"
-    },
-    {
-      "market": "코스피",
+      "market": "KOSPI",
       "name": "현대자동차",
       "symbol": "005380"
-    },
-    {
-      "market": "코스피",
-      "name": "SK하이닉스",
-      "symbol": "000660"
-    },
-    {
-      "market": "코스닥",
-      "name": "한국정보통신",
-      "symbol": "025770"
-    },
-    {
-      "market": "코스닥",
-      "name": "KH바텍",
-      "symbol": "060720"
-    },
-    {
-      "market": "코스피",
-      "name": "LG에너지솔루션",
-      "symbol": "373220"
-    },
-    {
-      "market": "S&P500",
-      "name": "Sandisk",
-      "symbol": "SNDK"
-    },
-    {
-      "market": "S&P500",
-      "name": "Alphabet Inc. (Class A)",
-      "symbol": "GOOGL"
-    },
-    {
-      "market": "NASDAQ",
-      "name": "Invesco QQQ Trust",
-      "symbol": "QQQ"
-    },
-    {
-      "market": "NASDAQ",
-      "name": "Defiance Quantum ETF",
-      "symbol": "QTUM"
-    },
-    {
-      "market": "S&P500",
-      "name": "Apple Inc.",
-      "symbol": "AAPL"
-    },
-    {
-      "market": "S&P500",
-      "name": "Meta Platforms",
-      "symbol": "META"
-    },
-    {
-      "market": "S&P500",
-      "name": "Advanced Micro Devices",
-      "symbol": "AMD"
-    },
-    {
-      "market": "S&P500",
-      "name": "Amazon",
-      "symbol": "AMZN"
-    },
-    {
-      "market": "코스피",
-      "name": "한미반도체",
-      "symbol": "042700"
-    },
-    {
-      "market": "코스피",
-      "name": "포스코DX",
-      "symbol": "022100"
-    },
-    {
-      "market": "코스피",
-      "name": "한화에어로스페이스",
-      "symbol": "012450"
-    },
-    {
-      "market": "Nyse",
-      "name": "IonQ, Inc. Common Stock",
-      "symbol": "IONQ"
-    },
-    {
-      "market": "Nyse",
-      "name": "Reddit, Inc. Class A Common Stock",
-      "symbol": "RDDT"
     },
     {
       "market": "ETF",
@@ -106,280 +26,111 @@
       "symbol": "122630"
     },
     {
-      "market": "Nyse",
-      "name": "Beta Technologies, Inc. Class A Common Stock",
-      "symbol": "BETA"
+      "market": "KOSPI",
+      "name": "LG에너지솔루션",
+      "symbol": "373220"
     },
     {
-      "market": "코스닥",
+      "market": "KOSPI",
+      "name": "한국정보통신",
+      "symbol": "025770"
+    },
+    {
+      "market": "KOSPI",
+      "name": "한화에어로스페이스",
+      "symbol": "012450"
+    },
+    {
+      "market": "KOSPI",
+      "name": "실리콘투",
+      "symbol": "257720"
+    },
+    {
+      "market": "KOSPI",
       "name": "NHN KCP",
       "symbol": "060250"
     },
     {
-<<<<<<< HEAD
-      "market": "ETF",
-      "name": "KODEX 은선물(H)",
-      "symbol": "144600"
-=======
-      "market": "코스피",
+      "market": "KOSPI",
       "name": "GS글로벌",
       "symbol": "001250"
     },
     {
-      "market": "코스닥",
+      "market": "KOSPI",
+      "name": "KH바텍",
+      "symbol": "060720"
+    },
+    {
+      "market": "KOSPI",
       "name": "삼지전자",
       "symbol": "037460"
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
+    },
+    {
+      "market": "KOSPI",
+      "name": "포스코DX",
+      "symbol": "022100"
+    },
+    {
+      "market": "KOSPI",
+      "name": "엘에스일렉트릭",
+      "symbol": "010120"
+    },
+    {
+      "name": "Sandisk",
+      "symbol": "SNDK",
+      "market": "S&P500"
+    },
+    {
+      "name": "Alphabet Inc. (Class A)",
+      "symbol": "GOOGL",
+      "market": "S&P500"
+    },
+    {
+      "name": "Invesco QQQ Trust",
+      "symbol": "QQQ",
+      "market": "S&P500"
+    },
+    {
+      "name": "Advanced Micro Devices",
+      "symbol": "AMD",
+      "market": "S&P500"
+    },
+    {
+      "name": "Defiance Quantum ETF",
+      "symbol": "QTUM",
+      "market": "S&P500"
+    },
+    {
+      "name": "Apple Inc.",
+      "symbol": "AAPL",
+      "market": "S&P500"
+    },
+    {
+      "name": "Amazon",
+      "symbol": "AMZN",
+      "market": "S&P500"
+    },
+    {
+      "name": "Beta Technologies, Inc. Class A Common Stock",
+      "symbol": "BETA",
+      "market": "NYSE"
+    },
+    {
+      "name": "Meta Platforms",
+      "symbol": "META",
+      "market": "S&P500"
+    },
+    {
+      "name": "IonQ, Inc. Common Stock",
+      "symbol": "IONQ",
+      "market": "NYSE"
+    },
+    {
+      "name": "Reddit, Inc. Class A Common Stock",
+      "symbol": "RDDT",
+      "market": "NYSE"
     }
   ],
-  "watchList": [
-    {
-      "market": "코스닥",
-      "name": "피엔티",
-      "symbol": "137400"
-    },
-    {
-      "market": "코스닥",
-      "name": "파인엠텍",
-      "symbol": "441270"
-    },
-    {
-<<<<<<< HEAD
-      "market": "코스피",
-      "name": "GS글로벌",
-      "symbol": "001250"
-    },
-    {
-=======
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
-      "market": "코스닥",
-      "name": "세경하이테크",
-      "symbol": "148150"
-    },
-    {
-      "market": "코스피",
-      "name": "삼양식품",
-      "symbol": "003230"
-    },
-    {
-      "market": "코스닥",
-      "name": "주성엔지니어링",
-      "symbol": "036930"
-    },
-    {
-      "market": "S&P500",
-      "name": "PTC Inc.",
-      "symbol": "PTC"
-    },
-    {
-      "market": "코스닥",
-      "name": "HPSP",
-      "symbol": "403870"
-    },
-    {
-      "market": "코스피",
-      "name": "HD한국조선해양",
-      "symbol": "009540"
-    },
-    {
-      "market": "코스피",
-      "name": "삼성중공업",
-      "symbol": "010140"
-    },
-    {
-      "market": "코스피",
-      "name": "메리츠금융지주",
-      "symbol": "138040"
-    },
-    {
-      "market": "KOSPI",
-      "name": "HD현대중공업",
-      "symbol": "329180"
-    },
-    {
-      "market": "S&P500",
-      "name": "SPDR Gold MiniShares",
-      "symbol": "GLDM"
-    },
-    {
-      "market": "KOSPI",
-      "name": "현대건설",
-      "symbol": "000720"
-    },
-    {
-      "market": "KOSPI",
-      "name": "삼성물산",
-      "symbol": "028260"
-    },
-    {
-      "market": "KOSPI",
-      "name": "진에어",
-      "symbol": "272450"
-    },
-    {
-      "market": "KOSPI",
-      "name": "대한항공",
-      "symbol": "003490"
-    },
-    {
-      "market": "KOSPI",
-      "name": "하나투어",
-      "symbol": "039130"
-    },
-    {
-      "market": "ETN",
-      "name": "삼성 레버리지 코스피200 선물 ETN",
-      "symbol": "530104"
-<<<<<<< HEAD
-    },
-    {
-      "market": "코스닥",
-      "name": "삼지전자",
-      "symbol": "037460"
-=======
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
-    }
-  ],
-  "holdings": {
-    "122630": {
-      "avg_price": 74503,
-<<<<<<< HEAD
-      "qty": 265
-    },
-    "144600": {
-      "avg_price": 14055,
-      "qty": 396
-    },
-    "373220": {
-      "avg_price": 375500,
-      "qty": 37
-    },
-    "411060": {
-      "avg_price": 23320,
-      "qty": 6800
-    },
-    "005930": {
-      "avg_price": 183339,
-      "qty": 355
-    },
-    "005380": {
-      "avg_price": 528811,
-      "qty": 73
-    },
-    "000660": {
-      "avg_price": 906576,
-      "qty": 47
-=======
-      "qty": 260
-    },
-    "373220": {
-      "avg_price": 375537,
-      "qty": 40
-    },
-    "411060": {
-      "avg_price": 23535,
-      "qty": 5400
-    },
-    "005930": {
-      "avg_price": 188121,
-      "qty": 460
-    },
-    "005380": {
-      "avg_price": 528437,
-      "qty": 80
-    },
-    "000660": {
-      "avg_price": 912961,
-      "qty": 50
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
-    },
-    "025770": {
-      "avg_price": 7710,
-      "qty": 1500
-    },
-    "060720": {
-      "avg_price": 15252,
-<<<<<<< HEAD
-      "qty": 511
-=======
-      "qty": 500
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
-    },
-    "SNDK": {
-      "avg_price": 410.03,
-      "qty": 70
-    },
-    "GOOGL": {
-      "avg_price": 227.62,
-      "qty": 140
-    },
-    "QQQ": {
-      "avg_price": 472.94,
-      "qty": 30
-    },
-    "QTUM": {
-      "avg_price": 87.82,
-      "qty": 100
-    },
-    "AAPL": {
-      "avg_price": 245.09,
-      "qty": 36
-    },
-    "META": {
-      "avg_price": 667.98,
-      "qty": 15
-    },
-    "AMD": {
-      "avg_price": 216.06,
-      "qty": 45
-    },
-    "AMZN": {
-      "avg_price": 211.05,
-      "qty": 31
-    },
-    "042700": {
-      "avg_price": 326461,
-      "qty": 26
-    },
-    "022100": {
-      "avg_price": 49138,
-      "qty": 44
-    },
-    "012450": {
-<<<<<<< HEAD
-      "avg_price": 942000,
-      "qty": 7
-=======
-      "avg_price": 1337800,
-      "qty": 10
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
-    },
-    "IONQ": {
-      "avg_price": 57.87,
-      "qty": 100
-    },
-    "RDDT": {
-      "avg_price": 246.98,
-      "qty": 20
-    },
-    "BETA": {
-      "avg_price": 23.89,
-      "qty": 563
-    },
-    "060250": {
-      "avg_price": 18320,
-      "qty": 500
-<<<<<<< HEAD
-=======
-    },
-    "001250": {
-      "avg_price": 2590,
-      "qty": 1901
-    },
-    "037460": {
-      "avg_price": 22951,
-      "qty": 101
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
-    }
-  }
+  "watchList": [],
+  "holdings": {}
 }
