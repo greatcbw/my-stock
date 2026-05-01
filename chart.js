@@ -556,8 +556,8 @@ function loadWatch() {
   const allItems = order.map(s => allMap[s]).filter(Boolean);
   const sortedItems = getSortedItems(allItems); // ← 정렬 적용
 
-if (!sortedItems.length) {
-    wc.innerHTML = '<div class="wc-empty">...';
+  if (!sortedItems.length) {
+    wc.innerHTML = '<div class="wc-empty"><p>👈 왼쪽에서 종목을 검색하고 추가하세요.<br>카드를 클릭하면 차트 팝업이 열립니다.</p></div>';
     return;
   }
   wc.innerHTML = '';
@@ -679,20 +679,19 @@ async function loadPortfolio() {
 
     let restored = false;
 
-    // 내종목 복원
+    // localStorage에 직접 저장 (saveMyList/saveList는 savePortfolio를 재호출하므로 제외)
     if (data.myList && data.myList.length) {
-      saveMyList(data.myList);
+      localStorage.setItem('myStockPro', JSON.stringify(data.myList));
       restored = true;
     }
-    // 관심종목 복원
     if (data.watchList && data.watchList.length) {
-      saveList(data.watchList);
+      localStorage.setItem('watchPro', JSON.stringify(data.watchList));
       restored = true;
     }
     // 보유정보 복원
     if (data.holdings) {
       Object.entries(data.holdings).forEach(([symbol, h]) => {
-        setHolding(symbol, h.avg_price, h.qty);
+        localStorage.setItem(`holding_${symbol}`, JSON.stringify({ avg_price: h.avg_price, qty: h.qty }));
       });
     }
     return restored;
