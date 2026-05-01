@@ -117,10 +117,7 @@ const REFRESH_SEC = 30;
 let cdTimer = null, rfTimer = null, lastPrices = {}, cdRemain = REFRESH_SEC;
 let _wcPriceTimer = null;
 let currentFilter = localStorage.getItem('dashFilter') || 'all';
-<<<<<<< HEAD
-=======
 let currentSort = localStorage.getItem('dashSort') || 'manual';
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
 const FILTER_LABELS = {
   all:'전체보기', my:'★ 내종목', watch:'⭐ 관심종목', kr:'🇰🇷 한국주식', us:'🇺🇸 미국주식'
 };
@@ -376,8 +373,6 @@ function syncDashOrder() {
   return order;
 }
 
-<<<<<<< HEAD
-=======
 
 /* ── 정렬 상태 ── */
 let _sortKey = localStorage.getItem('dashSortKey') || null; // 'invest'|'name'|'change'|null
@@ -514,7 +509,6 @@ function getSortedItems(allItems) {
   });
 }
 
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
 let cardDragSym = null;
 
 function bindCardDrag(card, symbol) {
@@ -560,29 +554,17 @@ function loadWatch() {
   [...myList.map(x=>({...x,_my:true})), ...wList.map(x=>({...x,_my:false}))]
     .forEach(x => allMap[x.symbol] = x);
   const allItems = order.map(s => allMap[s]).filter(Boolean);
-<<<<<<< HEAD
-
-  if (!allItems.length) {
-    wc.innerHTML = '<div class="wc-empty"><p>👈 왼쪽에서 종목을 검색하고 추가하세요.<br>카드를 클릭하면 차트 팝업이 열립니다.</p></div>';
-=======
   const sortedItems = getSortedItems(allItems); // ← 정렬 적용
 
 if (!sortedItems.length) {
     wc.innerHTML = '<div class="wc-empty">...';
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
     return;
   }
   wc.innerHTML = '';
   if (_sectorViewOn) {
-<<<<<<< HEAD
-    renderSectorView(wc, allItems);
-  } else {
-    allItems.forEach(item => wc.appendChild(buildCard(item)));
-=======
     renderSectorView(wc, sortedItems);   // ← sortedItems
   } else {
     sortedItems.forEach(item => wc.appendChild(buildCard(item)));  // ← sortedItems
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
   }
   const svBtn = document.getElementById('sector-view-btn');
   if (svBtn) svBtn.classList.toggle('on', _sectorViewOn);
@@ -673,12 +655,9 @@ async function loadWatchPrices() {
       chgEl.className      = `wc-chg ${cls}`;
       // 금일수익 계산용 — 부호 포함 실제 등락값 저장
       chgEl.dataset.change = change;
-<<<<<<< HEAD
-=======
 	  chgEl.dataset.changePct = changePct; // ← 이 줄 추가 (% 값)
       // 목표가/손절가 알림 체크
       checkPriceAlert(item.symbol, price);	  
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
     } catch(e) {
       if (priceEl) priceEl.textContent = '-';
     }
@@ -686,10 +665,7 @@ async function loadWatchPrices() {
   // 가격 갱신 후 보유정보/스냅샷 재계산
   loadHoldings();
   if (_snapshotOn) updateSnapshot();
-<<<<<<< HEAD
-=======
   savePortfolioSnapshot(); // ← 하루 1회 자동 스냅샷 저장
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
 }
 
 
@@ -742,9 +718,6 @@ function delHolding(symbol) {
   localStorage.removeItem(`holding_${symbol}`);
   savePortfolio();
 }
-<<<<<<< HEAD
-
-=======
 /* ── 목표가/손절가 ── */
 function getAlert(symbol) {
   return JSON.parse(localStorage.getItem(`alert_${symbol}`) || 'null');
@@ -826,7 +799,6 @@ function playAlertSound(type) {
     console.warn('사운드 재생 실패:', e);
   }
 }
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
 function openHoldingModal(symbol, name) {
   _hmSymbol = symbol;
   const isKrx = /^[0-9]{6}$/.test(symbol);
@@ -837,13 +809,10 @@ function openHoldingModal(symbol, name) {
   const h = getHolding(symbol);
   document.getElementById('hm-avgprice').value = h ? h.avg_price : '';
   document.getElementById('hm-qty').value      = h ? h.qty       : '';
-<<<<<<< HEAD
-=======
   // 목표가/손절가 불러오기
   const t = getAlert(symbol);
   document.getElementById('hm-target').value = t ? t.target : '';
   document.getElementById('hm-stop').value   = t ? t.stop   : '';
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
   document.getElementById('holding-modal').classList.add('open');
   setTimeout(() => document.getElementById('hm-avgprice').focus(), 100);
 }
@@ -858,27 +827,21 @@ function saveHolding() {
     showToast('⚠ 평균가와 수량을 입력하세요'); return;
   }
   setHolding(_hmSymbol, avg, qty);
-<<<<<<< HEAD
-=======
   // 목표가/손절가 저장
   const target = parseFloat(document.getElementById('hm-target').value) || 0;
   const stop   = parseFloat(document.getElementById('hm-stop').value)   || 0;
   setAlert(_hmSymbol, target, stop);
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
   closeHoldingModal();
   loadHoldings();
   showToast('✅ 보유정보 저장됨');
 }
-<<<<<<< HEAD
 function clearHolding() {
   delHolding(_hmSymbol);
   closeHoldingModal();
   loadHoldings();
   showToast('🗑 보유정보 삭제됨');
 }
-=======
 
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
 
 // 투자 스냅샷 ON/OFF
 let _snapshotOn = false;
@@ -971,9 +934,6 @@ function updateSnapshot() {
   }
   setRow(['isn-tot-buy','isn-tot-eval','isn-tot-profit','isn-tot-rate'], totBuyKrw, totEvalKrw, '₩');
 }
-<<<<<<< HEAD
-
-=======
 /* ── 포트폴리오 히스토리 스냅샷 ── */
 function savePortfolioSnapshot() {
   const myList = getMyList();
@@ -1132,7 +1092,6 @@ function renderHistoryChart(range) {
     <span style="color:${pCls};">● 손익 <b>${sign}${diff.toLocaleString()}원 (${sign}${rate}%)</b></span>
   `;
 }
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
 // 카드 보유정보 표시 (현재가 기반 실시간 계산)
 function loadHoldings() {
   getMyList().forEach(item => {
@@ -1194,11 +1153,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (e.target === this) closeHoldingModal();
   });
   // Enter 키 저장
-<<<<<<< HEAD
-  ['hm-avgprice','hm-qty'].forEach(id => {
-=======
   ['hm-avgprice','hm-qty','hm-target','hm-stop'].forEach(id => {
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
     document.getElementById(id)?.addEventListener('keydown', e => {
       if (e.key === 'Enter') saveHolding();
     });
@@ -1880,13 +1835,10 @@ function setFilter(f, el) {
 }
 
 function applyFilter() {
-<<<<<<< HEAD
-=======
   const symbolsInSector = _activeSector
     ? (_sectorData[_activeSector]?.stocks || [])
     : null;  // ← 섹터 활성 여부 체크
 
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
   document.querySelectorAll('#watch-cards .wc-card').forEach(card => {
     const sym  = card.dataset.symbol || '';
     const isMy = card.dataset.my === '1' || card.classList.contains('my-stock');
@@ -1896,15 +1848,12 @@ function applyFilter() {
     else if (currentFilter === 'watch') show = !isMy;
     else if (currentFilter === 'kr')    show = isKr;
     else if (currentFilter === 'us')    show = !isKr;
-<<<<<<< HEAD
-=======
 
     // ← 섹터 필터 추가 적용 (dashFilter와 AND 조건)
     if (symbolsInSector && show) {
       show = symbolsInSector.includes(sym);
     }
 
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
     card.style.display = show ? '' : 'none';
   });
   // 섹터 뷰: 필터 후 카드가 없는 그룹 숨기기
@@ -2461,12 +2410,9 @@ function openPopup(name, symbol, market = '기타') {
           <button class="kis-fund-tab" onclick="fundTab('${cid}',1,this)">실적</button>
           <button class="kis-fund-tab" onclick="fundTab('${cid}',2,this)">수익성</button>
           <button class="kis-fund-tab" onclick="fundTab('${cid}',3,this)">현금흐름</button>
-<<<<<<< HEAD
-=======
 		  <button class="kis-fund-tab" 
 		  style="margin-left:auto; background:rgba(139,92,246,.15); color:#8b5cf6; border-color:#8b5cf6;"
           onclick="fundamentalAnalysis('${cid}')">🔍 기본분석</button>
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
         </div>
         <div class="kis-fund-page active" id="kf-p0-${cid}">
           <div class="kis-fund-item"><span class="kis-fund-label">시총</span><span class="kis-fund-val" id="kf-mcap-${cid}">-</span></div>
@@ -3445,11 +3391,7 @@ async function loadFundamentals(cid, symbol) {
     };
 
     // 밸류
-<<<<<<< HEAD
-    set('kf-mcap',  d.mcap, '', false);
-=======
     set('kf-mcap',  d.mktcap, '', false);
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
     set('kf-per',   d.per,  '배');
     set('kf-perf',  d.per_fwd, '배');
     set('kf-pbr',   d.pbr,  '배');
@@ -3478,8 +3420,6 @@ async function loadFundamentals(cid, symbol) {
   }
 }
 
-<<<<<<< HEAD
-=======
 function calcFundamentalScore(cid) {
   const get = id => {
     const el = document.getElementById(`${id}-${cid}`);
@@ -3581,7 +3521,6 @@ ${result.details.join('\n')}
   }
 }
 
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
 function fundTab(cid, idx, btn) {
   document.querySelectorAll(`#kis-fund-${cid} .kis-fund-tab`).forEach((t,i) => {
     t.classList.toggle('active', i === idx);
@@ -3640,28 +3579,17 @@ async function fetchKisPrice(cid, symbol) {
         `<span>고<b style="color:#ef4444">${fmt(d.high)}</b></span>` +
         `<span>저<b style="color:#3b82f6">${fmt(d.low)}</b></span>` +
         `<span style="margin-left:4px">거래량 <b>${fmt(d.volume)}</b></span>` +
-<<<<<<< HEAD
-        `<span style="margin-left:auto">${d.time}</span>`;
-=======
         `<span style="margin-left:auto">${d.time || ''}</span>`;
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
     }
     dotEl.classList.add('live');
 
     const mcapEl = document.getElementById(`kis-mktcap-${cid}`);
-<<<<<<< HEAD
-    if (mcapEl && d.market_cap) {
-      const mcap = parseFloat(d.market_cap);
-=======
     if (mcapEl && d.mktcap) {
       const mcap = parseFloat(d.mktcap);
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
       mcapEl.textContent = mcap >= 10000 ? `시총 ${(mcap/10000).toFixed(1)}조` :
                            mcap >= 1000  ? `시총 ${(mcap/1000).toFixed(1)}천억` : `시총 ${Math.round(mcap)}억`;
       mcapEl.style.display = '';
     }
-<<<<<<< HEAD
-=======
 	// KIS PER/PBR → 펀더멘털 패널에 직접 주입
 	if (d.per) {
 	  const perEl = document.getElementById(`kf-per-${cid}`);
@@ -3691,7 +3619,6 @@ async function fetchKisPrice(cid, symbol) {
 							 mcap >= 1000  ? `${(mcap/1000).toFixed(1)}천억` : `${mcap}억`;
 	  }
 	}
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
   } catch(e) {
     console.warn('KIS 현재가 오류, 폴백 시도:', e);
     await fetchKisPriceFallback(cid, symbol);
@@ -3721,14 +3648,9 @@ async function fetchKisPriceFallback(cid, symbol) {
     changeEl.textContent = `${sign} ${fmt(Math.abs(d.change))} (${d.change_pct > 0 ? '+' : ''}${d.change_pct}%) ※지연`;
 
     if (infoRow) infoRow.innerHTML =
-<<<<<<< HEAD
-      `<span>매도 <b>$${d.ask}</b></span><span>매수 <b>$${d.bid}</b></span>` +
-      `<span style="margin-left:auto;opacity:.7">※15분지연</span>`;
-=======
 		`<span>매도 <b>${d.ask ? '$'+d.ask : '-'}</b></span>` +
 		`<span>매수 <b>${d.bid ? '$'+d.bid : '-'}</b></span>` +
 		`<span style="margin-left:auto;opacity:.7">※15분지연</span>`;
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
   } catch(e) { console.warn('KIS 폴백 오류:', e); }
 }
 
@@ -4331,9 +4253,6 @@ function toggleSectorView() {
 }
 
 function renderSectorView(wc, allItems) {
-<<<<<<< HEAD
-  const sectorMap = getSectorMap();
-=======
   // ← _sectorData에서 sectorMap 형식으로 변환 (symbol → 섹터이름)
   const sectorMap = {};
   Object.values(_sectorData).forEach(info => {
@@ -4341,7 +4260,6 @@ function renderSectorView(wc, allItems) {
       sectorMap[sym] = info.name;
     });
   });
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
   const collapsed = getSectorCollapsed();
 
   // 종목 → 섹터 그룹화
@@ -4514,15 +4432,9 @@ let _sectorData = {};
 // ── 🌟 섹터 클릭 이벤트 초기화 함수 ──
 function initSectorMenu() {
   const cards = document.querySelectorAll('.sector-card');
-<<<<<<< HEAD
-  let clickTimer = null; // 단일/더블 클릭을 구분하기 위한 타이머
-
-  cards.forEach(card => {
-=======
 
   cards.forEach(card => {
 	let clickTimer = null; // 단일/더블 클릭을 구분하기 위한 타이머
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
     card.addEventListener('click', (e) => {
       const sectorId = card.dataset.sector || `custom-${card.dataset.index}`;
       
@@ -4549,20 +4461,11 @@ function toggleSectorFilter(cardElement, sectorId) {
   const cards = document.querySelectorAll('.sector-card');
   
   if (_activeSector === sectorId) {
-<<<<<<< HEAD
     // 1. 이미 선택된 섹터를 다시 누름 -> 필터 해제 (전체 보기)
-=======
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
     _activeSector = null;
     cardElement.classList.remove('active');
     filterDashboardBySector(null);
   } else {
-<<<<<<< HEAD
-    // 2. 새로운 섹터를 누름 -> 해당 섹터만 보기
-    _activeSector = sectorId;
-    cards.forEach(c => c.classList.remove('active')); // 다른 박스들 불 끄기
-    cardElement.classList.add('active'); // 누른 박스 불 켜기
-=======
     // ← 빈 섹터 체크 추가
     const stocks = _sectorData[sectorId]?.stocks || [];
     if (stocks.length === 0) {
@@ -4572,12 +4475,10 @@ function toggleSectorFilter(cardElement, sectorId) {
     _activeSector = sectorId;
     cards.forEach(c => c.classList.remove('active'));
     cardElement.classList.add('active');
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
     filterDashboardBySector(sectorId);
   }
 }
 
-<<<<<<< HEAD
 // ── 🌟 대시보드 화면 필터링 로직 ──
 function filterDashboardBySector(sectorId) {
   // 대시보드의 모든 종목 카드를 가져옵니다. 
@@ -4606,8 +4507,6 @@ function filterDashboardBySector(sectorId) {
     }
   });
 }
-=======
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
 // 페이지 로드 완료 시 섹터 메뉴 활성화
 // ── 🌟 섹터 데이터 로드 및 초기화 ──
 let _editingSectorId = null; // 현재 편집 중인 섹터 ID
@@ -4699,12 +4598,7 @@ function filterDashboardBySector(sectorId) {
   }
   const symbolsInSector = _sectorData[sectorId]?.stocks || [];
   stockCards.forEach(card => {
-<<<<<<< HEAD
-    const match = card.innerHTML.match(/wcp-([A-Za-z0-9]+)/);
-    const symbol = match ? match[1] : null;
-=======
     const symbol = card.dataset.symbol || null;  // ← dataset.symbol 직접 참조
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
     card.style.display = (symbol && symbolsInSector.includes(symbol)) ? '' : 'none';
   });
 }
@@ -4903,18 +4797,11 @@ function saveSectorEdit() {
   const card = document.querySelector(`.sector-card[data-sector="${_editingSectorId}"]`) || 
                document.querySelector(`.sector-card[data-index="${_editingSectorId.replace('custom-','')}"]`);
   
-<<<<<<< HEAD
-  if (card) {
-    card.innerText = newName;
-    if (_editingSectorId.startsWith('custom-')) {
-      card.classList.remove('empty'); // 이름이 지정되면 점선(empty) 스타일 제거
-=======
 if (card) {
     const nameSpan = card.querySelector('.sc-name');  // ← sc-name span만 타겟
     if (nameSpan) nameSpan.textContent = newName;
     if (_editingSectorId.startsWith('custom-')) {
       card.classList.remove('empty');
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
     }
   }
   
@@ -4927,14 +4814,9 @@ if (card) {
   }
 }
 document.addEventListener('DOMContentLoaded', () => {
-<<<<<<< HEAD
-    loadSectorData(); // 🌟 저장된 데이터 먼저 불러오기 추가!
-    initSectorMenu();
-=======
     loadSectorData();
     // 저장된 정렬 상태 복원
 	updateSortBtnUI(); // ← 저장된 정렬 상태 UI 복원
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
 });
 // ── 🌟 모달창 드래그(이동) 및 크기 조절 활성화 함수 ──
 // ── 🌟 [신규/수정] 타이밍 이슈를 해결한 무적의 드래그 로직 ──

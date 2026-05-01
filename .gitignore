@@ -3,4 +3,4 @@ venv/
 venv311/
 __pycache__/
 *.pyc
-memos/
+memos/app.log

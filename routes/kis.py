@@ -6,11 +6,8 @@ import requests
 from datetime import datetime
 import os
 
-<<<<<<< HEAD
-=======
 from extensions import cache
 
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
 kis_bp = Blueprint('kis', __name__)
 
 _shared = {}
@@ -25,43 +22,13 @@ def _base(): return _shared.get('KIS_BASE_URL', '')
 def _account(): return _shared.get('KIS_ACCOUNT', '')
 def _suffix(): return _shared.get('KIS_ACCOUNT_SUFFIX', '01')
 
-<<<<<<< HEAD
-
-@kis_bp.route('/kis/price')
-=======
 @kis_bp.route('/kis/price')
 # @cache.cached(timeout=5, query_string=True)
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
 def kis_price():
     symbol = request.args.get('symbol', '')
     if not symbol:
         return jsonify({'error': '종목코드 필요'}), 400
     token = _get_token()
-<<<<<<< HEAD
-    if not token:
-        return jsonify({'error': 'KIS 토큰 없음'}), 500
-    try:
-        resp = requests.get(
-            f'{_base()}/uapi/domestic-stock/v1/quotations/inquire-price',
-            headers=_headers('FHKST01010100', token),
-            params={'FID_COND_MRKT_DIV_CODE': 'J', 'FID_INPUT_ISCD': symbol},
-            timeout=5
-        )
-        d = resp.json().get('output1', {})
-        return jsonify({
-            'price':      int(d.get('stck_prpr', 0)),
-            'change':     int(d.get('prdy_vrss', 0)),
-            'change_pct': float(d.get('prdy_ctrt', 0)),
-            'volume':     int(d.get('acml_vol', 0)),
-            'open':       int(d.get('stck_oprc', 0)),
-            'high':       int(d.get('stck_hgpr', 0)),
-            'low':        int(d.get('stck_lwpr', 0)),
-            'time':       d.get('stck_shrn_iscd', ''),
-            'per':        float(d.get('per', 0) or 0),
-            'pbr':        float(d.get('pbr', 0) or 0),
-            'mktcap':     int(d.get('hts_avls', 0)),
-        })
-=======
     print(f"[DEBUG] symbol={symbol} token={'있음' if token else '없음'}")
 
     if token:
@@ -83,9 +50,9 @@ def kis_price():
                             'change_pct': float(data.get('prdy_ctrt', 0)),
                             'volume': int(data.get('acml_vol', 0)),
                             'mktcap': int(data.get('hts_avls', 0)),
-                            'open':  int(data.get('stck_oprc', 0)),   # ← 추가
-                            'high':  int(data.get('stck_hgpr', 0)),   # ← 추가
-                            'low':   int(data.get('stck_lwpr', 0)),   # ← 추가
+                            'open':  int(data.get('stck_oprc', 0)),
+                            'high':  int(data.get('stck_hgpr', 0)),
+                            'low':   int(data.get('stck_lwpr', 0)),
                             'per': float(data.get('per', 0)) or None,
                             'pbr': float(data.get('pbr', 0)) or None,
                             'eps': float(data.get('eps', 0)) or None,
@@ -126,7 +93,7 @@ def kis_price():
         import traceback
         traceback.print_exc()
         return jsonify({'error': str(fallback_e)}), 500
-                
+
 @kis_bp.route('/kis/ws-key')
 def kis_ws_key():
     token = _get_token()
@@ -141,7 +108,6 @@ def kis_ws_key():
             timeout=5
         )
         return jsonify(resp.json())
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
@@ -169,27 +135,6 @@ def kis_orderbook():
         return jsonify({'error': str(e)}), 500
 
 
-<<<<<<< HEAD
-@kis_bp.route('/kis/ws-key')
-def kis_ws_key():
-    token = _get_token()
-    if not token:
-        return jsonify({'error': 'KIS 토큰 없음'}), 500
-    try:
-        resp = requests.post(
-            f'{_base()}/oauth2/Approval',
-            json={'grant_type': 'client_credentials',
-                  'appkey': os.environ.get('KIS_APP_KEY', ''),
-                  'secretkey': os.environ.get('KIS_APP_SECRET', '')},
-            timeout=5
-        )
-        return jsonify(resp.json())
-    except Exception as e:
-        return jsonify({'error': str(e)}), 500
-
-
-=======
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
 @kis_bp.route('/kis/investor')
 def kis_investor():
     symbol = request.args.get('symbol', '')
@@ -212,7 +157,3 @@ def kis_investor():
         return jsonify(resp.json().get('output', []))
     except Exception as e:
         return jsonify({'error': str(e)}), 500
-<<<<<<< HEAD
-=======
-        
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)

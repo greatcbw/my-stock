@@ -7,8 +7,6 @@ from flask import Response, stream_with_context
 import os, sys, time, threading, json, requests
 from datetime import datetime, timedelta
 
-<<<<<<< HEAD
-=======
 import logging
 from logging.handlers import RotatingFileHandler
 
@@ -28,8 +26,6 @@ logging.getLogger().addHandler(log_handler)
 
 # Flask/Werkzeug 로그도 파일로
 logging.getLogger('werkzeug').addHandler(log_handler)
-
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
 # ── 확장 모듈 불러오기 (추가된 부분) ──
 from extensions import cache
 

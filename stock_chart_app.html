@@ -54,9 +54,35 @@ header {
 #layout { display:flex; width:100%; height:calc(100vh - 50px - 44px); }
 /* 하단 태스크바 높이 44px 확보 */
 
-/* ─── 좌측 사이드바 제거 ─── */
-#sidebar { display:none; }
-#sb-head { display:none; }
+/* ─── 사이드바 리사이즈 핸들 ─── */
+#sb-resizer {
+  width: 5px;
+  flex-shrink: 0;
+  cursor: col-resize;
+  background: transparent;
+  transition: background .15s;
+  position: relative;
+  z-index: 10;
+}
+#sb-resizer:hover, #sb-resizer.dragging {
+  background: #3b82f6;
+}
+
+/* ─── 좌측 사이드바 ─── */
+#sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border);
+  background: var(--panel);
+  overflow: hidden;
+}
+#sb-head {
+  padding: 8px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
 .srch-wrap { position:relative; }
 #search {
   width:100%; padding:7px 10px; font-size:13px;
@@ -224,8 +250,6 @@ header {
   display:flex; align-items:center; gap:6px; transition:background .12s;
   border-bottom:1px solid rgba(148,163,184,.08);
 }
-<<<<<<< HEAD
-=======
 .sort-btn {
   padding: 4px 10px;
   border-radius: 6px;
@@ -245,7 +269,6 @@ header {
   font-weight: bold;
 }
 
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
 .dfm-item:last-child { border-bottom:none; }
 .dfm-item:hover { background:var(--hover); color:#3b82f6; }
 .dfm-item.active { color:#3b82f6; }
@@ -1635,7 +1658,9 @@ button.btn-icon.active { background:rgba(34,197,94,.3); border-color:#22c55e; }
       </div>
     </div>
   </div>
-  
+
+  <!-- 사이드바 리사이즈 핸들 -->
+  <div id="sb-resizer"></div>
 
   <!-- 대시보드 -->
   <div id="main">
@@ -1677,10 +1702,7 @@ button.btn-icon.active { background:rgba(34,197,94,.3); border-color:#22c55e; }
       <div style="display:flex;align-items:center;gap:6px;flex-wrap:nowrap;margin-bottom:6px;">
         <span class="sec-title" style="white-space:nowrap;margin:0;">⭐ 관심종목 &amp; 내종목</span>
         <button class="isn-toggle-btn" id="isn-toggle" onclick="toggleSnapshot()">💰 ON/OFF</button>
-<<<<<<< HEAD
-=======
 		<button class="isn-toggle-btn" onclick="openHistoryModal()">📈 히스토리</button>
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
         <div class="dash-filter-wrap">
           <button class="dash-filter-btn" onclick="toggleFilterMenu(event)">
             <span id="filter-label">전체보기</span> ▾
@@ -1693,15 +1715,12 @@ button.btn-icon.active { background:rgba(34,197,94,.3); border-color:#22c55e; }
             <div class="dfm-item" onclick="setFilter('us',this)">🇺🇸 미국주식<span class="dfm-check">✓</span></div>
           </div>
         </div>
-<<<<<<< HEAD
-=======
 <div id="sort-btn-group" style="display:flex;gap:4px;">
   <button class="sort-btn" id="sort-btn-invest" onclick="toggleSort('invest')">💰 금액</button>
   <button class="sort-btn" id="sort-btn-eval"   onclick="toggleSort('eval')">📈 평가금액</button>
   <button class="sort-btn" id="sort-btn-name"   onclick="toggleSort('name')">🔤 이름</button>
   <button class="sort-btn" id="sort-btn-change" onclick="toggleSort('change')">📊 등락률</button>
 </div>
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
         <button class="cross-toggle" id="cross-toggle-btn" onclick="toggleCrossAlert()">📡 크로스 알림 OFF</button>
         <button class="sector-view-btn" id="sector-view-btn" onclick="toggleSectorView()">🗂 섹터 뷰</button>
       </div>
@@ -1793,12 +1812,6 @@ button.btn-icon.active { background:rgba(34,197,94,.3); border-color:#22c55e; }
       <div class="hm-label">매수 평균가 (원)</div>
       <input class="hm-input" id="hm-avgprice" type="number" placeholder="예: 83500" min="0">
     </div>
-<<<<<<< HEAD
-    <div class="hm-row">
-      <div class="hm-label">보유 수량 (주)</div>
-      <input class="hm-input" id="hm-qty" type="number" placeholder="예: 100" min="0">
-    </div>
-=======
 	<div class="hm-row">
       <div class="hm-label">보유 수량 (주)</div>
       <input class="hm-input" id="hm-qty" type="number" placeholder="예: 100" min="0">
@@ -1812,7 +1825,6 @@ button.btn-icon.active { background:rgba(34,197,94,.3); border-color:#22c55e; }
       <div class="hm-label">🛑 손절가</div>
       <input class="hm-input" id="hm-stop" type="number" placeholder="예: 70000" min="0">
     </div>
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
     <div class="hm-btns">
       <button class="hm-save" onclick="saveHolding()">💾 저장</button>
       <button class="hm-clear" onclick="clearHolding()">🗑 삭제</button>
@@ -1959,8 +1971,6 @@ button.btn-icon.active { background:rgba(34,197,94,.3); border-color:#22c55e; }
   </div>
 
 </div>
-<<<<<<< HEAD
-=======
 <!-- 포트폴리오 히스토리 모달 -->
 <div id="history-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:9999; align-items:center; justify-content:center;">
   <div id="history-inner" style="background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:20px; width:760px; max-width:95vw;">
@@ -1985,10 +1995,45 @@ button.btn-icon.active { background:rgba(34,197,94,.3); border-color:#22c55e; }
     </div>
   </div>
 </div>
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
 <!-- 섹터 모달 편집 기능 제미나이랑 같이 추가 여기까지-->
 <script src="forecast.js"></script>
 <script src="chart.js"></script>
 <script src="panel.js"></script>
+<script>
+(function() {
+  const resizer  = document.getElementById('sb-resizer');
+  const sidebar  = document.getElementById('sidebar');
+  const MIN_W = 140, MAX_W = 480;
+  let dragging = false, startX = 0, startW = 0;
+
+  const savedW = localStorage.getItem('sidebarWidth');
+  if (savedW) sidebar.style.width = savedW + 'px';
+
+  resizer.addEventListener('mousedown', e => {
+    dragging = true;
+    startX = e.clientX;
+    startW = sidebar.offsetWidth;
+    resizer.classList.add('dragging');
+    document.body.style.cursor = 'col-resize';
+    document.body.style.userSelect = 'none';
+    e.preventDefault();
+  });
+
+  document.addEventListener('mousemove', e => {
+    if (!dragging) return;
+    const w = Math.min(MAX_W, Math.max(MIN_W, startW + e.clientX - startX));
+    sidebar.style.width = w + 'px';
+  });
+
+  document.addEventListener('mouseup', () => {
+    if (!dragging) return;
+    dragging = false;
+    resizer.classList.remove('dragging');
+    document.body.style.cursor = '';
+    document.body.style.userSelect = '';
+    localStorage.setItem('sidebarWidth', sidebar.offsetWidth);
+  });
+})();
+</script>
 </body>
 </html>

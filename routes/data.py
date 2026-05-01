@@ -57,15 +57,11 @@ def get_data():
                 try: df = fdr.DataReader(symbol, start, end)
                 except Exception: df = None
             if df is None or (hasattr(df, 'empty') and df.empty):
-<<<<<<< HEAD
-                yf_sym = symbol + '.KS' if is_krx else symbol
-=======
                 if is_krx:
                     tk_test = yf.Ticker(symbol + '.KS')
                     yf_sym = symbol + '.KS' if tk_test.fast_info.last_price else symbol + '.KQ'
                 else:
                     yf_sym = symbol
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
                 df = yf.download(yf_sym, start=start, end=end, progress=False)
             if df is None or df.empty:
                 return jsonify([])
@@ -87,15 +83,11 @@ def get_data():
             # 분봉
             period_map = {'1m': '1d', '5m': '5d', '15m': '5d', '30m': '1mo'}
             period = period_map.get(interval, '1d')
-<<<<<<< HEAD
-            yf_sym = symbol + '.KS' if is_krx else symbol
-=======
             if is_krx:
                 tk_test = yf.Ticker(symbol + '.KS')
                 yf_sym = symbol + '.KS' if tk_test.fast_info.last_price else symbol + '.KQ'
             else:
                 yf_sym = symbol
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
             df = yf.download(yf_sym, period=period, interval=interval, progress=False)
             if df is None or df.empty:
                 return jsonify([])
@@ -206,15 +198,11 @@ def get_fundamentals():
     symbol = request.args.get('symbol', '')
     market = request.args.get('market', '')
     is_krx = bool(__import__('re').match(r'^[0-9]{6}$', symbol))
-<<<<<<< HEAD
-    yf_sym = symbol + '.KS' if is_krx else symbol
-=======
     if is_krx:
         tk_test = yf.Ticker(symbol + '.KS')
         yf_sym = symbol + '.KS' if tk_test.fast_info.last_price else symbol + '.KQ'
     else:
         yf_sym = symbol
->>>>>>> 20a1089 (주식모니터링 시스템 Vw)
     try:
         tk = yf.Ticker(yf_sym)
         i  = tk.info
